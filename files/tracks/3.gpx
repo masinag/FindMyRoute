@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="outdooractive - http://www.outdooractive.com">
+    <metadata>
+        <name>Pista Ciclabile Primiero</name>
+        <author>
+            <name>VisitTrentino   - VisitTrentino</name>
+        </author>
+        <time>2016-04-08T17:13:07</time>
+    </metadata>
+    <trk>
+        <name>Pista Ciclabile Primiero</name>
+        <desc>La ciclabile del Primiero si sviluppa lungo il torrente Cismon e attraversa i territori comunali di Imer, Mezzano, Transacqua, Fiera di Primiero, Tonadico e Siror, con una lunghezza complessiva di circa 11 km, comprensiva di tratti a viabilità promiscua.</desc>
+        <trkseg>
+            <trkpt lat="46.147452" lon="11.795902">
+                <ele>613.01743</ele>
+            </trkpt>
+            <trkpt lat="46.147113" lon="11.796161">
+                <ele>612.49669</ele>
+            </trkpt>
+            <trkpt lat="46.147059" lon="11.796207">
+                <ele>612.47060</ele>
+            </trkpt>
+            <trkpt lat="46.147053" lon="11.796213">
+                <ele>612.47299</ele>
+            </trkpt>
+            <trkpt lat="46.147007" lon="11.796266">
+                <ele>612.53509</ele>
+            </trkpt>
+            <trkpt lat="46.147006" lon="11.796268">
+                <ele>612.54035</ele>
+            </trkpt>
+            <trkpt lat="46.146983" lon="11.796357">
+                <ele>612.84969</ele>
+            </trkpt>
+            <trkpt lat="46.146983" lon="11.796363">
+                <ele>612.87497</ele>
+            </trkpt>
+            <trkpt lat="46.146985" lon="11.796440">
+                <ele>613.19501</ele>
+            </trkpt>
+            <trkpt lat="46.147000" lon="11.796553">
+                <ele>613.64000</ele>
+            </trkpt>
+            <trkpt lat="46.147001" lon="11.796564">
+                <ele>613.67779</ele>
+            </trkpt>
+            <trkpt lat="46.147023" lon="11.796652">
+                <ele>613.97035</ele>
+            </trkpt>
+            <trkpt lat="46.147026" lon="11.796679">
+                <ele>614.03885</ele>
+            </trkpt>
+            <trkpt lat="46.147051" lon="11.796751">
+                <ele>614.22243</ele>
+            </trkpt>
+            <trkpt lat="46.147080" lon="11.796854">
+                <ele>614.40726</ele>
+            </trkpt>
+            <trkpt lat="46.147104" lon="11.796943">
+                <ele>614.51108</ele>
+            </trkpt>
+            <trkpt lat="46.147103" lon="11.796942">
+                <ele>614.51108</ele>
+            </trkpt>
+            <trkpt lat="46.147135" lon="11.797047">
+                <ele>614.59270</ele>
+            </trkpt>
+            <trkpt lat="46.147175" lon="11.797123">
+                <ele>614.64316</ele>
+            </trkpt>
+            <trkpt lat="46.147228" lon="11.797298">
+                <ele>614.70230</ele>
+            </trkpt>
+            <trkpt lat="46.147282" lon="11.797476">
+                <ele>614.84088</ele>
+            </trkpt>
+            <trkpt lat="46.147444" lon="11.798594">
+                <ele>617.09743</ele>
+            </trkpt>
+            <trkpt lat="46.147500" lon="11.799049">
+                <ele>617.09743</ele>
+            </trkpt>
+            <trkpt lat="46.147151" lon="11.799177">
+                <ele>618.39727</ele>
+            </trkpt>
+            <trkpt lat="46.147123" lon="11.799233">
+                <ele>618.39727</ele>
+            </trkpt>
+            <trkpt lat="46.147253" lon="11.800088">
+                <ele>618.39727</ele>
+            </trkpt>
+            <trkpt lat="46.147385" lon="11.801084">
+                <ele>619.03813</ele>
+            </trkpt>
+            <trkpt lat="46.147474" lon="11.801663">
+                <ele>620.09506</ele>
+            </trkpt>
+            <trkpt lat="46.147551" lon="11.802112">
+                <ele>620.39031</ele>
+            </trkpt>
+            <trkpt lat="46.148201" lon="11.804515">
+                <ele>623.95953</ele>
+            </trkpt>
+            <trkpt lat="46.148816" lon="11.806260">
+                <ele>626.29767</ele>
+            </trkpt>
+            <trkpt lat="46.149098" lon="11.807057">
+                <ele>626.66538</ele>
+            </trkpt>
+            <trkpt lat="46.149499" lon="11.808219">
+                <ele>628.46769</ele>
+            </trkpt>
+            <trkpt lat="46.149813" lon="11.809135">
+                <ele>629.39035</ele>
+            </trkpt>
+            <trkpt lat="46.150070" lon="11.809833">
+                <ele>628.95705</ele>
+            </trkpt>
+            <trkpt lat="46.150421" lon="11.810513">
+                <ele>629.02166</ele>
+            </trkpt>
+            <trkpt lat="46.150704" lon="11.810933">
+                <ele>631.85090</ele>
+            </trkpt>
+            <trkpt lat="46.151357" lon="11.811661">
+                <ele>634.39723</ele>
+            </trkpt>
+            <trkpt lat="46.151848" lon="11.812177">
+                <ele>634.89689</ele>
+            </trkpt>
+            <trkpt lat="46.152316" lon="11.812597">
+                <ele>635.32357</ele>
+            </trkpt>
+            <trkpt lat="46.152715" lon="11.812898">
+                <ele>636.80951</ele>
+            </trkpt>
+            <trkpt lat="46.152785" lon="11.812957">
+                <ele>637.15359</ele>
+            </trkpt>
+            <trkpt lat="46.152807" lon="11.813074">
+                <ele>637.79358</ele>
+            </trkpt>
+            <trkpt lat="46.152812" lon="11.813155">
+                <ele>638.24874</ele>
+            </trkpt>
+            <trkpt lat="46.152839" lon="11.813194">
+                <ele>638.29270</ele>
+            </trkpt>
+            <trkpt lat="46.152929" lon="11.813171">
+                <ele>638.29270</ele>
+            </trkpt>
+            <trkpt lat="46.153007" lon="11.813151">
+                <ele>638.20565</ele>
+            </trkpt>
+            <trkpt lat="46.153127" lon="11.813138">
+                <ele>638.20565</ele>
+            </trkpt>
+            <trkpt lat="46.153249" lon="11.813174">
+                <ele>638.43030</ele>
+            </trkpt>
+            <trkpt lat="46.153407" lon="11.813285">
+                <ele>638.92881</ele>
+            </trkpt>
+            <trkpt lat="46.153745" lon="11.813524">
+                <ele>640.42256</ele>
+            </trkpt>
+            <trkpt lat="46.153876" lon="11.813638">
+                <ele>641.24214</ele>
+            </trkpt>
+            <trkpt lat="46.154028" lon="11.813761">
+                <ele>642.18647</ele>
+            </trkpt>
+            <trkpt lat="46.154180" lon="11.813829">
+                <ele>642.74724</ele>
+            </trkpt>
+            <trkpt lat="46.154664" lon="11.814017">
+                <ele>642.78113</ele>
+            </trkpt>
+            <trkpt lat="46.154862" lon="11.814164">
+                <ele>642.90540</ele>
+            </trkpt>
+            <trkpt lat="46.154984" lon="11.814240">
+                <ele>643.10779</ele>
+            </trkpt>
+            <trkpt lat="46.155152" lon="11.814399">
+                <ele>643.64982</ele>
+            </trkpt>
+            <trkpt lat="46.155503" lon="11.814602">
+                <ele>644.74368</ele>
+            </trkpt>
+            <trkpt lat="46.155728" lon="11.814754">
+                <ele>645.90968</ele>
+            </trkpt>
+            <trkpt lat="46.155888" lon="11.814862">
+                <ele>647.18741</ele>
+            </trkpt>
+            <trkpt lat="46.155969" lon="11.814956">
+                <ele>648.07000</ele>
+            </trkpt>
+            <trkpt lat="46.156079" lon="11.815258">
+                <ele>649.19219</ele>
+            </trkpt>
+            <trkpt lat="46.156346" lon="11.815942">
+                <ele>652.17895</ele>
+            </trkpt>
+            <trkpt lat="46.156528" lon="11.816513">
+                <ele>658.82618</ele>
+            </trkpt>
+            <trkpt lat="46.156929" lon="11.817486">
+                <ele>665.31617</ele>
+            </trkpt>
+            <trkpt lat="46.157146" lon="11.818068">
+                <ele>665.31617</ele>
+            </trkpt>
+            <trkpt lat="46.157482" lon="11.818668">
+                <ele>664.25982</ele>
+            </trkpt>
+            <trkpt lat="46.157639" lon="11.818909">
+                <ele>664.25982</ele>
+            </trkpt>
+            <trkpt lat="46.158178" lon="11.819675">
+                <ele>668.07019</ele>
+            </trkpt>
+            <trkpt lat="46.158264" lon="11.819809">
+                <ele>668.26691</ele>
+            </trkpt>
+            <trkpt lat="46.158318" lon="11.819838">
+                <ele>668.26691</ele>
+            </trkpt>
+            <trkpt lat="46.158407" lon="11.819855">
+                <ele>666.42094</ele>
+            </trkpt>
+            <trkpt lat="46.158496" lon="11.819886">
+                <ele>665.01394</ele>
+            </trkpt>
+            <trkpt lat="46.158611" lon="11.819969">
+                <ele>663.98006</ele>
+            </trkpt>
+            <trkpt lat="46.158849" lon="11.820176">
+                <ele>663.69029</ele>
+            </trkpt>
+            <trkpt lat="46.159130" lon="11.820462">
+                <ele>663.69029</ele>
+            </trkpt>
+            <trkpt lat="46.159325" lon="11.820602">
+                <ele>663.80565</ele>
+            </trkpt>
+            <trkpt lat="46.159634" lon="11.820825">
+                <ele>664.12152</ele>
+            </trkpt>
+            <trkpt lat="46.160314" lon="11.821364">
+                <ele>665.27411</ele>
+            </trkpt>
+            <trkpt lat="46.160412" lon="11.821421">
+                <ele>665.36966</ele>
+            </trkpt>
+            <trkpt lat="46.160697" lon="11.821527">
+                <ele>665.43564</ele>
+            </trkpt>
+            <trkpt lat="46.160939" lon="11.821591">
+                <ele>665.94586</ele>
+            </trkpt>
+            <trkpt lat="46.161200" lon="11.821657">
+                <ele>667.52482</ele>
+            </trkpt>
+            <trkpt lat="46.161481" lon="11.821632">
+                <ele>669.96140</ele>
+            </trkpt>
+            <trkpt lat="46.161963" lon="11.821614">
+                <ele>676.12817</ele>
+            </trkpt>
+            <trkpt lat="46.162460" lon="11.821644">
+                <ele>683.22569</ele>
+            </trkpt>
+            <trkpt lat="46.162871" lon="11.821690">
+                <ele>683.22569</ele>
+            </trkpt>
+            <trkpt lat="46.163122" lon="11.821742">
+                <ele>681.84140</ele>
+            </trkpt>
+            <trkpt lat="46.163427" lon="11.821770">
+                <ele>681.84140</ele>
+            </trkpt>
+            <trkpt lat="46.163841" lon="11.821765">
+                <ele>682.27788</ele>
+            </trkpt>
+            <trkpt lat="46.164453" lon="11.821771">
+                <ele>682.27788</ele>
+            </trkpt>
+            <trkpt lat="46.164578" lon="11.821803">
+                <ele>681.78257</ele>
+            </trkpt>
+            <trkpt lat="46.164721" lon="11.821849">
+                <ele>681.78257</ele>
+            </trkpt>
+            <trkpt lat="46.164873" lon="11.821909">
+                <ele>682.08481</ele>
+            </trkpt>
+            <trkpt lat="46.165105" lon="11.821972">
+                <ele>683.58516</ele>
+            </trkpt>
+            <trkpt lat="46.165464" lon="11.822017">
+                <ele>686.57700</ele>
+            </trkpt>
+            <trkpt lat="46.165590" lon="11.822010">
+                <ele>686.61758</ele>
+            </trkpt>
+            <trkpt lat="46.165790" lon="11.821943">
+                <ele>686.61758</ele>
+            </trkpt>
+            <trkpt lat="46.166116" lon="11.821881">
+                <ele>685.90472</ele>
+            </trkpt>
+            <trkpt lat="46.166295" lon="11.821891">
+                <ele>685.70652</ele>
+            </trkpt>
+            <trkpt lat="46.166393" lon="11.821948">
+                <ele>685.70652</ele>
+            </trkpt>
+            <trkpt lat="46.166507" lon="11.822057">
+                <ele>686.10748</ele>
+            </trkpt>
+            <trkpt lat="46.166704" lon="11.822182">
+                <ele>686.79812</ele>
+            </trkpt>
+            <trkpt lat="46.167246" lon="11.822410">
+                <ele>690.44148</ele>
+            </trkpt>
+            <trkpt lat="46.167568" lon="11.822461">
+                <ele>691.57600</ele>
+            </trkpt>
+            <trkpt lat="46.167657" lon="11.822505">
+                <ele>692.25748</ele>
+            </trkpt>
+            <trkpt lat="46.167783" lon="11.822537">
+                <ele>692.98906</ele>
+            </trkpt>
+            <trkpt lat="46.168078" lon="11.822578">
+                <ele>694.43793</ele>
+            </trkpt>
+            <trkpt lat="46.168445" lon="11.822662">
+                <ele>694.43793</ele>
+            </trkpt>
+            <trkpt lat="46.168839" lon="11.822772">
+                <ele>694.30895</ele>
+            </trkpt>
+            <trkpt lat="46.169096" lon="11.822915">
+                <ele>694.30895</ele>
+            </trkpt>
+            <trkpt lat="46.169370" lon="11.823111">
+                <ele>694.72702</ele>
+            </trkpt>
+            <trkpt lat="46.169529" lon="11.823248">
+                <ele>694.72702</ele>
+            </trkpt>
+            <trkpt lat="46.169669" lon="11.823424">
+                <ele>694.72702</ele>
+            </trkpt>
+            <trkpt lat="46.169868" lon="11.823732">
+                <ele>695.38311</ele>
+            </trkpt>
+            <trkpt lat="46.170032" lon="11.824025">
+                <ele>696.96894</ele>
+            </trkpt>
+            <trkpt lat="46.170160" lon="11.824304">
+                <ele>699.12050</ele>
+            </trkpt>
+            <trkpt lat="46.170303" lon="11.824726">
+                <ele>703.19010</ele>
+            </trkpt>
+            <trkpt lat="46.170496" lon="11.825280">
+                <ele>704.06410</ele>
+            </trkpt>
+            <trkpt lat="46.170758" lon="11.825954">
+                <ele>704.76081</ele>
+            </trkpt>
+            <trkpt lat="46.170868" lon="11.826244">
+                <ele>705.36044</ele>
+            </trkpt>
+            <trkpt lat="46.171005" lon="11.826537">
+                <ele>705.36044</ele>
+            </trkpt>
+            <trkpt lat="46.171244" lon="11.827054">
+                <ele>702.64976</ele>
+            </trkpt>
+            <trkpt lat="46.171260" lon="11.827120">
+                <ele>702.58156</ele>
+            </trkpt>
+            <trkpt lat="46.171250" lon="11.827171">
+                <ele>701.40168</ele>
+            </trkpt>
+            <trkpt lat="46.171373" lon="11.827294">
+                <ele>701.40168</ele>
+            </trkpt>
+            <trkpt lat="46.171699" lon="11.827583">
+                <ele>700.97342</ele>
+            </trkpt>
+            <trkpt lat="46.172013" lon="11.827975">
+                <ele>701.45251</ele>
+            </trkpt>
+            <trkpt lat="46.172424" lon="11.828475">
+                <ele>702.59505</ele>
+            </trkpt>
+            <trkpt lat="46.173141" lon="11.829315">
+                <ele>704.86944</ele>
+            </trkpt>
+            <trkpt lat="46.173334" lon="11.829519">
+                <ele>705.96564</ele>
+            </trkpt>
+            <trkpt lat="46.173527" lon="11.829711">
+                <ele>705.96564</ele>
+            </trkpt>
+            <trkpt lat="46.173792" lon="11.829918">
+                <ele>704.44958</ele>
+            </trkpt>
+            <trkpt lat="46.173978" lon="11.830058">
+                <ele>703.86844</ele>
+            </trkpt>
+            <trkpt lat="46.174474" lon="11.830381">
+                <ele>704.75925</ele>
+            </trkpt>
+            <trkpt lat="46.174900" lon="11.830623">
+                <ele>707.96108</ele>
+            </trkpt>
+            <trkpt lat="46.175138" lon="11.830817">
+                <ele>709.45639</ele>
+            </trkpt>
+            <trkpt lat="46.175269" lon="11.830966">
+                <ele>710.56061</ele>
+            </trkpt>
+            <trkpt lat="46.175417" lon="11.831194">
+                <ele>711.77386</ele>
+            </trkpt>
+            <trkpt lat="46.175540" lon="11.831291">
+                <ele>711.99401</ele>
+            </trkpt>
+            <trkpt lat="46.175628" lon="11.831399">
+                <ele>711.99401</ele>
+            </trkpt>
+            <trkpt lat="46.175715" lon="11.831507">
+                <ele>711.99401</ele>
+            </trkpt>
+            <trkpt lat="46.175914" lon="11.831815">
+                <ele>712.36485</ele>
+            </trkpt>
+            <trkpt lat="46.175911" lon="11.831823">
+                <ele>712.37936</ele>
+            </trkpt>
+            <trkpt lat="46.175966" lon="11.831909">
+                <ele>712.69371</ele>
+            </trkpt>
+            <trkpt lat="46.177059" lon="11.833559">
+                <ele>720.03401</ele>
+            </trkpt>
+            <trkpt lat="46.177614" lon="11.834390">
+                <ele>720.92737</ele>
+            </trkpt>
+            <trkpt lat="46.178065" lon="11.835087">
+                <ele>724.26946</ele>
+            </trkpt>
+            <trkpt lat="46.178324" lon="11.835515">
+                <ele>724.15889</ele>
+            </trkpt>
+            <trkpt lat="46.178542" lon="11.835812">
+                <ele>723.43140</ele>
+            </trkpt>
+            <trkpt lat="46.178759" lon="11.836146">
+                <ele>723.43140</ele>
+            </trkpt>
+            <trkpt lat="46.178949" lon="11.836454">
+                <ele>724.67209</ele>
+            </trkpt>
+            <trkpt lat="46.179103" lon="11.836786">
+                <ele>726.13449</ele>
+            </trkpt>
+            <trkpt lat="46.179386" lon="11.837371">
+                <ele>728.17552</ele>
+            </trkpt>
+            <trkpt lat="46.179582" lon="11.837783">
+                <ele>730.15891</ele>
+            </trkpt>
+            <trkpt lat="46.179784" lon="11.838376">
+                <ele>733.00977</ele>
+            </trkpt>
+            <trkpt lat="46.179995" lon="11.838944">
+                <ele>735.11715</ele>
+            </trkpt>
+            <trkpt lat="46.180280" lon="11.839775">
+                <ele>746.54628</ele>
+            </trkpt>
+            <trkpt lat="46.180533" lon="11.840449">
+                <ele>746.54628</ele>
+            </trkpt>
+            <trkpt lat="46.180617" lon="11.840700">
+                <ele>746.13135</ele>
+            </trkpt>
+            <trkpt lat="46.180704" lon="11.840641">
+                <ele>743.97667</ele>
+            </trkpt>
+            <trkpt lat="46.180846" lon="11.840530">
+                <ele>742.19130</ele>
+            </trkpt>
+            <trkpt lat="46.180898" lon="11.840636">
+                <ele>742.19130</ele>
+            </trkpt>
+            <trkpt lat="46.180990" lon="11.840887">
+                <ele>742.80172</ele>
+            </trkpt>
+            <trkpt lat="46.181085" lon="11.841074">
+                <ele>743.21808</ele>
+            </trkpt>
+            <trkpt lat="46.181171" lon="11.841220">
+                <ele>743.39854</ele>
+            </trkpt>
+            <trkpt lat="46.181310" lon="11.841409">
+                <ele>743.48590</ele>
+            </trkpt>
+            <trkpt lat="46.181561" lon="11.841098">
+                <ele>748.32642</ele>
+            </trkpt>
+            <trkpt lat="46.181666" lon="11.840857">
+                <ele>751.55654</ele>
+            </trkpt>
+            <trkpt lat="46.181547" lon="11.840579">
+                <ele>751.55654</ele>
+            </trkpt>
+            <trkpt lat="46.181477" lon="11.840498">
+                <ele>750.63585</ele>
+            </trkpt>
+            <trkpt lat="46.181442" lon="11.840444">
+                <ele>750.16044</ele>
+            </trkpt>
+            <trkpt lat="46.181410" lon="11.840300">
+                <ele>750.16044</ele>
+            </trkpt>
+            <trkpt lat="46.181501" lon="11.840253">
+                <ele>751.95007</ele>
+            </trkpt>
+            <trkpt lat="46.181601" lon="11.840219">
+                <ele>753.73987</ele>
+            </trkpt>
+            <trkpt lat="46.181749" lon="11.840071">
+                <ele>755.70277</ele>
+            </trkpt>
+            <trkpt lat="46.181832" lon="11.839985">
+                <ele>756.44551</ele>
+            </trkpt>
+            <trkpt lat="46.181907" lon="11.839872">
+                <ele>756.88551</ele>
+            </trkpt>
+            <trkpt lat="46.181999" lon="11.839773">
+                <ele>757.18085</ele>
+            </trkpt>
+            <trkpt lat="46.182051" lon="11.839879">
+                <ele>757.54553</ele>
+            </trkpt>
+            <trkpt lat="46.182161" lon="11.840144">
+                <ele>758.55577</ele>
+            </trkpt>
+            <trkpt lat="46.182247" lon="11.840304">
+                <ele>759.60840</ele>
+            </trkpt>
+            <trkpt lat="46.182281" lon="11.840358">
+                <ele>760.06554</ele>
+            </trkpt>
+            <trkpt lat="46.182341" lon="11.840503">
+                <ele>761.19810</ele>
+            </trkpt>
+            <trkpt lat="46.182357" lon="11.840582">
+                <ele>761.70773</ele>
+            </trkpt>
+            <trkpt lat="46.182412" lon="11.840559">
+                <ele>762.02675</ele>
+            </trkpt>
+            <trkpt lat="46.182470" lon="11.840756">
+                <ele>763.45132</ele>
+            </trkpt>
+            <trkpt lat="46.182513" lon="11.840836">
+                <ele>764.10211</ele>
+            </trkpt>
+            <trkpt lat="46.182583" lon="11.840917">
+                <ele>764.90304</ele>
+            </trkpt>
+            <trkpt lat="46.182661" lon="11.841038">
+                <ele>766.04657</ele>
+            </trkpt>
+            <trkpt lat="46.182730" lon="11.841132">
+                <ele>767.17945</ele>
+            </trkpt>
+            <trkpt lat="46.182775" lon="11.841161">
+                <ele>767.73972</ele>
+            </trkpt>
+            <trkpt lat="46.182846" lon="11.841177">
+                <ele>768.37078</ele>
+            </trkpt>
+            <trkpt lat="46.182927" lon="11.841169">
+                <ele>768.67653</ele>
+            </trkpt>
+            <trkpt lat="46.183018" lon="11.841134">
+                <ele>768.67653</ele>
+            </trkpt>
+            <trkpt lat="46.183175" lon="11.841000">
+                <ele>766.94711</ele>
+            </trkpt>
+            <trkpt lat="46.183524" lon="11.840694">
+                <ele>764.27523</ele>
+            </trkpt>
+            <trkpt lat="46.183791" lon="11.840449">
+                <ele>763.13851</ele>
+            </trkpt>
+            <trkpt lat="46.183958" lon="11.840263">
+                <ele>762.71426</ele>
+            </trkpt>
+            <trkpt lat="46.184116" lon="11.840064">
+                <ele>762.71426</ele>
+            </trkpt>
+            <trkpt lat="46.184239" lon="11.839837">
+                <ele>762.71426</ele>
+            </trkpt>
+            <trkpt lat="46.184420" lon="11.839418">
+                <ele>762.71426</ele>
+            </trkpt>
+            <trkpt lat="46.184542" lon="11.839217">
+                <ele>763.15001</ele>
+            </trkpt>
+            <trkpt lat="46.184636" lon="11.839054">
+                <ele>763.26194</ele>
+            </trkpt>
+            <trkpt lat="46.184729" lon="11.838942">
+                <ele>763.78000</ele>
+            </trkpt>
+            <trkpt lat="46.184894" lon="11.838795">
+                <ele>764.94533</ele>
+            </trkpt>
+            <trkpt lat="46.185171" lon="11.838550">
+                <ele>765.46897</ele>
+            </trkpt>
+            <trkpt lat="46.185336" lon="11.838416">
+                <ele>765.46897</ele>
+            </trkpt>
+            <trkpt lat="46.185430" lon="11.838265">
+                <ele>764.10507</ele>
+            </trkpt>
+            <trkpt lat="46.185618" lon="11.837938">
+                <ele>764.10507</ele>
+            </trkpt>
+            <trkpt lat="46.185777" lon="11.837687">
+                <ele>764.12646</ele>
+            </trkpt>
+            <trkpt lat="46.186211" lon="11.836867">
+                <ele>766.89764</ele>
+            </trkpt>
+            <trkpt lat="46.186485" lon="11.836363">
+                <ele>769.31148</ele>
+            </trkpt>
+            <trkpt lat="46.186684" lon="11.835958">
+                <ele>773.51238</ele>
+            </trkpt>
+            <trkpt lat="46.186818" lon="11.835654">
+                <ele>775.59071</ele>
+            </trkpt>
+            <trkpt lat="46.186978" lon="11.835364">
+                <ele>777.44426</ele>
+            </trkpt>
+            <trkpt lat="46.187135" lon="11.835178">
+                <ele>779.20530</ele>
+            </trkpt>
+            <trkpt lat="46.187310" lon="11.835019">
+                <ele>781.30913</ele>
+            </trkpt>
+            <trkpt lat="46.187477" lon="11.834820">
+                <ele>781.44853</ele>
+            </trkpt>
+            <trkpt lat="46.187618" lon="11.834581">
+                <ele>781.44853</ele>
+            </trkpt>
+            <trkpt lat="46.187750" lon="11.834341">
+                <ele>779.72362</ele>
+            </trkpt>
+            <trkpt lat="46.187891" lon="11.834102">
+                <ele>778.50336</ele>
+            </trkpt>
+            <trkpt lat="46.187994" lon="11.833952">
+                <ele>778.07803</ele>
+            </trkpt>
+            <trkpt lat="46.188133" lon="11.833791">
+                <ele>777.79902</ele>
+            </trkpt>
+            <trkpt lat="46.188254" lon="11.833642">
+                <ele>777.79902</ele>
+            </trkpt>
+            <trkpt lat="46.188394" lon="11.833429">
+                <ele>777.24388</ele>
+            </trkpt>
+            <trkpt lat="46.188504" lon="11.833331">
+                <ele>776.90272</ele>
+            </trkpt>
+            <trkpt lat="46.188561" lon="11.833243">
+                <ele>776.90272</ele>
+            </trkpt>
+            <trkpt lat="46.188573" lon="11.833088">
+                <ele>775.12774</ele>
+            </trkpt>
+            <trkpt lat="46.188540" lon="11.832982">
+                <ele>773.64933</ele>
+            </trkpt>
+            <trkpt lat="46.188517" lon="11.832826">
+                <ele>772.28712</ele>
+            </trkpt>
+            <trkpt lat="46.188548" lon="11.832672">
+                <ele>772.28712</ele>
+            </trkpt>
+            <trkpt lat="46.188657" lon="11.832613">
+                <ele>772.29737</ele>
+            </trkpt>
+            <trkpt lat="46.188737" lon="11.832656">
+                <ele>773.43945</ele>
+            </trkpt>
+            <trkpt lat="46.188808" lon="11.832711">
+                <ele>774.81999</ele>
+            </trkpt>
+            <trkpt lat="46.188953" lon="11.832667">
+                <ele>776.61194</ele>
+            </trkpt>
+            <trkpt lat="46.189107" lon="11.832623">
+                <ele>779.35075</ele>
+            </trkpt>
+            <trkpt lat="46.189271" lon="11.832554">
+                <ele>783.11338</ele>
+            </trkpt>
+            <trkpt lat="46.189381" lon="11.832443">
+                <ele>784.54523</ele>
+            </trkpt>
+            <trkpt lat="46.189476" lon="11.832266">
+                <ele>784.54523</ele>
+            </trkpt>
+            <trkpt lat="46.189543" lon="11.832088">
+                <ele>784.54523</ele>
+            </trkpt>
+            <trkpt lat="46.189673" lon="11.831926">
+                <ele>784.67590</ele>
+            </trkpt>
+            <trkpt lat="46.189813" lon="11.831726">
+                <ele>786.08960</ele>
+            </trkpt>
+            <trkpt lat="46.189879" lon="11.831600">
+                <ele>786.08960</ele>
+            </trkpt>
+            <trkpt lat="46.189937" lon="11.831473">
+                <ele>785.79752</ele>
+            </trkpt>
+            <trkpt lat="46.190042" lon="11.831220">
+                <ele>784.96078</ele>
+            </trkpt>
+            <trkpt lat="46.190194" lon="11.830903">
+                <ele>784.96078</ele>
+            </trkpt>
+            <trkpt lat="46.190354" lon="11.830614">
+                <ele>787.71009</ele>
+            </trkpt>
+            <trkpt lat="46.190421" lon="11.830462">
+                <ele>788.09159</ele>
+            </trkpt>
+            <trkpt lat="46.190443" lon="11.830268">
+                <ele>785.39315</ele>
+            </trkpt>
+            <trkpt lat="46.190467" lon="11.830036">
+                <ele>782.18411</ele>
+            </trkpt>
+            <trkpt lat="46.190508" lon="11.829844">
+                <ele>780.42337</ele>
+            </trkpt>
+            <trkpt lat="46.190569" lon="11.829575">
+                <ele>778.35619</ele>
+            </trkpt>
+            <trkpt lat="46.190617" lon="11.829422">
+                <ele>777.92189</ele>
+            </trkpt>
+            <trkpt lat="46.190711" lon="11.829297">
+                <ele>777.92189</ele>
+            </trkpt>
+            <trkpt lat="46.190831" lon="11.829161">
+                <ele>778.80945</ele>
+            </trkpt>
+            <trkpt lat="46.191024" lon="11.829002">
+                <ele>781.77251</ele>
+            </trkpt>
+            <trkpt lat="46.191134" lon="11.828904">
+                <ele>782.60941</ele>
+            </trkpt>
+            <trkpt lat="46.191154" lon="11.828853">
+                <ele>782.60941</ele>
+            </trkpt>
+            <trkpt lat="46.191138" lon="11.828762">
+                <ele>779.67862</ele>
+            </trkpt>
+            <trkpt lat="46.191131" lon="11.828684">
+                <ele>777.47952</ele>
+            </trkpt>
+            <trkpt lat="46.191141" lon="11.828632">
+                <ele>776.46250</ele>
+            </trkpt>
+            <trkpt lat="46.191197" lon="11.828532">
+                <ele>775.43157</ele>
+            </trkpt>
+            <trkpt lat="46.191319" lon="11.828343">
+                <ele>773.66038</ele>
+            </trkpt>
+            <trkpt lat="46.191422" lon="11.828180">
+                <ele>772.01961</ele>
+            </trkpt>
+            <trkpt lat="46.191442" lon="11.828116">
+                <ele>770.98053</ele>
+            </trkpt>
+            <trkpt lat="46.191435" lon="11.828025">
+                <ele>769.00473</ele>
+            </trkpt>
+            <trkpt lat="46.191418" lon="11.827973">
+                <ele>767.76901</ele>
+            </trkpt>
+            <trkpt lat="46.191374" lon="11.827931">
+                <ele>766.42058</ele>
+            </trkpt>
+            <trkpt lat="46.191302" lon="11.827941">
+                <ele>765.62595</ele>
+            </trkpt>
+            <trkpt lat="46.191238" lon="11.827963">
+                <ele>765.14216</ele>
+            </trkpt>
+            <trkpt lat="46.191184" lon="11.827999">
+                <ele>764.99673</ele>
+            </trkpt>
+            <trkpt lat="46.191102" lon="11.828034">
+                <ele>764.48176</ele>
+            </trkpt>
+            <trkpt lat="46.191029" lon="11.828056">
+                <ele>763.90941</ele>
+            </trkpt>
+            <trkpt lat="46.190975" lon="11.828079">
+                <ele>763.61060</ele>
+            </trkpt>
+            <trkpt lat="46.190910" lon="11.828141">
+                <ele>762.98535</ele>
+            </trkpt>
+            <trkpt lat="46.190829" lon="11.828163">
+                <ele>762.98535</ele>
+            </trkpt>
+            <trkpt lat="46.190802" lon="11.828135">
+                <ele>762.43165</ele>
+            </trkpt>
+            <trkpt lat="46.190776" lon="11.828108">
+                <ele>761.94665</ele>
+            </trkpt>
+            <trkpt lat="46.190731" lon="11.828119">
+                <ele>761.70679</ele>
+            </trkpt>
+            <trkpt lat="46.190605" lon="11.828125">
+                <ele>761.00498</ele>
+            </trkpt>
+            <trkpt lat="46.190459" lon="11.828170">
+                <ele>760.62864</ele>
+            </trkpt>
+            <trkpt lat="46.190259" lon="11.828263">
+                <ele>760.17666</ele>
+            </trkpt>
+            <trkpt lat="46.190095" lon="11.828345">
+                <ele>759.61594</ele>
+            </trkpt>
+            <trkpt lat="46.189958" lon="11.828416">
+                <ele>758.99889</ele>
+            </trkpt>
+            <trkpt lat="46.189831" lon="11.828487">
+                <ele>758.46930</ele>
+            </trkpt>
+            <trkpt lat="46.189785" lon="11.828511">
+                <ele>758.29205</ele>
+            </trkpt>
+            <trkpt lat="46.189422" lon="11.828635">
+                <ele>756.72882</ele>
+            </trkpt>
+            <trkpt lat="46.188877" lon="11.828840">
+                <ele>753.18007</ele>
+            </trkpt>
+            <trkpt lat="46.188341" lon="11.829046">
+                <ele>748.59455</ele>
+            </trkpt>
+            <trkpt lat="46.187560" lon="11.829330">
+                <ele>746.46323</ele>
+            </trkpt>
+            <trkpt lat="46.187487" lon="11.829002">
+                <ele>749.58585</ele>
+            </trkpt>
+            <trkpt lat="46.187369" lon="11.829048">
+                <ele>750.02440</ele>
+            </trkpt>
+            <trkpt lat="46.186741" lon="11.829326">
+                <ele>754.38033</ele>
+            </trkpt>
+            <trkpt lat="46.186295" lon="11.829511">
+                <ele>755.17372</ele>
+            </trkpt>
+            <trkpt lat="46.185950" lon="11.829649">
+                <ele>755.17372</ele>
+            </trkpt>
+            <trkpt lat="46.185659" lon="11.829763">
+                <ele>753.25583</ele>
+            </trkpt>
+            <trkpt lat="46.185396" lon="11.829815">
+                <ele>752.93357</ele>
+            </trkpt>
+            <trkpt lat="46.185017" lon="11.829886">
+                <ele>752.93357</ele>
+            </trkpt>
+            <trkpt lat="46.184709" lon="11.829935">
+                <ele>753.52503</ele>
+            </trkpt>
+            <trkpt lat="46.184294" lon="11.830004">
+                <ele>753.52503</ele>
+            </trkpt>
+            <trkpt lat="46.183969" lon="11.830026">
+                <ele>752.53042</ele>
+            </trkpt>
+            <trkpt lat="46.183491" lon="11.830054">
+                <ele>748.20413</ele>
+            </trkpt>
+            <trkpt lat="46.183095" lon="11.830072">
+                <ele>746.43048</ele>
+            </trkpt>
+            <trkpt lat="46.182500" lon="11.830094">
+                <ele>744.62866</ele>
+            </trkpt>
+            <trkpt lat="46.182140" lon="11.830101">
+                <ele>739.49760</ele>
+            </trkpt>
+            <trkpt lat="46.181906" lon="11.830115">
+                <ele>735.15079</ele>
+            </trkpt>
+            <trkpt lat="46.181653" lon="11.830141">
+                <ele>731.08606</ele>
+            </trkpt>
+            <trkpt lat="46.181418" lon="11.830206">
+                <ele>727.89571</ele>
+            </trkpt>
+            <trkpt lat="46.181109" lon="11.830307">
+                <ele>724.88834</ele>
+            </trkpt>
+            <trkpt lat="46.180791" lon="11.830433">
+                <ele>722.97029</ele>
+            </trkpt>
+            <trkpt lat="46.180526" lon="11.830575">
+                <ele>721.71114</ele>
+            </trkpt>
+            <trkpt lat="46.180280" lon="11.830705">
+                <ele>720.32474</ele>
+            </trkpt>
+            <trkpt lat="46.179943" lon="11.830869">
+                <ele>718.86201</ele>
+            </trkpt>
+            <trkpt lat="46.179661" lon="11.830984">
+                <ele>718.78741</ele>
+            </trkpt>
+            <trkpt lat="46.179462" lon="11.831026">
+                <ele>718.78741</ele>
+            </trkpt>
+            <trkpt lat="46.179273" lon="11.831042">
+                <ele>718.88838</ele>
+            </trkpt>
+            <trkpt lat="46.179021" lon="11.831042">
+                <ele>719.22453</ele>
+            </trkpt>
+            <trkpt lat="46.178832" lon="11.831032">
+                <ele>719.81286</ele>
+            </trkpt>
+            <trkpt lat="46.178805" lon="11.831031">
+                <ele>719.90732</ele>
+            </trkpt>
+            <trkpt lat="46.178777" lon="11.831069">
+                <ele>719.98980</ele>
+            </trkpt>
+            <trkpt lat="46.178743" lon="11.831365">
+                <ele>720.07370</ele>
+            </trkpt>
+            <trkpt lat="46.178715" lon="11.831389">
+                <ele>720.16567</ele>
+            </trkpt>
+            <trkpt lat="46.178455" lon="11.831350">
+                <ele>720.64976</ele>
+            </trkpt>
+            <trkpt lat="46.177890" lon="11.831256">
+                <ele>719.96602</ele>
+            </trkpt>
+            <trkpt lat="46.177567" lon="11.831214">
+                <ele>718.79195</ele>
+            </trkpt>
+            <trkpt lat="46.177451" lon="11.831208">
+                <ele>718.39698</ele>
+            </trkpt>
+            <trkpt lat="46.177092" lon="11.831163">
+                <ele>717.01137</ele>
+            </trkpt>
+            <trkpt lat="46.176785" lon="11.831174">
+                <ele>715.85635</ele>
+            </trkpt>
+            <trkpt lat="46.176308" lon="11.831175">
+                <ele>713.96919</ele>
+            </trkpt>
+            <trkpt lat="46.176236" lon="11.831171">
+                <ele>713.67975</ele>
+            </trkpt>
+            <trkpt lat="46.176208" lon="11.831209">
+                <ele>713.53563</ele>
+            </trkpt>
+            <trkpt lat="46.176196" lon="11.831351">
+                <ele>713.37552</ele>
+            </trkpt>
+            <trkpt lat="46.176194" lon="11.831441">
+                <ele>713.31839</ele>
+            </trkpt>
+            <trkpt lat="46.176082" lon="11.831591">
+                <ele>712.68848</ele>
+            </trkpt>
+            <trkpt lat="46.175914" lon="11.831815">
+                <ele>712.36485</ele>
+            </trkpt>
+        </trkseg>
+    </trk>
+</gpx>
