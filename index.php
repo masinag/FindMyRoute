@@ -58,13 +58,14 @@
                     </h5>
                     <div class=" w3-center">
                         <?php include "registra_form.html" ?>
+                        <?php include "accedi_form.html" ?>
                         <button class="w3-button w3-deep-orange w3-padding-large w3-xlarge w3-margin-top my-button"
                         onclick="document.getElementById('registra').style.display='block'">
-                        <!-- ########## -->
-                        <!-- onclick="show(this, 'registra')"-->
-                        <!--https://www.w3schools.com/howto/howto_css_login_form.asp -->
                             Registrati</button>
-                        <button class="w3-button w3-deep-orange w3-padding-large w3-xlarge w3-margin-top my-button">Accedi</button>
+                        <button class="w3-button w3-deep-orange w3-padding-large w3-xlarge w3-margin-top my-button"
+                        onclick="document.getElementById('accedi').style.display='block'">
+                            Accedi
+                        </button>
                     </div>
                 </div>
             </div>
@@ -112,6 +113,19 @@
                 } else {
                     x.className = x.className.replace(" w3-show", "");
                 }
+            }
+
+            // Get the modal
+            var modalA = document.getElementById('accedi');
+            var modalR = document.getElementById('registra');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+               if (event.target == modalA) {
+                   modalA.style.display = "none";
+               } else if (event.target == modalR) {
+                   modalR.style.display = "none";
+               }
             }
         </script>
 
