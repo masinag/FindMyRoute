@@ -59,7 +59,7 @@
                     <div class=" w3-center">
                         <?php include "registra_form.html" ?>
                         <button class="w3-button w3-deep-orange w3-padding-large w3-xlarge w3-margin-top my-button"
-                        onclick="document.getElementById('id01').style.display='block'">
+                        onclick="document.getElementById('registra').style.display='block'">
                         <!-- ########## -->
                         <!-- onclick="show(this, 'registra')"-->
                         <!--https://www.w3schools.com/howto/howto_css_login_form.asp -->
