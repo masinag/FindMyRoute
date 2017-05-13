@@ -1,0 +1,3 @@
+# ignore all images and gps track files
+files/img/*
+files/tracks/*
