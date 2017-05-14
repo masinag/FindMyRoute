@@ -66,7 +66,7 @@ body, h1, h2, h3, h4, h5, h6 {
 .my-userForm input {
     width: 100%;
 }
-.my-userForm header {
+.my-userForm h2 {
     text-align: center;
 }
 
@@ -77,4 +77,8 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 .my-float-right{
     float: right !important;
+}
+
+.my-display-inline {
+    display: inline;
 }

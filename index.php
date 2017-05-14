@@ -11,6 +11,46 @@
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
         <script type="text/javascript" src="js/myscript.js" defer="defer"> </script>
     </head>
+    <?php
+        $errorMessage = "";
+        $user_logged_in = false;
+        if (isSet($_POST["accedi"]) or isSet($_POST["registra"])) {
+            // mi connetto al db
+            $conn = mysql_connect("localhost", "root", "");
+            mysql_select_db("itinerariInBicicletta", $conn);
+            if (isSet($_POST["accedi"])) {
+                // codice per l'accesso
+                // controllo se l'utente esiste
+                $query = "SELECT * FROM utenti WHERE username='".$_POST['username']."'";
+                // $message = $query;
+                $res=mysql_query($query);
+                if(mysql_num_rows($res)==0){
+                    // Messaggio di errore
+                    $errorMessage = "Utente non trovato";
+                } else {
+                    // confronto le password
+                    $pwd = mysql_query("SELECT ");
+                    $row = mysql_fetch_array($res);
+                    $errorMessage = "Password errata";
+                    if (password_verify($_POST["password"],$row["password"])){
+                        $errorMessage = "";
+                        setCookie("username", $row["username"]);
+                        $user_logged_in = true;
+                    }
+                }
+            } else  if (isSet($_POST["registra"])) {
+                // codice per la registrazione
+            }
+            mysql_close($conn);
+        } else if (isSet($_POST["logout"])) {
+            // cancello il cookie
+            setCookie("username", "", time()-1);
+            $user_logged_in = false;
+        } else if (isSet($_COOKIE["username"])){
+            $user_logged_in = true;
+        }
+     ?>
+
 
     <body>
         <!-- Barra di navigazione -->
@@ -28,33 +68,37 @@
                 <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 2</a>
                 <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 3</a>
                 <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 4</a>
-                <?php
-                    if (!isSet($_POST["username"])) {
-                 ?>
-                    <!-- Form per la registrazione -->
-                    <?php include "registra_form.html"; ?>
-                    <!-- Form per l'accesso -->
-                    <?php include "accedi_form.html"; ?>
-                    <!-- Pulsanti -->
-                    <button class="w3-bar-item w3-button w3-hide-small w3-hide-medium
-                        w3-padding-large w3-hover-white w3-deep-orange my-float-right"
-                    onclick="document.getElementById('registra').style.display='block'">
-                        Registrati</button>
-                    <button class="w3-bar-item w3-button w3-hide-small w3-hide-medium
-                        w3-padding-large w3-hover-white w3-deep-orange my-float-right"
-                    onclick="document.getElementById('accedi').style.display='block';">
-                        Accedi
-                    </button>
-                <?php } else {
-                ?>
-                    <form action="#" method="post">
+                <div class="my-float-right">
+                    <?php
+                        if (!$user_logged_in) {
+                     ?>
+                        <!-- Form per la registrazione -->
+                        <?php include "registra_form.html"; ?>
+                        <!-- Form per l'accesso -->
+                        <?php include "accedi_form.php"; ?>
+                        <!-- Pulsanti -->
+                        <button class="w3-bar-item w3-button w3-hide-small w3-hide-medium
+                            w3-padding-large w3-white w3-text-deep-orange"
+                        onclick="document.getElementById('accedi').style.display='block';">
+                            Accedi
+                        </button>
+                        <button class="w3-bar-item w3-button w3-hide-small w3-hide-medium
+                            w3-padding-large w3-hover-deep-orange w3-hover-white w3-deep-orange"
+                        onclick="document.getElementById('registra').style.display='block'">
+                            Registrati</button>
+                    <?php } else {
+                    ?>
+                        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium
+                            w3-padding-large w3-white w3-text-deep-orange">Account</a>
+                        <form action="#" method="post" class="my-display-inline">
                         <input type="submit" class="w3-bar-item w3-button w3-hide-small
-                            w3-hide-medium w3-padding-large w3-hover-white w3-deep-orange
-                            my-float-right" name="logout" value="Logout"/>
-                    </form>
-                <?php
-                }
-                ?>
+                                w3-hide-medium w3-padding-large w3-hover-white w3-deep-orange"
+                                name="logout" value="Logout"/>
+                        </form>
+                    <?php
+                    }
+                    ?>
+                </div>
             </nav>
 
             <!-- Navbar su schermi piccoli -->
@@ -64,7 +108,7 @@
                 <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
                 <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
                 <?php
-                    if (!isSet($_POST["username"])) {
+                    if (!$user_logged_in) {
                  ?>
                     <button class="w3-bar-item w3-button w3-padding-large w3-text-deep-orange"
                     onclick="toggleMenu();document.getElementById('registra').style.display='block'">
@@ -75,6 +119,9 @@
                     </button>
                 <?php } else {
                 ?>
+                    <a href="#" class="w3-bar-item w3-button w3-padding-large">
+                        Account
+                    </a>
                     <form action="#" method="post">
                         <input type="submit" class="w3-bar-item w3-button w3-padding-large
                             w3-text-deep-orange" name="logout" value="Logout"/>
@@ -89,7 +136,7 @@
         <header class="w3-container w3-cyan w3-center" style="padding:128px 16px">
             <h1 class="w3-margin w3-jumbo w3-text-white">FindMyRoute</h1>
             <p class="w3-xlarge w3-text-white">
-                L'applicazione per la mappatura di itinerari in bicicletta
+                L'applicazione per la mappatura di itinerari in bicicletta <br/>
             </p>
         </header>
 
@@ -162,6 +209,7 @@
             window.onclick = function(event) {
                if (event.target == modalA) {
                    modalA.style.display = "none";
+                   console.log("Closing Access form");
                } else if (event.target == modalR) {
                    modalR.style.display = "none";
                }

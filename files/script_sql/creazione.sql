@@ -6,7 +6,7 @@ create table utenti(
     id       int unsigned auto_increment not null,
     username varchar(20)  unique         not null,
     email    varchar(250) unique         not null,
-    password varchar(30)                 not null,
+    password varchar(60)                 not null,
 
     primary key(id)
 ) engine = innodb;
