@@ -17,25 +17,71 @@
         <div class="w3-top">
             <!-- Navbar su schermi larghi -->
             <nav class="w3-bar w3-cyan w3-card-2 w3-left-align w3-large w3-text-white ">
-                <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large
+                <a class="w3-bar-item w3-button w3-hide-large
                     w3-right w3-padding-large w3-hover-white w3-large w3-cyan"
                     href="javascript:void(0);" onclick="toggleMenu()"
                     title="Toggle Navigation Menu">
                     <i class="fa fa-bars"></i>
                 </a>
                 <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white ">Home</a>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 1</a>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 1</a>
+                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 2</a>
+                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 3</a>
+                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 4</a>
+                <?php
+                    if (!isSet($_POST["username"])) {
+                 ?>
+                    <!-- Form per la registrazione -->
+                    <?php include "registra_form.html"; ?>
+                    <!-- Form per l'accesso -->
+                    <?php include "accedi_form.html"; ?>
+                    <!-- Pulsanti -->
+                    <button class="w3-bar-item w3-button w3-hide-small w3-hide-medium
+                        w3-padding-large w3-hover-white w3-deep-orange my-float-right"
+                    onclick="document.getElementById('registra').style.display='block'">
+                        Registrati</button>
+                    <button class="w3-bar-item w3-button w3-hide-small w3-hide-medium
+                        w3-padding-large w3-hover-white w3-deep-orange my-float-right"
+                    onclick="document.getElementById('accedi').style.display='block';">
+                        Accedi
+                    </button>
+                <?php } else {
+                ?>
+                    <form action="#" method="post">
+                        <input type="submit" class="w3-bar-item w3-button w3-hide-small
+                            w3-hide-medium w3-padding-large w3-hover-white w3-deep-orange
+                            my-float-right" name="logout" value="Logout"/>
+                    </form>
+                <?php
+                }
+                ?>
             </nav>
 
             <!-- Navbar su schermi piccoli -->
-            <nav id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+            <nav id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-large">
                 <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
                 <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
                 <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
                 <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+                <?php
+                    if (!isSet($_POST["username"])) {
+                 ?>
+                    <button class="w3-bar-item w3-button w3-padding-large w3-text-deep-orange"
+                    onclick="toggleMenu();document.getElementById('registra').style.display='block'">
+                        Registrati</button>
+                    <button class="w3-bar-item w3-button w3-padding-large w3-text-deep-orange"
+                    onclick="toggleMenu();document.getElementById('accedi').style.display='block'">
+                        Accedi
+                    </button>
+                <?php } else {
+                ?>
+                    <form action="#" method="post">
+                        <input type="submit" class="w3-bar-item w3-button w3-padding-large
+                            w3-text-deep-orange" name="logout" value="Logout"/>
+                    </form>
+                <?php
+                }
+                ?>
             </nav>
         </div>
 
@@ -49,39 +95,22 @@
 
         <!-- Primo blocco -->
         <section class="w3-row-padding w3-padding-64 w3-container">
-            <div class="w3-content">
+            <div class="w3-content w3-container" style="">
                 <article class="w3-twothird w3-padding-large">
                     <h1>Che cosa offriamo?</h1>
-                    <h5>
+                    <h5 class="w3-justify">
                         FindMyRoute è un'applicazione per la mappatura di percorsi per biciclette.
                         Con FindMyRoute sarà molto più facile trovare gli itinerari che desideri e
                         conoscere tutte le informazioni utili relative ad essi.
                     </h5>
                 </article>
-                <?php
-                    if (!isSet($_POST["username"])) {
-                 ?>
                 <section class="w3-third w3-padding-large">
-                    <!-- <i class="fa fa-anchor w3-padding-64 w3-text-red"></i> -->
-                    <h5 class="w3-margin-left">
-                        Per condividere i tuoi itinerari entra a far parte della community.
+                    <h5 class="w3-justify">
+                        Inizia subito ad utilizzare la nostra applicazione
                     </h5>
-                    <!-- Form per la registrazione -->
-                    <?php include "registra_form.html"; ?>
-                    <!-- Form per l'accesso -->
-                    <?php include "accedi_form.html"; ?>
-                    <!-- Pulsanti -->
-                    <div class=" w3-center">
-                        <button class="w3-button w3-deep-orange w3-padding-large w3-xlarge w3-margin-top my-button"
-                        onclick="document.getElementById('registra').style.display='block'">
-                            Registrati</button>
-                        <button class="w3-button w3-deep-orange w3-padding-large w3-xlarge w3-margin-top my-button"
-                        onclick="document.getElementById('accedi').style.display='block'">
-                            Accedi
-                        </button>
-                    </div>
+                    <a href="#" class="w3-button w3-padding-large w3-xlarge
+                        w3-deep-orange">Scopri gli itinerari</a>
                 </section>
-                <?php } ?>
             </div>
         </section>
 
@@ -94,13 +123,15 @@
 
                 <article class="w3-twothird w3-padding-large">
                     <h1>A chi ci rivolgiamo?</h1>
-                    <h5 class="w3-padding-32">
-                        IIB è un'applicazione rivolta sia a ciclisti professionisti, sia a ciclisti amatoriali. Raccoglie percorsi per ogni difficoltà ed adatti a persone con livelli differenti di allenamento.
+                    <h5 class="w3-padding-32 w3-justify">
+                        FindMyRoute è un'applicazione rivolta sia a ciclisti professionisti,
+                        sia a ciclisti amatoriali. Raccoglie percorsi per ogni difficoltà ed
+                        adatti a persone con livelli differenti di allenamento.
                     </h5>
                 </article>
             </div>
         </section>
-        
+
         <!-- Blocco con una citazione -->
         <blockquote class="w3-container w3-black w3-center w3-opacity w3-padding-64">
             <h1 class="w3-margin w3-xlarge">
