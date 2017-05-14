@@ -9,9 +9,7 @@
         <link rel="stylesheet" type="text/css" href="css/w3.css" />
         <link rel="stylesheet" type="text/css" href="css/fonts.css" />
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-        <script type="text/javascript" src="js/popup.js" defer></script>
     </head>
-
 
     <body>
 

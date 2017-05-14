@@ -1,47 +1,76 @@
 <!-- The Modal -->
+<!-- <div id="registra" class="modal">
+    <span onclick="document.getElementById('registra').style.display='none'"
+    class="my-close" title="Close Modal">&times;</span>
+
+    <article class="my-userForm animate">
+        <header class="w3-container">
+            <h2>Registrati</h2>
+        </header>
+        <form class="w3-container" action="#" method="post">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" required="required"
+                class="w3-input w3-border"/>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" required="required" id="email"
+                class="w3-input w3-border"/>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" required="required"
+                id="password" class="w3-input w3-border" onkeyup='check();'/>
+
+            <label for="password_c">Conferma password</label>
+            <input type="password" name="password_c" required="required"
+                id="password_c" class="w3-input w3-border" onkeyup='check();'/>
+
+            <input class="w3-button w3-deep-orange w3-large w3-margin-top"
+                type="registra" name="submit" value="Conferma"/>
+        </form>
+    </article>
+</div> -->
+
 <div id="registra" class="modal">
-  <span onclick="document.getElementById('registra').style.display='none'"
-  class="my-close" title="Close Modal">&times;</span>
-  <!-- Modal Content -->
-  <form class="my-userForm animate" action="#" method="post">
-      <h2>Registrazione</h2>
-      <table>
-          <tbody>
-              <tr class="my-formField">
-                  <td><label for="username">Username:</label></td>
-                  <td>
-                      <input type="text" name="username" required="required"
-                      id="username"/>
-                  </td>
-              </tr>
-              <tr class="my-formField">
-                  <td><label for="email">Email:</label></td>
-                  <td>
-                      <input type="email" name="email" required="required"
-                      id="email"/>
-                  </td>
-              </tr>
-              <tr class="my-formField">
-                  <td><label for="password">Password:</label></td>
-                  <td>
-                      <input type="password" name="password" required="required"
-                      id="password"/>
-                  </td>
-              </tr>
-              <tr class="my-formField">
-                  <td><label for="password_c">Conferma password:</label></td>
-                  <td>
-                      <input type="password" name="password_c"
-                      required="required" id="password_c"/>
-                  </td>
-              </tr>
-              <tr class="my-formButton">
-                  <td colspan="2">
-                      <input class="w3-button w3-deep-orange
-                      w3-large w3-margin-top" type="registra" name="submit" value="Conferma"/>
-                  </td>
-              </tr>
-          </tbody>
-      </table>
-  </form>
+    <span onclick="document.getElementById('registra').style.display='none'"
+        class="my-close" title="Close Modal">&times;</span>
+
+        <article class="my-userForm animate">
+            <header class="w3-container">
+                <h2>Registrati</h2>
+            </header>
+            <form class="w3-container" action="#" method="post">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username"
+                    required="required" class="w3-input w3-border"/>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required="required"
+                    class="w3-input w3-border"/>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"
+                    required="required" class="w3-input w3-border" onkeyup='check();'/>
+
+                <label for="password_c">Conferma password</label>
+                <input type="password" name="password_c" id="password_c"
+                    required="required" class="w3-input w3-border" onkeyup='check();'/>
+                <!-- <label for="password_c" id="errMessage"></label> -->
+
+                <input class="w3-button w3-deep-orange w3-large w3-margin-top"
+                    type="submit" name="accedi" value="Conferma"/>
+            </form>
+
+        </article>
 </div>
+
+<script type="text/javascript">
+    var check = function() {
+        if (document.getElementById('password').value ==
+            document.getElementById('password_c').value) {
+            document.getElementById('password_c').setCustomValidity('');
+        } else {
+            document.getElementById('password_c').setCustomValidity(
+                'Le password devono coincidere');
+        }
+    }
+</script>
