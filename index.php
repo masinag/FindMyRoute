@@ -73,9 +73,9 @@
                         if (!$user_logged_in) {
                      ?>
                         <!-- Form per la registrazione -->
-                        <?php include "registra_form.html"; ?>
+                        <?php include "views/registra_form.html"; ?>
                         <!-- Form per l'accesso -->
-                        <?php include "accedi_form.php"; ?>
+                        <?php include "views/accedi_form.php"; ?>
                         <!-- Pulsanti -->
                         <button class="w3-bar-item w3-button w3-hide-small w3-hide-medium
                             w3-padding-large w3-white w3-text-deep-orange"
