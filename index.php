@@ -11,46 +11,7 @@
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
         <script type="text/javascript" src="js/myscript.js" defer="defer"> </script>
     </head>
-    <?php
-        $errorMessage = "";
-        $user_logged_in = false;
-        if (isSet($_POST["accedi"]) or isSet($_POST["registra"])) {
-            // mi connetto al db
-            $conn = mysql_connect("localhost", "root", "");
-            mysql_select_db("itinerariInBicicletta", $conn);
-            if (isSet($_POST["accedi"])) {
-                // codice per l'accesso
-                // controllo se l'utente esiste
-                $query = "SELECT * FROM utenti WHERE username='".$_POST['username']."'";
-                // $message = $query;
-                $res=mysql_query($query);
-                if(mysql_num_rows($res)==0){
-                    // Messaggio di errore
-                    $errorMessage = "Utente non trovato";
-                } else {
-                    // confronto le password
-                    $pwd = mysql_query("SELECT ");
-                    $row = mysql_fetch_array($res);
-                    $errorMessage = "Password errata";
-                    if (password_verify($_POST["password"],$row["password"])){
-                        $errorMessage = "";
-                        setCookie("username", $row["username"]);
-                        $user_logged_in = true;
-                    }
-                }
-            } else  if (isSet($_POST["registra"])) {
-                // codice per la registrazione
-            }
-            mysql_close($conn);
-        } else if (isSet($_POST["logout"])) {
-            // cancello il cookie
-            setCookie("username", "", time()-1);
-            $user_logged_in = false;
-        } else if (isSet($_COOKIE["username"])){
-            $user_logged_in = true;
-        }
-     ?>
-
+    <?php include "php/user_status.php" ?>
 
     <body>
         <!-- Barra di navigazione -->
@@ -73,7 +34,7 @@
                         if (!$user_logged_in) {
                      ?>
                         <!-- Form per la registrazione -->
-                        <?php include "views/registra_form.html"; ?>
+                        <?php include "views/registra_form.php"; ?>
                         <!-- Form per l'accesso -->
                         <?php include "views/accedi_form.php"; ?>
                         <!-- Pulsanti -->
@@ -156,7 +117,7 @@
                         Inizia subito ad utilizzare la nostra applicazione
                     </h5>
                     <a href="#" class="w3-button w3-padding-large w3-xlarge
-                        w3-deep-orange">Scopri gli itinerari</a>
+                        w3-deep-orange my-button">Scopri gli itinerari</a>
                 </section>
             </div>
         </section>

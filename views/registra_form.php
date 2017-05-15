@@ -1,8 +1,15 @@
-<div id="registra" class="modal">
+<div id="registra" class="modal" style="display: <?php echo ($signupMessage==null)?'none':'block' ?>">
     <article class="my-userForm animate w3-text-black">
         <header class="w3-container">
             <h2>Registrati</h2>
         </header>
+
+        <p class="w3-text-red w3-padding-large">
+        <?php
+            echo $signupMessage;
+            $signupMessage = null;
+        ?>
+        </p>
         <form class="w3-container" action="#" method="post">
             <label for="username">Username</label>
             <input type="text" name="username" id="username"

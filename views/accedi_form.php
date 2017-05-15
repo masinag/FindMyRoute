@@ -1,18 +1,15 @@
-<!-- The Modal -->
-<div id="accedi" class="modal" style="display: <?php echo ($errorMessage==null)?'none':'block' ?>">
-    <!-- Modal Content -->
+<div id="accedi" class="modal" style="display: <?php echo ($loginMessage==null)?'none':'block' ?>">
     <article class="my-userForm animate w3-text-black">
         <header class="w3-container">
             <h2>Accedi</h2>
         </header>
 
-        <span class="w3-text-red w3-padding-large">
+        <p class="w3-text-red w3-padding-large">
         <?php
-            echo $errorMessage;
-            $errorMessage = null;
+            echo $loginMessage;
+            $loginMessage = null;
         ?>
-        </span>
-        <?php echo $errorMessage ?>
+        </p>
         <form class="w3-container" action="#" method="post">
             <label for="username">Username</label>
             <input type="text" name="username" id="username"
