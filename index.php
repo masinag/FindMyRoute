@@ -2,14 +2,7 @@
 <html>
     <head>
         <title>FindMyRoute</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="css/reset.css" />
-        <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
-        <link rel="stylesheet" type="text/css" href="css/w3.css" />
-        <link rel="stylesheet" type="text/css" href="css/fonts.css" />
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-        <script type="text/javascript" src="js/myscript.js" defer="defer"> </script>
+        <?php include "views/head.php" ?>
     </head>
 
     <body>
@@ -38,7 +31,7 @@
                     <h5 class="w3-justify">
                         Inizia subito ad utilizzare la nostra applicazione
                     </h5>
-                    <a href="#" class="w3-button w3-padding-large w3-xlarge
+                    <a href="views/itinerari.php" class="w3-button w3-padding-large w3-xlarge
                         w3-deep-orange my-button">Scopri gli itinerari</a>
                 </section>
             </div>
@@ -57,6 +50,8 @@
                         FindMyRoute è un'applicazione rivolta sia a ciclisti professionisti,
                         sia a ciclisti amatoriali. Raccoglie percorsi per ogni difficoltà ed
                         adatti a persone con livelli differenti di allenamento.
+                        <?php echo "->>>".__DIR__ ?>
+
                     </h5>
                 </article>
             </div>

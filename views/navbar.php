@@ -1,4 +1,4 @@
-<?php include "php/user_status.php" ?>
+<?php include ROOT_DIR."php/user_status.php" ?>
 <!-- Barra di navigazione -->
 <div class="w3-top">
     <!-- Navbar su schermi larghi -->
@@ -9,7 +9,7 @@
             title="Toggle Navigation Menu">
             <i class="fa fa-bars"></i>
         </a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white ">Home</a>
+        <a href="/FindMyRoute/index.php" class="w3-bar-item w3-button w3-padding-large w3-white ">Home</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 1</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 2</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 3</a>
@@ -19,9 +19,9 @@
                 if (!$user_logged_in) {
              ?>
                 <!-- Form per la registrazione -->
-                <?php include "views/registra_form.php"; ?>
+                <?php include ROOT_DIR."views/registra_form.php"; ?>
                 <!-- Form per l'accesso -->
-                <?php include "views/accedi_form.php"; ?>
+                <?php include ROOT_DIR."views/accedi_form.php"; ?>
                 <!-- Pulsanti -->
                 <button class="w3-bar-item w3-button w3-hide-small w3-hide-medium
                     w3-padding-large w3-white w3-text-deep-orange"

@@ -1,0 +1,9 @@
+<?php define('ROOT_DIR', $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/"); ?>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="/FindMyRoute/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/FindMyRoute/css/mystyle.css" />
+<link rel="stylesheet" type="text/css" href="/FindMyRoute/css/w3.css" />
+<link rel="stylesheet" type="text/css" href="/FindMyRoute/css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="/FindMyRoute/css/font-awesome.min.css" />
+<script type="text/javascript" src="/js/myscript.js" defer="defer"> </script>
