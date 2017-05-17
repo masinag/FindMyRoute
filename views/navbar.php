@@ -85,7 +85,6 @@
     window.onclick = function(event) {
        if (event.target == modalA) {
            modalA.style.display = "none";
-           console.log("Closing Access form");
        } else if (event.target == modalR) {
            modalR.style.display = "none";
        }

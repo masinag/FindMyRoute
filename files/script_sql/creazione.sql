@@ -55,7 +55,7 @@ create table puntiSignificativi(
 
 create table itinerari(
     id               int unsigned auto_increment not null,
-    nome             varchar(30)                 not null,
+    nome             varchar(100)                not null,
     descrizione      text                        not null,
     lunghezza        decimal(7,2)                not null,
     tempoPercorrenza time                        not null,

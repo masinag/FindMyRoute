@@ -6,4 +6,4 @@
 <link rel="stylesheet" type="text/css" href="/FindMyRoute/css/w3.css" />
 <link rel="stylesheet" type="text/css" href="/FindMyRoute/css/fonts.css" />
 <link rel="stylesheet" type="text/css" href="/FindMyRoute/css/font-awesome.min.css" />
-<script type="text/javascript" src="/js/myscript.js" defer="defer"> </script>
+<script type="text/javascript" src="/FindMyRoute/js/myscript.js" defer="defer"> </script>

@@ -1,8 +1,13 @@
 <?php
-function log_in($username, $password, &$user_logged_in, &$message){
-    // mi connetto al db
+function db_connect(){
     $conn = mysql_connect("localhost", "root", "");
     mysql_select_db("itinerariInBicicletta", $conn);
+    return $conn;
+}
+
+function log_in($username, $password, &$user_logged_in, &$message){
+    // mi connetto al db
+    $conn = db_connect();
     // controllo se l'utente esiste
     $query = "SELECT * FROM utenti WHERE username='$username'";
     $res=mysql_query($query);
