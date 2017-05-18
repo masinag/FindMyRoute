@@ -2,9 +2,12 @@
 function db_connect(){
     $conn = mysql_connect("localhost", "root", "");
     mysql_select_db("itinerariInBicicletta", $conn);
+    mysql_query ("set character_set_client='utf8'");
+    mysql_query ("set character_set_results='utf8'"); 
+
+    mysql_query ("set collation_connection='utf8_general_ci'");
     return $conn;
 }
-
 function log_in($username, $password, &$user_logged_in, &$message){
     // mi connetto al db
     $conn = db_connect();

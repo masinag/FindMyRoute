@@ -51,7 +51,7 @@
     "pointsoffset"=> 10,
     "uom"=>"0",
     "uomspeed"=>"0",
-    "mlinecolor"=>"#ff0000",
+    "mlinecolor"=>"#ff5722",
     "glinecolor"=>"#3366cc",
     "glinecolorspeed"=>"#ff0000",
     "glinecolorhr"=>"#ff77bd",

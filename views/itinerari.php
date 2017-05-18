@@ -43,7 +43,7 @@
                                 </ul>
                             </article>
                             <footer>
-                                <form action='#' method='post'>
+                                <form action='itinerario.php' method='post'>
                                 <input type='hidden' name='idItinerario' value='".$row["id"]."'/>
                                 <input type='submit' name='submit' value='Maggiori informazioni' class='w3-button w3-block w3-deep-orange'/>
                                 </form>
