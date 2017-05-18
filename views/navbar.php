@@ -10,7 +10,7 @@
             <i class="fa fa-bars"></i>
         </a>
         <a href="/FindMyRoute/index.php" class="w3-bar-item w3-button w3-padding-large w3-white ">Home</a>
-        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 1</a>
+        <a href="/FindMyRoute/views/itinerari.php" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Itinerari</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 2</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 3</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 4</a>
@@ -49,8 +49,8 @@
 
     <!-- Navbar su schermi piccoli -->
     <nav id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-large">
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+        <a href="/FindMyRoute/index.php" class="w3-bar-item w3-button w3-padding-large">Home</a>
+        <a href="/FindMyRoute/views/itinerari.php" class="w3-bar-item w3-button w3-padding-large">Itinerari</a>
         <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
         <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
         <?php
