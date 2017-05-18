@@ -13,7 +13,10 @@
         <section class='w3-container'>
         <?php
             $conn = db_connect();
-            $query = "SELECT * from itinerari";
+            $query = "SELECT itinerari.*, immagini.path
+                    from itinerari, immagini
+                    where immagini.idItinerario = itinerari.id
+                    group by itinerari.id";
             $res = mysql_query($query);
             $i = 0;
             while ($row = mysql_fetch_array($res)) {
@@ -27,8 +30,9 @@
                 echo "<article class='w3-card-2 w3-margin'>";
                 echo "<header class='w3-container w3-cyan w3-text-white'><h1>".$row["nome"]."</h1></header>\n";
                 echo "<article class='w3-container'>
-                        <p>Lunghezza: ".$row["lunghezza"]." km</p>
-                        <p>Tempo di percorrenza: ".$row["tempoPercorrenza"]." ore</p>
+                        <img src='".ROOT_DIR."files/imgs/".$row["path"]."'>
+                        <p><h5 class='my-label'>Lunghezza</h5>: ".$row["lunghezza"]." km</p>
+                        <p><h5 class='my-label'>Tempo di percorrenza</h5>: ".$row["tempoPercorrenza"]." ore</p>
                       </article>";
                 echo "</article>";
                 echo "\t\t\t\t</div>\n";
