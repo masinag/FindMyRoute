@@ -39,9 +39,7 @@
                                     <li><h5 class='my-label'>Punto di arrivo</h5>: ".$row["puntoArrivo"]."</li>
                                     <li><h5 class='my-label'>Lunghezza</h5>: ".$row["lunghezza"]." km</li>
                                     <li><h5 class='my-label'>Tempo di percorrenza</h5>: ".$row["tempoPercorrenza"]." ore</li>
-                                    <li>
-                                    </li>
-                                    </ul>
+                                </ul>
                             </article>
                             <footer>
                                 <form action='#' method='post'>
