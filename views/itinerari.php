@@ -20,6 +20,7 @@
                           p2.id = itinerari.idPuntoArrivo
                     group by itinerari.id";
             $res = mysql_query($query);
+            mysql_close($conn);
             $i = 0;
             while ($row = mysql_fetch_array($res)) {
                 if ($i%3 == 0) {
@@ -51,9 +52,7 @@
                     </div>";
                 $i++;
             }
-
          ?>
             </section>
-        </section>
     </body>
 </html>
