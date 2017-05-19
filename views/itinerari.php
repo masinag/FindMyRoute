@@ -31,11 +31,13 @@
                 }
                 echo "<div class='w3-third'>
                         <article class='w3-card-2 w3-margin'>
-                            <header class='w3-container w3-cyan w3-text-white'><h1>".$row["nome"]."</h1></header>
+                            <header class='w3-container w3-cyan w3-text-white'>
+                                <h3 class='my-two-lines'>".$row["nome"]."</h3>
+                            </header>
                             <div class='my-card-image'
                                 style='background-image:url(/FindMyRoute/files/imgs/".$row["path"].")'></div>
                             <article class='w3-container'>
-                                <ul class='w3-ul'>
+                                <ul class='w3-ul my-list'>
                                     <li><h5 class='my-label'>Punto di partenza</h5>: ".$row["puntoPartenza"]."</li>
                                     <li><h5 class='my-label'>Punto di arrivo</h5>: ".$row["puntoArrivo"]."</li>
                                     <li><h5 class='my-label'>Lunghezza</h5>: ".$row["lunghezza"]." km</li>

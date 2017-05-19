@@ -9,8 +9,11 @@
             title="Toggle Navigation Menu">
             <i class="fa fa-bars"></i>
         </a>
-        <a href="/FindMyRoute/index.php" class="w3-bar-item w3-button w3-padding-large w3-white ">Home</a>
-        <a href="/FindMyRoute/views/itinerari.php" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Itinerari</a>
+        <?php $page = basename($_SERVER['PHP_SELF'])?>
+        <a href="/FindMyRoute/index.php" class="w3-bar-item w3-button w3-padding-large
+        <?php echo $page=='index.php'?'w3-white':'w3-hover-white' ?> ">Home</a>
+        <a href="/FindMyRoute/views/itinerari.php" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large
+        <?php echo ($page=='itinerari.php' || $page =='itinerario.php')?'w3-white':'w3-hover-white' ?>">Itinerari</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 2</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 3</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 4</a>

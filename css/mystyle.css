@@ -97,3 +97,11 @@ body, h1, h2, h3, h4, h5, h6 {
     background-size:cover;
     background-position:50% 50%;
 }
+.my-list li {
+    min-height: 3em;
+    line-height: 1em;
+}
+.my-two-lines{
+    height: 2em;
+    line-height: 1em;
+}

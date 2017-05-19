@@ -50,6 +50,7 @@
                         FindMyRoute è un'applicazione rivolta sia a ciclisti professionisti,
                         sia a ciclisti amatoriali. Raccoglie percorsi per ogni difficoltà ed
                         adatti a persone con livelli differenti di allenamento.
+
                     </h5>
                 </article>
             </div>
