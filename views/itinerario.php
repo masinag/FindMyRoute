@@ -46,7 +46,7 @@
              </ul>
          </section>
          <section class="w3-container w3-twothird">
-             <?php include "prova_mappe.php" ?>
+             <?php include "mappa.php" ?>
          </section>
          <?php } ?>
     </body>

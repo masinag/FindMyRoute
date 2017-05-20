@@ -23,7 +23,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 	CustomMarker.prototype = new google.maps.OverlayView();
 
 	CustomMarker.prototype.draw = function() {
-	
+
 		var me = this;
 
 		// Check if the el has been created.
@@ -40,8 +40,8 @@ Author URI: http://www.pedemontanadelgrappa.it/
 
 			google.maps.event.addDomListener(el, "click", function(event) {
 				google.maps.event.trigger(me, "click", el);
-			});	
-			
+			});
+
 			google.maps.event.addDomListener(el, "mouseover", function(event) {
 				var _t = el.style.top.replace('px','');
 				var _l = el.style.left.replace('px','');
@@ -62,14 +62,14 @@ Author URI: http://www.pedemontanadelgrappa.it/
 					left  : me.orig_left,
 					'z-index' : 1
 				  }, 100);
-			});	
+			});
 
 			// Then add the overlay to the DOM
 			var panes = this.getPanes();
 			panes.overlayImage.appendChild(el);
 		}
 
-		// Position the overlay 
+		// Position the overlay
 		var point = this.getProjection().fromLatLngToDivPixel(this.latlng_);
 			if (point) {
 			  el.style.left = point.x + 'px';
@@ -86,7 +86,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 		  this.img_ = null;
 		}
 	};
- 
+
     $.fn.wpgpxmaps = function( params ) {
 
 		var targetId = params.targetId;
@@ -123,7 +123,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 		var usegpsposition = params.usegpsposition;
 		var currentpositioncon= params.currentpositioncon;
 		var ThunderforestApiKey = params.TFApiKey;
-		
+
 		var hasThunderforestApiKey = (ThunderforestApiKey + '').length > 0;
 
 		// Unit of measure settings
@@ -133,15 +133,15 @@ Author URI: http://www.pedemontanadelgrappa.it/
 		var l_grade = { suf : "%", dec : 1 };
 		var l_hr = { suf : "", dec : 0 };
 		var l_cad = { suf : "", dec : 0 };
-		
+
 		var el = document.getElementById("wpgpxmaps_" + targetId);
 		var el_map = document.getElementById("map_" + targetId);
 		var el_chart = document.getElementById("chart_" + targetId);
 		var el_report = document.getElementById("report_" + targetId);
 		var el_osm_credits = document.getElementById("wpgpxmaps_" + targetId + "_osm_footer");
-		
+
 		var mapWidth = el_map.style.width;
-		
+
 		var mapTypeIds = [];
 		for(var type in google.maps.MapTypeId) {
 			mapTypeIds.push(google.maps.MapTypeId[type]);
@@ -152,9 +152,9 @@ Author URI: http://www.pedemontanadelgrappa.it/
 		mapTypeIds.push("OSM4");
 		mapTypeIds.push("OSM5");
 		mapTypeIds.push("OSM6");
-		
+
 		var ngImageMarkers = [];
-		
+
 		switch (mapType)
 		{
 			case 'TERRAIN': { mapType = google.maps.MapTypeId.TERRAIN; break;}
@@ -168,7 +168,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			case 'OSM6': { mapType = "OSM6"; break;}
 			default: { mapType = google.maps.MapTypeId.HYBRID; break;}
 		}
-		
+
 		if ( mapType == "TERRAIN" || mapType == "SATELLITE" || mapType == "ROADMAP" )
 		{
 			// google maps
@@ -176,7 +176,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			// Show OpenStreetMaps credits
 			$(el_osm_credits).show();
 		}
-		
+		// ### MAPPA
 		var map = new google.maps.Map(el_map, {
 			mapTypeId: mapType,
 			scrollwheel: (zoomOnScrollWheel == 'true'),
@@ -184,8 +184,8 @@ Author URI: http://www.pedemontanadelgrappa.it/
 				style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
 				mapTypeIds: mapTypeIds
 			}
-		}); 
-			
+		});
+
 		map.mapTypes.set("OSM1", new google.maps.ImageMapType({
 			getTileUrl: function(coord, zoom) {
 				return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
@@ -195,7 +195,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			alt : "Open Street Map",
 			maxZoom: 18
 		}));
-		
+
 		map.mapTypes.set("OSM2", new google.maps.ImageMapType({
 			getTileUrl: function(coord, zoom) {
 				if (hasThunderforestApiKey)
@@ -208,7 +208,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			alt : "Open Cycle Map",
 			maxZoom: 18
 		}));
-		
+
 		map.mapTypes.set("OSM4", new google.maps.ImageMapType({
 			getTileUrl: function(coord, zoom) {
 				if (hasThunderforestApiKey)
@@ -221,7 +221,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			alt : "Open Cycle Map - Transport",
 			maxZoom: 18
 		}));
-		
+
 		map.mapTypes.set("OSM5", new google.maps.ImageMapType({
 			getTileUrl: function(coord, zoom) {
 				if (hasThunderforestApiKey)
@@ -234,7 +234,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			alt : "Open Cycle Map - Landscape",
 			maxZoom: 18
 		}));
-		
+
 		map.mapTypes.set("OSM6", new google.maps.ImageMapType({
 			getTileUrl: function(coord, zoom) {
 				return "http://tile2.maptoolkit.net/terrain/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
@@ -244,7 +244,14 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			alt : "MapToolKit - Terrain",
 			maxZoom: 18
 		}));
-			
+
+		// ### MARKER
+		var mymarker = new google.maps.Marker({
+			position: new google.maps.LatLng(46.231029, 11.176574),
+			map: map,
+			title: "prova"
+		});
+
 		// FULL SCREEN BUTTON
 		var controlDiv = document.createElement('div');
 		controlDiv.style.padding = '5px';
@@ -261,7 +268,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			var isFullScreen = (controlUI.isfullscreen == true);
 			var mapDiv = [ map.getDiv(), map.getDiv().parentNode ];
 			var center = map.getCenter();
-			
+
 			if (isFullScreen)
 			{
 				map.setOptions( { scrollwheel : (zoomOnScrollWheel == 'true') } );
@@ -272,14 +279,14 @@ Author URI: http://www.pedemontanadelgrappa.it/
 				  css("z-index", '');
 				google.maps.event.trigger(map, 'resize');
 				map.setCenter(center);
-				controlUI.src = pluginUrl + "/wp-gpx-maps/img/goFullScreen.png";	
+				controlUI.src = pluginUrl + "/wp-gpx-maps/img/goFullScreen.png";
 				controlUI.title = lng.gofullscreen;
 			}
 			else
 			{
-				map.setOptions( { scrollwheel : true } );		
+				map.setOptions( { scrollwheel : true } );
 				controlUI.googleMapWidth = jQuery(mapDiv).css('width');
-				controlUI.googleMapHeight = jQuery(mapDiv).css('height');		
+				controlUI.googleMapHeight = jQuery(mapDiv).css('height');
 				jQuery(mapDiv).css("position", 'fixed').
 				  css('top', 0).
 				  css('left', 0).
@@ -295,17 +302,17 @@ Author URI: http://www.pedemontanadelgrappa.it/
 				controlUI.title = lng.exitFullFcreen;
 			}
 			controlUI.isfullscreen = !isFullScreen;
-			return false;			
+			return false;
 		});
-		
-		
+
+
 		controlDiv.index = 1;
 		map.controls[google.maps.ControlPosition.TOP_RIGHT].push(controlDiv);
-		
+
 		var bounds = new google.maps.LatLngBounds();
-		
+
 		var markerCurrentPosition = null;
-		
+
 		if ( usegpsposition == "true" )
 		{
 
@@ -313,10 +320,10 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			if(navigator.geolocation) {
 
 				navigator.geolocation.getCurrentPosition(function(position) {
-				
+
 					// user position
 					var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-				
+
 					// draw current position marker
 					markerCurrentPosition = new google.maps.Marker({
 										  position: pos,
@@ -325,39 +332,39 @@ Author URI: http://www.pedemontanadelgrappa.it/
 										  animation: google.maps.Animation.DROP,
 										  zIndex: 10
 									  });
-									  
+
 					if (currentpositioncon)
 					{
 						markerCurrentPosition.setIcon(currentpositioncon);
 					}
 					bounds.extend(pos);
-					
-					map.setCenter(bounds.getCenter()); 
+
+					map.setCenter(bounds.getCenter());
 					map.fitBounds(bounds);
-					
-					
+
+
 				}, function() {});
-				
+
 				navigator.geolocation.watchPosition(function(position){
 														// move current position marker
 														if (markerCurrentPosition != null)
 														{
 															markerCurrentPosition.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
 														}
-													}, 
+													},
 													function(e){
 														// some errors
-													}, 
+													},
 													{
 													  enableHighAccuracy: false,
 													  timeout: 5000,
 													  maximumAge: 0
 													});
 			}
-		
+
 		}
-		
-		
+
+
 		// Print WayPoints
 		if (!jQuery.isEmptyObject(waypoints))
 		{
@@ -372,15 +379,15 @@ Author URI: http://www.pedemontanadelgrappa.it/
 				new google.maps.Point(0,0),
 				new google.maps.Point(16, 32)
 			);
-			
+
 			if (waypointIcon!='')
 			{
 				image = new google.maps.MarkerImage(waypointIcon);
 				shadow = '';
 			}
-			
+
 			jQuery.each(waypoints, function(i, wpt) {
-				
+
 				var lat= wpt.lat;
 				var lon= wpt.lon;
 				var sym= wpt.sym;
@@ -395,40 +402,40 @@ Author URI: http://www.pedemontanadelgrappa.it/
 
 				addWayPoint(map, wim, wsh, lat, lon, wpt.name, wpt.desc);
 				bounds.extend(new google.maps.LatLng(lat, lon));
-				
+
 			});
 		}
-		
+
 		// Print Images
-		
+
 		jQuery("#ngimages_" + targetId).attr("style","display:block;position:absolute;left:-50000px");
 		jQuery("#ngimages_" + targetId + " span").each(function(){
-		
+
 			var imageLat  = jQuery(this).attr("lat");
 			var imageLon  = jQuery(this).attr("lon");
-			
+
 			jQuery("img",this).each(function() {
-			
+
 				jQuery(this).load(function(){
 
 					var imageUrl  = jQuery(this).attr("src");
 					var img_w = jQuery(this).width();
 					var img_h = jQuery(this).height();
-					
+
 					imageLat = imageLat.replace(",", ".");
 					imageLon = imageLon.replace(",", ".");
-					
+
 					var p = new google.maps.LatLng(imageLat, imageLon);
 					bounds.extend(p);
 
 					var mc = new CustomMarker(map, p, imageUrl, img_w, img_h );
-					
+
 					ngImageMarkers.push(mc);
-					
+
 					google.maps.event.addListener(mc, "click", function(div) {
 						var lat = div.getAttribute("lat");
 						var lon = div.getAttribute("lon");
-						var a = getClosestImage(lat,lon,targetId).childNodes[0];			
+						var a = getClosestImage(lat,lon,targetId).childNodes[0];
 						if (a)
 						{
 							a.click();
@@ -436,33 +443,33 @@ Author URI: http://www.pedemontanadelgrappa.it/
 					});
 
 				});
-			
+
 				if (jQuery(this).width() + jQuery(this).height() > 0)
 				{
 					jQuery(this).trigger("load");
 				}
 
 			});
-		
+
 		});
-		
+
 		/*
-		
+
 		// Nextgen Pro Lightbox FIX
 		var _xx = jQuery("#ngimages_" + targetId + " .nextgen_pro_lightbox");
 		if (_xx.length > 0)
 		{
-		
+
 			var rnd1 = Math.random().toString(36).substring(7);
 			var rnd2 = Math.random().toString(36).substring(7);
-		
+
 			//get first gallery without images
-			for (var _temp in galleries) {  
+			for (var _temp in galleries) {
 				var _gal = galleries[_temp];
-				
+
 				if (_gal.source == "random_images" && _gal.wpgpxmaps != true )
 				{
-				
+
 					_gal.source == "galleries";
 					_gal.wpgpxmaps = true;
 					_transient_id = _temp.replace("gallery_","")
@@ -470,20 +477,20 @@ Author URI: http://www.pedemontanadelgrappa.it/
 					_gal["image_ids"] = [];
 					_gal["gallery_ids"] = [96];
 					for (var i=0;i<_xx.length;i++)
-					{ 
+					{
 						var __xx = jQuery(_xx[i]);
 						__xx.attr("data-nplmodal-gallery-id", _transient_id);
-						_gal["image_ids"].push(__xx.attr("data-image-id"));			
+						_gal["image_ids"].push(__xx.attr("data-image-id"));
 					}
 					break;
 				}
 			}
 		}
 		*/
-		
+
 		if ( jQuery("#ngimages_" + targetId + " span").length > 0 )
 		{
-		
+
 			// Set CSS for the control border
 			var controlUIhi = document.createElement('img');
 			controlUIhi.src = pluginUrl + "/wp-gpx-maps/img/hideImages.png";
@@ -496,43 +503,43 @@ Author URI: http://www.pedemontanadelgrappa.it/
 				var isImagesHidden = (controlUIhi.isImagesHidden == true);
 				var mapDiv = map.getDiv();
 				var center = map.getCenter();
-				
+
 				if (isImagesHidden)
 				{
 					for (var i=0; i<ngImageMarkers.length; i++) {
 						ngImageMarkers[i].setMap(map);
-					}			
-					controlUIhi.src = pluginUrl + "/wp-gpx-maps/img/hideImages.png";	
+					}
+					controlUIhi.src = pluginUrl + "/wp-gpx-maps/img/hideImages.png";
 					controlUIhi.title = lng.hideImages;
 				}
 				else
 				{
 					for (var i=0; i<ngImageMarkers.length; i++) {
 						ngImageMarkers[i].setMap(null);
-					}			
+					}
 					controlUIhi.src = pluginUrl + "/wp-gpx-maps/img/showImages.png";
 					controlUIhi.title = lng.showImages;
 				}
 				controlUIhi.isImagesHidden = !isImagesHidden;
-				return false;			
+				return false;
 			});
 
 		}
-		
-		
+
+
 		// Print Track
-		if (mapData != '')		
+		if (mapData != '')
 		{
 			var points = [];
 			var lastCut=0;
 			var polylinenes = [];
 			var polyline_number=0;
 			var color=0;
-			for (i=0; i < mapData.length; i++) 
-			{	
+			for (i=0; i < mapData.length; i++)
+			{
 				if (mapData[i] == null)
 				{
-				
+
 
 						color=color1[polyline_number % color1.length];
 
@@ -555,10 +562,10 @@ Author URI: http://www.pedemontanadelgrappa.it/
 				{
 					var p = new google.maps.LatLng(mapData[i][0], mapData[i][1]);
 					points.push(p);
-					bounds.extend(p);			
+					bounds.extend(p);
 				}
 			}
-			
+
 			if (points.length != lastCut)
 			{
 					if ( polyline_number < color1.length)
@@ -576,11 +583,11 @@ Author URI: http://www.pedemontanadelgrappa.it/
 					strokeWeight: 4,
 					map: map
 				});
-				polylinenes.push(poly);			
+				polylinenes.push(poly);
 				currentPoints = [];
 				polyline_number= polyline_number +1;
 			}
-			
+
 			if (startIcon != '')
 			{
 				var startIconImage = new google.maps.MarkerImage(startIcon);
@@ -606,22 +613,22 @@ Author URI: http://www.pedemontanadelgrappa.it/
 						  icon: endIconImage,
 						  zIndex: 10
 					  });
-			
+
 			}
 
 			var first = getItemFromArray(mapData,0)
-			
+
 			if (currentIcon == '')
 			{
 				currentIcon = "http://maps.google.com/mapfiles/kml/pal4/icon25.png";
 			}
-			
+
 			var current = new google.maps.MarkerImage(currentIcon,
 				new google.maps.Size(32, 32),
 				new google.maps.Point(0,0),
 				new google.maps.Point(16, 16)
 			);
-			
+
 			var marker = new google.maps.Marker({
 				position: new google.maps.LatLng(first[0], first[1]),
 				title:"Start",
@@ -629,14 +636,14 @@ Author URI: http://www.pedemontanadelgrappa.it/
 				map: map,
 				zIndex: 10
 			});
-			
-			for (i=0; i < polylinenes.length; i++) 
-			{	
+
+			for (i=0; i < polylinenes.length; i++)
+			{
 
 				google.maps.event.addListener(polylinenes[i],'mouseover',function(event){
 					if (marker)
 					{
-						marker.setPosition(event.latLng);	
+						marker.setPosition(event.latLng);
 						marker.setTitle(lng.currentPosition);
 						if (hchart)
 						{
@@ -654,30 +661,30 @@ Author URI: http://www.pedemontanadelgrappa.it/
 								tooltip.refresh(items);
 						}
 					}
-				});		
+				});
 			}
 		}
-		
-		map.setCenter(bounds.getCenter()); 
+
+		map.setCenter(bounds.getCenter());
 		map.fitBounds(bounds);
-		
-		// FIX post tabs	
-		var $_tab = $(el).closest(".wordpress-post-tabs").eq(0);	
+
+		// FIX post tabs
+		var $_tab = $(el).closest(".wordpress-post-tabs").eq(0);
 		if ($_tab)
 		{
-			$("div > ul > li > a", $_tab).click(function(e){		
-				setTimeout(function(e){		
+			$("div > ul > li > a", $_tab).click(function(e){
+				setTimeout(function(e){
 					google.maps.event.trigger(map, 'resize');
 					//map.setCenter(bounds.getCenter());
 					map.fitBounds(bounds);
 					tabResized = true;
 				},10);
 			});
-		}	
-		
+		}
+
 		var controlUIcenter = null;
 		var idFirstCenterChanged = true;
-		
+
 		google.maps.event.addListener(map, 'center_changed', function() {
 
 			if (idFirstCenterChanged == true)
@@ -685,7 +692,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 				idFirstCenterChanged = false;
 				return;
 			}
-		
+
 			if (controlUIcenter == null)
 			{
 				// Set CSS for the control border
@@ -697,25 +704,25 @@ Author URI: http://www.pedemontanadelgrappa.it/
 
 				// Setup the click event listeners
 				google.maps.event.addDomListener(controlUIcenter, 'click', function(event) {
-					map.setCenter(bounds.getCenter()); 
+					map.setCenter(bounds.getCenter());
 					map.fitBounds(bounds);
 					controlDiv.removeChild(controlUIcenter);
 					controlUIcenter = null;
-					return false;			
-				});		
+					return false;
+				});
 			}
 
 		});
-		
+
 		var graphh = jQuery('#hchart_' + params.targetId).css("height");
-		
+
 		if (graphDist != '' && (graphEle != '' || graphSpeed != '' || graphHr != '' || graphAtemp != '' || graphCad != '') && graphh != "0px")
 		{
 
 			var valLen = graphDist.length;
-		
+
 			var l_y_arr = [];
-			
+
 			if (unit=="1")
 			{
 				l_x = { suf : "mi", dec : 1 };
@@ -730,7 +737,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			{
 				l_x = { suf : "NM", dec : 1 };
 				l_y = { suf : "m", dec : 0 };
-			}		
+			}
 			else if (unit=="4")
 			{
 				l_x = { suf : "mi", dec : 1 };
@@ -746,19 +753,19 @@ Author URI: http://www.pedemontanadelgrappa.it/
 				l_x = { suf : "m", dec : 0 };
 				l_y = { suf : "m", dec : 0 };
 			}
-			
+
 			var nn = 1111.1;
 			var _nn = nn.toLocaleString();
 			var _nnLen = _nn.length;
 			var decPoint = _nn.substring(_nnLen - 2, _nnLen - 1);
 			var thousandsSep = _nn.substring(1, 2);
-			
+
 			if (decPoint == "1")
 				decPoint = ".";
-				
+
 			if (thousandsSep == "1")
-				thousandsSep = "";		
-				
+				thousandsSep = "";
+
 			// define the options
 			var hoptions = {
 				chart: {
@@ -768,28 +775,28 @@ Author URI: http://www.pedemontanadelgrappa.it/
 						selection: function(event) {
 
 							if (event.xAxis) {
-							
-								el_report.innerHTML = 'Zoom: '+ (event.xAxis[0].min).toFixed(l_x.dec) + ' ' + l_x.suf + ' -> '+ (event.xAxis[0].max).toFixed(decPoint) + ' ' + l_x.suf + '<br />';						
-							
+
+								el_report.innerHTML = 'Zoom: '+ (event.xAxis[0].min).toFixed(l_x.dec) + ' ' + l_x.suf + ' -> '+ (event.xAxis[0].max).toFixed(decPoint) + ' ' + l_x.suf + '<br />';
+
 								var seriesLength = event.currentTarget.series.length;
-							
+
 								for (var i = 0; i < seriesLength; i++) {
-								
+
 									var dataX = {value: 0, count: 0};
-									
+
 									var serie = event.currentTarget.series[i];
 									var points = serie.points;
 									var min = event.xAxis[0].min, max = event.xAxis[0].max;
-									
+
 									for (var j = 0; j < points.length; j++) {
 										if (points[j].x >= min && points[j].x <= max) {
 											dataX.value += points[j].y;
 											dataX.count +=1;
 										}
 									}
-									
+
 									var name = serie.name;
-									
+
 									if (name == lng.altitude) {
 										el_report.innerHTML += name + ' avg: ' + (dataX.value / dataX.count).toFixed(l_y.dec) + " " + l_y.suf + "<br />";
 									} else if (name == lng.speed) {
@@ -808,7 +815,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 								}
 
 								el_report.innerHTML += "<br />"
-								
+
 							} else {
 								el_report.innerHTML = '';
 							}
@@ -856,12 +863,12 @@ Author URI: http://www.pedemontanadelgrappa.it/
 									marker.setTitle(lng.currentPosition);
 									i+=10000000;
 								}
-							}			
+							}
 						}
-						var tooltip = "<b>" + Highcharts.numberFormat(this.x, l_x.dec,decPoint,thousandsSep) + l_x.suf + "</b><br />"; 
+						var tooltip = "<b>" + Highcharts.numberFormat(this.x, l_x.dec,decPoint,thousandsSep) + l_x.suf + "</b><br />";
 						for (i=0; i < this.points.length; i++)
 						{
-							tooltip += this.points[i].series.name + ": " + Highcharts.numberFormat(this.points[i].y, l_y_arr[i].dec,decPoint,thousandsSep) + l_y_arr[i].suf + "<br />"; 					
+							tooltip += this.points[i].series.name + ": " + Highcharts.numberFormat(this.points[i].y, l_y_arr[i].dec,decPoint,thousandsSep) + l_y_arr[i].suf + "<br />";
 						}
 						return tooltip;
 					}
@@ -879,36 +886,36 @@ Author URI: http://www.pedemontanadelgrappa.it/
 									enabled: true
 								}
 							}
-						}					
+						}
 					}
 				},
 				credits: {
 					enabled: false
-				},	
+				},
 				series: []
 			};
-		
+
 			if (graphEle != '')
 			{
-				
+
 				var eleData = [];
 				var myelemin = 99999;
 				var myelemax = -99999;
-		
-				for (i=0; i<valLen; i++) 
+
+				for (i=0; i<valLen; i++)
 				{
 					if (graphDist[i] != null)
 					{
 						var _graphEle = graphEle[i];
 						eleData.push([graphDist[i],_graphEle]);
-						if (_graphEle > myelemax) 
-							myelemax = _graphEle; 
-						if (_graphEle < myelemin) 
+						if (_graphEle > myelemax)
+							myelemax = _graphEle;
+						if (_graphEle < myelemin)
 							myelemin = _graphEle;
 					}
 				}
 
-				var yaxe = { 
+				var yaxe = {
 					title: { text: null },
 					labels: {
 						align: 'left',
@@ -917,25 +924,25 @@ Author URI: http://www.pedemontanadelgrappa.it/
 						}
 					}
 				}
-		
+
 				if ( chartFrom1 != '' )
 				{
 					yaxe.min = chartFrom1;
 					yaxe.startOnTick = false;
 				}
-				else { 
-					yaxe.min = myelemin; 
+				else {
+					yaxe.min = myelemin;
 				}
-				
+
 				if ( chartTo1 != '' )
 				{
 					yaxe.max = chartTo1;
 					yaxe.endOnTick = false;
 				}
-				else { 
-					yaxe.max = myelemax; 
+				else {
+					yaxe.max = myelemax;
 				}
-									
+
 				hoptions.yAxis.push(yaxe);
 				hoptions.series.push({
 										name: lng.altitude,
@@ -944,47 +951,47 @@ Author URI: http://www.pedemontanadelgrappa.it/
 										data : eleData,
 										color: color2,
 										yAxis: hoptions.series.length
-									});			
-				
+									});
+
 				l_y_arr.push(l_y);
 			}
-			
+
 			if (graphSpeed != '')			{
-				if (unitspeed == '6') /* min/100m */				{					l_s = { suf : "min/100m", dec : 2 };				} 
+				if (unitspeed == '6') /* min/100m */				{					l_s = { suf : "min/100m", dec : 2 };				}
 				else if (unitspeed == '5') /* knots */
 				{
 					l_s = { suf : "knots", dec : 2 };
-				} 
+				}
 				else if (unitspeed == '4') /* min/miles */
 				{
 					l_s = { suf : "min/mi", dec : 2 };
-				} 
+				}
 				else if (unitspeed == '3') /* min/km */
 				{
 					l_s = { suf : "min/km", dec : 2 };
-				} 
+				}
 				else if (unitspeed == '2') /* miles/h */
 				{
 					l_s = { suf : "mi/h", dec : 0 };
-				} 
+				}
 				else if (unitspeed == '1') /* km/h */
 				{
 					l_s = { suf : "km/h", dec : 0 };
-				} 
+				}
 				else
 				{
 					l_s = { suf : "m/s", dec : 0 };
 				}
-				
+
 				var speedData = [];
-			
-				for (i=0; i<valLen; i++) 
+
+				for (i=0; i<valLen; i++)
 				{
 					if (graphDist[i] != null)
 						speedData.push([graphDist[i],graphSpeed[i]]);
 				}
 
-				var yaxe = { 
+				var yaxe = {
 					title: { text: null },
 					labels: {
 						//align: 'right',
@@ -994,19 +1001,19 @@ Author URI: http://www.pedemontanadelgrappa.it/
 					},
 					opposite: true
 				}
-							
+
 				if ( chartFrom2 != '' )
 				{
 					yaxe.min = chartFrom2;
-					yaxe.startOnTick = false;				
+					yaxe.startOnTick = false;
 				}
-				
+
 				if ( chartTo2 != '' )
 				{
 					yaxe.max = chartTo2;
-					yaxe.endOnTick = false;				
+					yaxe.endOnTick = false;
 				}
-									
+
 				hoptions.yAxis.push(yaxe);
 				hoptions.series.push({
 										name: lng.speed,
@@ -1015,28 +1022,28 @@ Author URI: http://www.pedemontanadelgrappa.it/
 										data : speedData,
 										color: color3,
 										yAxis: hoptions.series.length
-									});			
-				
+									});
+
 				l_y_arr.push(l_s);
 			}
-			
+
 			if (graphHr != '')
 			{
-				
+
 				var hrData = [];
-			
-				for (i=0; i<valLen; i++) 
+
+				for (i=0; i<valLen; i++)
 				{
 					if (graphDist[i] != null)
 					{
 						var c = graphHr[i];
 						if (c==0)
 							c = null;
-						hrData.push([graphDist[i],c]);				
+						hrData.push([graphDist[i],c]);
 					}
 				}
 
-				var yaxe = { 
+				var yaxe = {
 					title: { text: null },
 					labels: {
 						//align: 'right',
@@ -1055,29 +1062,29 @@ Author URI: http://www.pedemontanadelgrappa.it/
 										data : hrData,
 										color: color4,
 										yAxis: hoptions.series.length
-									});			
-				
+									});
+
 				l_y_arr.push(l_hr);
 			}
-			
-			
+
+
 			if (graphAtemp != '')
 			{
-				
+
 				var atempData = [];
-			
-				for (i=0; i<valLen; i++) 
+
+				for (i=0; i<valLen; i++)
 				{
 					if (graphDist[i] != null)
 					{
 						var c = graphAtemp[i];
 						if (c==0)
 							c = null;
-						atempData.push([graphDist[i],c]);				
+						atempData.push([graphDist[i],c]);
 					}
 				}
 
-				var yaxe = { 
+				var yaxe = {
 					title: { text: null },
 					labels: {
 						//align: 'right',
@@ -1096,18 +1103,18 @@ Author URI: http://www.pedemontanadelgrappa.it/
 										data : atempData,
 										color: color7,
 										yAxis: hoptions.series.length
-									});			
-				
+									});
+
 				l_y_arr.push({ suf : "°C", dec : 1 });
 			}
-			
-			
+
+
 			if (graphCad != '')
 			{
-				
+
 				var cadData = [];
-			
-				for (i=0; i<valLen; i++) 
+
+				for (i=0; i<valLen; i++)
 				{
 					if (graphDist[i] != null)
 					{
@@ -1118,7 +1125,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 					}
 				}
 
-				var yaxe = { 
+				var yaxe = {
 					title: { text: null },
 					labels: {
 						//align: 'right',
@@ -1128,7 +1135,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 					},
 					opposite: true
 				}
-									
+
 				hoptions.yAxis.push(yaxe);
 				hoptions.series.push({
 										name: lng.cadence,
@@ -1137,17 +1144,17 @@ Author URI: http://www.pedemontanadelgrappa.it/
 										data : cadData,
 										color: color5,
 										yAxis: hoptions.series.length
-									});			
-				
+									});
+
 				l_y_arr.push(l_cad);
 			}
 
 			if (graphGrade != '')
 			{
-				
+
 				var cadData = [];
-			
-				for (i=0; i<valLen; i++) 
+
+				for (i=0; i<valLen; i++)
 				{
 					if (graphDist[i] != null)
 					{
@@ -1158,7 +1165,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 					}
 				}
 
-				var yaxe = { 
+				var yaxe = {
 					title: { text: null },
 					labels: {
 						//align: 'right',
@@ -1168,7 +1175,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 					},
 					opposite: true
 				}
-									
+
 				hoptions.yAxis.push(yaxe);
 				hoptions.series.push({
 										name: lng.grade,
@@ -1177,21 +1184,21 @@ Author URI: http://www.pedemontanadelgrappa.it/
 										data : cadData,
 										color: color6,
 										yAxis: hoptions.series.length
-									});			
-				
+									});
+
 				l_y_arr.push(l_grade);
 			}
 
 			var hchart = new Highcharts.Chart(hoptions);
-		
+
 		}
 		else  {
 			jQuery("#hchart_" + params.targetId).css("display","none");
 		}
-	
+
         return this;
     };
-	
+
 	function addWayPoint(map, image, shadow, lat, lon, title, descr)
 	{
 		var p = new google.maps.LatLng(lat, lon);
@@ -1204,14 +1211,14 @@ Author URI: http://www.pedemontanadelgrappa.it/
 							  icon: image,
 							  zIndex: 5
 						  });
-						  
+
 		google.maps.event.addListener(m, 'click', function() {
 			if (infowindow)
 			{
-				infowindow.close(); 		
+				infowindow.close();
 			}
-			var cnt = '';	
-			
+			var cnt = '';
+
 			if (title=='')
 			{
 				cnt = "<div>" + unescape(descr) + "</div>";
@@ -1220,12 +1227,12 @@ Author URI: http://www.pedemontanadelgrappa.it/
 			{
 				cnt = "<div><b>" + title + "</b><br />" + unescape(descr) + "</div>";
 			}
-			
+
 			cnt += "<br /><p><a href='https://maps.google.com?daddr=" + lat + "," + lon + "' target='_blank'>Itin&eacute;raire</a></p>";
-			
+
 			infowindow = new google.maps.InfoWindow({ content: cnt});
 			infowindow.open(map,m);
-		});	
+		});
 		/*
 		google.maps.event.addListener(m, "mouseout", function () {
 			if (infowindow)
@@ -1253,11 +1260,11 @@ Author URI: http://www.pedemontanadelgrappa.it/
 	{
 		var dd=10000;
 		var ii=0;
-		for (i=0; i < points.length; i++) 
+		for (i=0; i < points.length; i++)
 		{
 			if (points[i]==null)
 				continue;
-		
+
 			var d = dist(points[i][0], points[i][1], lat, lon);
 			if ( d < dd )
 			{
@@ -1273,20 +1280,20 @@ Author URI: http://www.pedemontanadelgrappa.it/
 		var dd=10000;
 		var img;
 		var divImages = document.getElementById("ngimages_"+targetId);
-		var img_spans = divImages.getElementsByTagName("span");   
-		for (var i = 0; i < img_spans.length; i++) {   
+		var img_spans = divImages.getElementsByTagName("span");
+		for (var i = 0; i < img_spans.length; i++) {
 			var imageLat = img_spans[i].getAttribute("lat");
-			var imageLon = img_spans[i].getAttribute("lon");	
-						
+			var imageLon = img_spans[i].getAttribute("lon");
+
 			imageLat = imageLat.replace(",", ".");
 			imageLon = imageLon.replace(",", ".");
-			
+
 			var d = dist(imageLat, imageLon, lat, lon);
 			if ( d < dd )
 			{
 				img = img_spans[i];
 				dd = d;
-			}		
+			}
 		}
 		return img;
 	}
@@ -1303,5 +1310,5 @@ Author URI: http://www.pedemontanadelgrappa.it/
 		var dLon = (lon2-lon1);
 		return Math.sqrt(dLat * dLat + dLon * dLon);
 	}
-	
+
 }( jQuery ));
