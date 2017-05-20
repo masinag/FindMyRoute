@@ -1,9 +1,11 @@
 <?php
+define('ROOT_DIR', $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/");
+
 function db_connect(){
     $conn = mysql_connect("localhost", "root", "");
     mysql_select_db("itinerariInBicicletta", $conn);
     mysql_query ("set character_set_client='utf8'");
-    mysql_query ("set character_set_results='utf8'"); 
+    mysql_query ("set character_set_results='utf8'");
 
     mysql_query ("set collation_connection='utf8_general_ci'");
     return $conn;
@@ -28,10 +30,12 @@ function log_in($username, $password, &$user_logged_in, &$message){
            $user_logged_in = true;
        }
    }
+   return $user_logged_in;
 }
 function log_out(&$user_logged_in){
     setCookie("username", "", time()-1);
     $user_logged_in = false;
+    return !$user_logged_in;
 }
 function console_log( $data ){
   echo '<script>';
@@ -65,20 +69,27 @@ function sign_up($username, $email, $password, &$user_logged_in, &$message){
         $user_logged_in = true;
     }
     mysql_close($conn);
+    return $user_logged_in;
 }
 
 $loginMessage = "";
 $signupMessage = "";
 $user_logged_in = false;
+$changed = false;
 if (isSet($_POST["accedi"]) or isSet($_POST["registra"])) {
     if (isSet($_POST["accedi"])) {
-        log_in($_POST["username"], $_POST["password"], $user_logged_in, $loginMessage);
+        $changed = log_in($_POST["username"], $_POST["password"], $user_logged_in, $loginMessage);
     } else  if (isSet($_POST["registra"])) {
-        sign_up($_POST["username"], $_POST["email"], $_POST["password"], $user_logged_in, $signupMessage);
+        $changed = sign_up($_POST["username"], $_POST["email"], $_POST["password"], $user_logged_in, $signupMessage);
     }
 } else if (isSet($_POST["logout"])) {
-    log_out($user_logged_in);
+    $changed = log_out($user_logged_in);
 } else if (isSet($_COOKIE["username"])){
     $user_logged_in = true;
 }
+
+if ($changed) {
+    header('Location: /FindMyRoute/index.php');
+}
+
 ?>

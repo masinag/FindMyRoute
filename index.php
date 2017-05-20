@@ -1,3 +1,4 @@
+<?php include $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/user_status.php" ?>
 <!DOCTYPE html>
 <html>
     <head>

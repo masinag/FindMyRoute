@@ -1,4 +1,3 @@
-<?php include ROOT_DIR."php/user_status.php" ?>
 <!-- Barra di navigazione -->
 <div class="w3-top">
     <!-- Navbar su schermi larghi -->

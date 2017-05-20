@@ -1,12 +1,21 @@
+<?php include $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/user_status.php" ?>
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta charset="utf-8">
         <title>Itinerario</title>
         <?php include "head.php" ?>
     </head>
     <body>
         <?php include ROOT_DIR."views/navbar.php" ?>
+        <?php if (!isSet($_POST["idItinerario"])){
+            echo "<header class='my-header'>
+            <h1 class='w3-xxxlarge'>Torna alla pagina precedente per scegliere
+                un itinerario</h1>
+            </header>";
+        } else {
+        ?>
         <?php
             $conn = db_connect();
             $query = "SELECT itinerari.*, immagini.path, p1.nome as puntoPartenza,
@@ -39,5 +48,6 @@
          <section class="w3-container w3-twothird">
              <?php include "prova_mappe.php" ?>
          </section>
+         <?php } ?>
     </body>
 </html>

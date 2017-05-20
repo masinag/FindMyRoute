@@ -1,4 +1,3 @@
-<?php define('ROOT_DIR', $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/"); ?>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" type="text/css" href="/FindMyRoute/css/reset.css" />
