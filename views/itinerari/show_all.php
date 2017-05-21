@@ -7,6 +7,7 @@
     </head>
     <body>
         <?php include ROOT_DIR."views/shared/navbar.php" ?>
+        <?php include  "new.php" ?>
         <header class="my-header w3-center">
             <h1 class="w3-xxxlarge">Itinerari</h1>
         </header>
@@ -55,6 +56,9 @@
                 $i++;
             }
          ?>
-            </section>
+         <button type="button" name="new" class="w3-button w3-circle w3-xlarge w3-deep-orange my-fixed"
+            onclick="document.getElementById('nuovo').style.display='block';">
+             <i class="fa fa-plus"></i></button>
+        </section>
     </body>
 </html>

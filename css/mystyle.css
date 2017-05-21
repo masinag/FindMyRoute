@@ -44,6 +44,12 @@ body, h1, h2, h3, h4, h5, h6 {
 
 /*####################*/
 
+textarea {
+    resize: none;
+    margin-left: 10px!important;
+    margin-top: 10px!important;
+}
+
 .my-button{
     width: 100%;
 }
@@ -104,4 +110,9 @@ body, h1, h2, h3, h4, h5, h6 {
 .my-two-lines{
     height: 2em;
     line-height: 1em;
+}
+.my-fixed{
+    position: fixed!important;
+    bottom: 20px;
+    right: 20px;
 }

@@ -22,6 +22,5 @@
             <input class="w3-button w3-deep-orange w3-large w3-margin-top"
                 type="submit" name="accedi" value="Conferma"/>
         </form>
-
     </article>
 </div>
