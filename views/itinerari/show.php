@@ -5,10 +5,10 @@
 
         <meta charset="utf-8">
         <title>Itinerario</title>
-        <?php include "head.php" ?>
+        <?php include ROOT_DIR."views/shared/head.php" ?>
     </head>
     <body>
-        <?php include ROOT_DIR."views/navbar.php" ?>
+        <?php include ROOT_DIR."views/shared/navbar.php" ?>
         <?php if (!isSet($_POST["idItinerario"])){
             echo "<header class='my-header'>
             <h1 class='w3-xxxlarge'>Torna alla pagina precedente per scegliere
@@ -41,12 +41,12 @@
                  <li><h5 class='my-label'>Punto di arrivo</h5>: <?php echo $row["puntoArrivo"] ?></li>
                  <li><h5 class='my-label'>Lunghezza</h5>: <?php echo $row["lunghezza"] ?></li>
                  <li><h5 class='my-label'>Tempo di percorrenza</h5>: <?php echo $row["tempoPercorrenza"] ?> ore</li>
-                 <li><h5 class='my-label'>informazioni utili: </h5>: <?php echo $row["infoUtili"] ?></li>
+                 <li><h5 class='my-label'>informazioni utili</h5>: <?php echo $row["infoUtili"] ?></li>
 
              </ul>
          </section>
          <section class="w3-container w3-twothird">
-             <?php include "mappa.php" ?>
+             <?php include "map.php" ?>
          </section>
          <?php } ?>
     </body>

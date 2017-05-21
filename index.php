@@ -3,11 +3,11 @@
 <html>
     <head>
         <title>FindMyRoute</title>
-        <?php include "views/head.php" ?>
+        <?php include ROOT_DIR."views/shared/head.php" ?>
     </head>
 
     <body>
-        <?php include "views/navbar.php" ?>
+        <?php include ROOT_DIR."views/shared/navbar.php" ?>
 
         <!-- Intestazione -->
         <header class="w3-container w3-cyan w3-center" style="padding:128px 16px">
@@ -32,7 +32,7 @@
                     <h5 class="w3-justify">
                         Inizia subito ad utilizzare la nostra applicazione
                     </h5>
-                    <a href="views/itinerari.php" class="w3-button w3-padding-large w3-xlarge
+                    <a href="views/itinerari/show_all.php" class="w3-button w3-padding-large w3-xlarge
                         w3-deep-orange my-button">Scopri gli itinerari</a>
                 </section>
             </div>

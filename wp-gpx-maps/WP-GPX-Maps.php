@@ -167,7 +167,7 @@
 				case 'OSM4': { mapType = "OSM4"; break;}
 				case 'OSM5': { mapType = "OSM5"; break;}
 				case 'OSM6': { mapType = "OSM6"; break;}
-				default: { mapType = google.maps.MapTypeId.HYBRID; break;}
+				default: { mapType = google.maps.MapTypeId.ROADMAP; break;}
 			}
 
 			if ( mapType == "TERRAIN" || mapType == "SATELLITE" || mapType == "ROADMAP" )

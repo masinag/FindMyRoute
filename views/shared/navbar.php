@@ -11,8 +11,8 @@
         <?php $page = basename($_SERVER['PHP_SELF'])?>
         <a href="/FindMyRoute/index.php" class="w3-bar-item w3-button w3-padding-large
         <?php echo $page=='index.php'?'w3-white':'w3-hover-white' ?> ">Home</a>
-        <a href="/FindMyRoute/views/itinerari.php" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large
-        <?php echo ($page=='itinerari.php' || $page =='itinerario.php')?'w3-white':'w3-hover-white' ?>">Itinerari</a>
+        <a href="/FindMyRoute/views/itinerari/show_all.php" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large
+        <?php echo ($page!='index.php')?'w3-white':'w3-hover-white' ?>">Itinerari</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 2</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 3</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 4</a>
@@ -21,9 +21,9 @@
                 if (!$user_logged_in) {
              ?>
                 <!-- Form per la registrazione -->
-                <?php include ROOT_DIR."views/registra_form.php"; ?>
+                <?php include ROOT_DIR."views/shared/registra_form.php"; ?>
                 <!-- Form per l'accesso -->
-                <?php include ROOT_DIR."views/accedi_form.php"; ?>
+                <?php include ROOT_DIR."views/shared/accedi_form.php"; ?>
                 <!-- Pulsanti -->
                 <button class="w3-bar-item w3-button w3-hide-small w3-hide-medium
                     w3-padding-large w3-white w3-text-deep-orange"
@@ -52,7 +52,7 @@
     <!-- Navbar su schermi piccoli -->
     <nav id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-large">
         <a href="/FindMyRoute/index.php" class="w3-bar-item w3-button w3-padding-large">Home</a>
-        <a href="/FindMyRoute/views/itinerari.php" class="w3-bar-item w3-button w3-padding-large">Itinerari</a>
+        <a href="/FindMyRoute/views/itinerari/show_all.php" class="w3-bar-item w3-button w3-padding-large">Itinerari</a>
         <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
         <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
         <?php

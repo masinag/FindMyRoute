@@ -3,11 +3,10 @@
 <html>
     <head>
         <title>Itinerari</title>
-        <?php include "head.php" ?>
+        <?php include ROOT_DIR."views/shared/head.php" ?>
     </head>
     <body>
-        <?php include ROOT_DIR."views/navbar.php" ?>
-
+        <?php include ROOT_DIR."views/shared/navbar.php" ?>
         <header class="my-header w3-center">
             <h1 class="w3-xxxlarge">Itinerari</h1>
         </header>
@@ -46,7 +45,7 @@
                                 </ul>
                             </article>
                             <footer>
-                                <form action='itinerario.php' method='post'>
+                                <form action='show.php' method='post'>
                                 <input type='hidden' name='idItinerario' value='".$row["id"]."'/>
                                 <input type='submit' name='submit' value='Maggiori informazioni' class='w3-button w3-block w3-deep-orange'/>
                                 </form>

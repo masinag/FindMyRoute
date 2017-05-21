@@ -1,6 +1,6 @@
 <?php
-    $pluginDir = "../wp-gpx-maps/"; // wordpress plugin path
-    $gpxUrl = "../files/tracks/$traccia"; // your gpx file
+    $pluginDir = ROOT_DIR."wp-gpx-maps/"; // wordpress plugin path
+    $gpxUrl = ROOT_DIR."files/tracks/$traccia"; // your gpx file
     function load_plugin_textdomain(){}
     function is_admin() {return false;}
     function add_action(){}
