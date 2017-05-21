@@ -24,17 +24,20 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxNPdObgBGVgg7PJPj3KihhwnMr30kSzA" type="text/javascript"></script>
     <!-- <script src="https://maps.googleapis.com/maps/api/js?sensor=false&v=3.9" type="text/javascript" ></script> -->
     <script src="http://code.highcharts.com/highcharts.js" type="text/javascript" ></script>
-    <script src="<?php echo $pluginDir; ?>WP-GPX-Maps.js" type="text/javascript" ></script>
+    <?php include $pluginDir."WP-GPX-Maps.php" ?>
+    <!-- <script src="<?php echo $pluginDir; ?>WP-GPX-Maps.js" type="text/javascript" ></script> -->
     <?php
     echo print_WP_GPX_Maps_styles();
     ?>
+    <script type="text/javascript">
+        console.log(map);
+    </script>
     <?php
 
     /*
     plugin call with all the possible settings
     more info here: http://wordpress.org/extend/plugins/wp-gpx-maps/faq/
     */
-
     echo handle_WP_GPX_Maps_Shortcodes( Array (
     "gpx"=> $gpxUrl,
     "width"=> "100%",
@@ -79,5 +82,6 @@
     "summaryavgspeed"=> false,
     "summarytotaltime"=>false,
     ) );
+
 
     ?>

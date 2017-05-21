@@ -139,7 +139,7 @@
 		return TRUE;
 	}
 
-	function getPoints($gpxPath, $gpxOffset = 10, $donotreducegpx, $distancetype)
+	function getPoints($gpxPath, $gpxOffset = 10, $donotreducegpx, $distancetype, $sample = false)
 	{
 
 		$points = array();
@@ -163,7 +163,8 @@
 		if ( $donotreducegpx != true)
 		{
 			$count=sizeof($points->lat)-1;
-			if ($count>200)
+			// ### "campiono" i punti se richiesto per velocizzare il caricamento della traccia
+			if ($sample && $count>200)
 			{
 				$f = round($count/200);
 				if ($f>1)
