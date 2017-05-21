@@ -179,7 +179,7 @@ Author URI: http://www.pedemontanadelgrappa.it/
 		// ### MAPPA
 		var map = new google.maps.Map(el_map, {
 			mapTypeId: mapType,
-			scrollwheel: (zoomOnScrollWheel == 'true'),
+			// scrollwheel: (zoomOnScrollWheel == 'true'),
 			mapTypeControlOptions: {
 				style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
 				mapTypeIds: mapTypeIds
