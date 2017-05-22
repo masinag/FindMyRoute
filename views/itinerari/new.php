@@ -10,7 +10,7 @@
             // $routeMessage = null;
         ?>
         </p>
-        <form class="w3-container" action="#" method="post">
+        <form class="w3-container" action="#" method="post" enctype="multipart/form-data">
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome"
                 required="required" class="w3-input w3-border"/>
@@ -50,10 +50,36 @@
             <label for="infoUtili">Informazioni utili</label>
             <textarea name="infoUtili" id="infoUtili" rows="4"
                 class="w3-input w3-border"></textarea>
-            <!-- <input type="textarea" name="infoUtili" id="infoUtili" rows="4"
-                class="w3-input w3-border"/> -->
 
+            <label for="traccia">Traccia GPS</label>
+            <input type="file" name="traccia" id="traccia" required="required"/>
 
+            <label for="puntoPartenza">Punto di partenza</label>
+            <select name="puntoPartenza" id="puntoPartenza" class="my-select w3-margin-bottom" onchange="showSubDiv(this, 'nuovoPuntoPartenza');">
+            <?php
+                $conn = db_connect();
+                $query = "
+                    SELECT ps.id, ps.nome as nomePunto, l.nome as nomeLoc, p.sigla
+                    FROM puntiSignificativi as ps, province as p, localita as l
+                    WHERE ps.idLocalita = l.id AND
+                          l.idProvincia = p.id
+                ";
+                $res = mysql_query($query);
+                mysql_close($conn);
+                $i = 0;
+                while ($row = mysql_fetch_array($res)) {
+             ?>
+                <option value="<?php echo $row['id'] ?>"<?php echo ($i==0)?"selected='selected'":"" ?>><?php echo $row["nomePunto"].", ".$row["nomeLoc"].", ".$row["sigla"] ?></option>
+             <?php
+                    $i++;
+                } ?>
+                <option value="altro">Altro</option>
+             </select>
+
+            <div id="nuovoPuntoPartenza" style="display: none;">
+                <hr/>
+                <?php include ROOT_DIR."views/puntiSignificativi/new.php" ?>
+            </div>
 
             <input class="w3-button w3-deep-orange w3-large w3-margin-top"
                 type="submit" name="nuovo" value="Conferma"/>
@@ -61,6 +87,16 @@
 
     </article>
 </div>
+
+<script type="text/javascript">
+    function showSubDiv(punto, idDiv) {
+        if (punto.value == "altro") {
+            document.getElementById(idDiv).style.display = "block";
+        } else {
+            document.getElementById(idDiv).style.display = "none";
+        }
+    }
+</script>
 
 <script type="text/javascript" async defer>
     var modalNew = document.getElementById('nuovo');
