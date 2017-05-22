@@ -11,7 +11,7 @@
 <label for="sitoWebNuovoPunto">Sito WEB punto di partenza</label>
 <input type="text" id="sitoWebNuovoPunto" name="sitoWebNuovoPunto" />
 
-<label for="localitaNuovoPunto">Punto di partenza</label>
+<label for="localitaNuovoPunto">Località punto di partenza</label>
 <select name="localitaNuovoPunto" id="localitaNuovoPunto" class="my-select w3-margin-bottom" onchange="showSubDiv(this, 'nuovaLocalita')">
     <?php
         $conn = db_connect();
@@ -35,5 +35,5 @@
  </select>
 <div id="nuovaLocalita" style="display: none;">
     <hr/>
-    <!-- div nuova localita -->
+    <?php include ROOT_DIR."views/localita/new.php" ?>
 </div>

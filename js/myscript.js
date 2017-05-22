@@ -16,3 +16,11 @@ function checkPassword() {
             'Le password devono coincidere');
     }
 }
+
+function showSubDiv(punto, idDiv) {
+    if (punto.value == "altro") {
+        document.getElementById(idDiv).style.display = "block";
+    } else {
+        document.getElementById(idDiv).style.display = "none";
+    }
+}

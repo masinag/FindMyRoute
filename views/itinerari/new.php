@@ -88,16 +88,6 @@
     </article>
 </div>
 
-<script type="text/javascript">
-    function showSubDiv(punto, idDiv) {
-        if (punto.value == "altro") {
-            document.getElementById(idDiv).style.display = "block";
-        } else {
-            document.getElementById(idDiv).style.display = "none";
-        }
-    }
-</script>
-
 <script type="text/javascript" async defer>
     var modalNew = document.getElementById('nuovo');
     window.addEventListener("click", function(event) {
