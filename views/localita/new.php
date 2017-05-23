@@ -1,11 +1,11 @@
-<label for="nomeNuovaLocalita">Nome nuova localita</label>
-<input type="text" name="nomeNuovaLocalita" id="nomeNuovaLocalita" />
+<label for="nomeNuovaLocalita<?php echo $tipoPunto ?>">Nome nuova localita di <?php echo $tipoPunto ?></label>
+<input type="text" name="nomeNuovaLocalita<?php echo $tipoPunto ?>" id="nomeNuovaLocalita<?php echo $tipoPunto ?>" />
 
-<label for="capNuovaLocalita">CAP nuova localita</label>
-<input type="number" name="capNuovaLocalita" id="capNuovaLocalita" />
+<label for="capNuovaLocalita<?php echo $tipoPunto ?>">CAP nuova localita di <?php echo $tipoPunto ?></label>
+<input type="number" name="capNuovaLocalita<?php echo $tipoPunto ?>" id="capNuovaLocalita<?php echo $tipoPunto ?>" />
 
-<label for="provinciaNuovaLocalita">Provincia nuova localita</label>
-<select name="provinciaNuovaLocalita" id="provinciaNuovaLocalita">
+<label for="provinciaNuovaLocalita<?php echo $tipoPunto ?>">Provincia nuova localita</label>
+<select name="provinciaNuovaLocalita<?php echo $tipoPunto ?>" id="provinciaNuovaLocalita<?php echo $tipoPunto ?>">
     <?php
         $conn = db_connect();
         $query = "
@@ -16,7 +16,7 @@
         $i = 0;
         while ($row = mysql_fetch_array($res)){
     ?>
-        <option value="<?php echo $row["id"] ?>" <?php echo ($i==0)?"selected='selected'":""; ?>>
+        <option value="<?php echo $row["id"] ?>" <?php echo ($i==0)?" selected='selected'":""; ?>>
             <?php echo $row["nome"] ?>
         </option>
     <?php
