@@ -1,5 +1,6 @@
 <label for="nomeNuovoPunto<?php echo $tipoPunto ?>">Nome punto di <?php echo $tipoPunto ?></label>
-<input type="text" id="nomeNuovoPunto<?php echo $tipoPunto ?>" name="nomeNuovoPunto<?php echo $tipoPunto ?>" />
+<input type="text" id="nomeNuovoPunto<?php echo $tipoPunto ?>"
+    name="nomeNuovoPunto<?php echo $tipoPunto ?>"/>
 
 <label for="tipoNuovoPunto<?php echo $tipoPunto ?>">Tipo punto di <?php echo $tipoPunto ?></label>
 <select name="tipoNuovoPunto<?php echo $tipoPunto ?>" class="w3-margin-bottom">
@@ -9,7 +10,8 @@
 </select> <br/>
 
 <label for="sitoWebNuovoPunto<?php echo $tipoPunto ?>">Sito WEB punto di <?php echo $tipoPunto ?></label>
-<input type="text" id="sitoWebNuovoPunto<?php echo $tipoPunto ?>" name="sitoWebNuovoPunto<?php echo $tipoPunto ?>" />
+<input type="text" id="sitoWebNuovoPunto<?php echo $tipoPunto ?>"
+    name="sitoWebNuovoPunto<?php echo $tipoPunto ?>" />
 
 <label for="localitaNuovoPunto<?php echo $tipoPunto ?>">Località punto di <?php echo $tipoPunto ?></label>
 <select name="localitaNuovoPunto<?php echo $tipoPunto ?><?php echo $tipoPunto ?>"

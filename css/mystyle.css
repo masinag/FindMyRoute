@@ -121,3 +121,9 @@ textarea {
     margin-top: 10px!important;
     width: 100%;
 }
+.my-input-error{
+    margin-left: 10px;
+    color: red;
+    display: block;
+    margin-bottom: 10px;
+}

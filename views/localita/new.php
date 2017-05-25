@@ -1,8 +1,10 @@
 <label for="nomeNuovaLocalita<?php echo $tipoPunto ?>">Nome nuova localita di <?php echo $tipoPunto ?></label>
-<input type="text" name="nomeNuovaLocalita<?php echo $tipoPunto ?>" id="nomeNuovaLocalita<?php echo $tipoPunto ?>" />
+<input type="text" name="nomeNuovaLocalita<?php echo $tipoPunto ?>"
+    id="nomeNuovaLocalita<?php echo $tipoPunto ?>"/>
 
 <label for="capNuovaLocalita<?php echo $tipoPunto ?>">CAP nuova localita di <?php echo $tipoPunto ?></label>
-<input type="number" name="capNuovaLocalita<?php echo $tipoPunto ?>" id="capNuovaLocalita<?php echo $tipoPunto ?>" />
+<input type="number" name="capNuovaLocalita<?php echo $tipoPunto ?>"
+id="capNuovaLocalita<?php echo $tipoPunto ?>"/>
 
 <label for="provinciaNuovaLocalita<?php echo $tipoPunto ?>">Provincia nuova localita</label>
 <select name="provinciaNuovaLocalita<?php echo $tipoPunto ?>" id="provinciaNuovaLocalita<?php echo $tipoPunto ?>">
