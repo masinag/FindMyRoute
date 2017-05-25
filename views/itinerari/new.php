@@ -13,7 +13,7 @@
         <form class="w3-container" action="#" method="post" enctype="multipart/form-data">
             <label for="nomeItinerario">Nome</label>
             <input type="text" name="nomeItinerario" id="nomeItinerario"
-                required="required" class="w3-input w3-border"/>
+                required="required" class="w3-input w3-border" />
 
             <label for="descrizioneItinerario">Descrizione</label>
             <textarea name="descrizioneItinerario" id="descrizioneItinerario" rows="4"
@@ -124,7 +124,7 @@
 </div>
 
 
-<script type="text/javascript" async defer>
+<script type="text/javascript">
     var modalNew = document.getElementById('nuovo');
     window.addEventListener("click", function(event) {
        if (event.target == modalNew) {

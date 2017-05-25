@@ -80,7 +80,7 @@
     </nav>
 </div>
 
-<script type="text/javascript" async defer>
+<script type="text/javascript">
 
     // Chiudo le finestre quando l'utente clicca fuori da esse
     var modalA = document.getElementById('accedi');

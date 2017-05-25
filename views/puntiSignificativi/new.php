@@ -12,15 +12,15 @@
 </span>
 
 <label for="tipoPunto<?php echo $tipoPunto ?>">Tipo punto di <?php echo $tipoPunto ?></label>
-<select name="tipoPunto<?php echo $tipoPunto ?>" class="w3-margin-bottom">
+<select name="tipoPunto<?php echo $tipoPunto ?>" class="w3-margin-bottom" id="tipoPunto<?php echo $tipoPunto ?>">
     <option value="interesse">Interesse</option>
     <option value="ristoro">Ristoro</option>
     <option value="altro">Altro</option>
 </select> <br/>
 
-<label for="sitoWebPunto<?php echo $tipoPunto ?>">Sito WEB punto di <?php echo $tipoPunto ?></label>
-<input type="text" id="sitoWebPunto<?php echo $tipoPunto ?>"
-    name="sitoWebPunto<?php echo $tipoPunto ?>" />
+<label for="sitoPunto<?php echo $tipoPunto ?>">Sito WEB punto di <?php echo $tipoPunto ?></label>
+<input type="text" id="sitoPunto<?php echo $tipoPunto ?>"
+    name="sitoPunto<?php echo $tipoPunto ?>" />
 <span class="my-input-error">
     <?php
         if ($tipoPunto == "Partenza") {
@@ -60,7 +60,10 @@
     <?php } ?>
     <option value="altro" class="w3-text-deep-orange">Altro</option>
  </select>
-<div id="nuovaLocalita<?php echo $tipoPunto ?>" style="display: none;">
+<div id="nuovaLocalita<?php echo $tipoPunto ?>"
+    style="display: <?php
+   echo (($tipoPunto == 'Arrivo' && $erroriNuovaLocalitaArrivo>0) ||
+         ($tipoPunto == 'Partenza' && $erroriNuovaLocalitaPartenza>0))?'block':'none';?>">
     <hr/>
     <?php include ROOT_DIR."views/localita/new.php" ?>
 </div>
