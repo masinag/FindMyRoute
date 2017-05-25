@@ -7,7 +7,7 @@
     </head>
     <body>
         <?php include ROOT_DIR."views/shared/navbar.php" ?>
-        <?php include  "new.php" ?>
+        <?php include  "new_form.php" ?>
         <header class="my-header w3-center">
             <h1 class="w3-xxxlarge">Itinerari</h1>
         </header>

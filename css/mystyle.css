@@ -68,6 +68,7 @@ textarea {
     border: 1px solid #888;
     width: 40%; /* Could be more or less, depending on screen size */
     min-width: 350px;
+    min-height:100%;
 }
 .my-userForm input {
     width: 100%;
@@ -116,9 +117,12 @@ textarea {
     bottom: 20px;
     right: 20px;
 }
-.my-select{
+
+.my-formAlign, .my-select{
     margin-left: 10px!important;
     margin-top: 10px!important;
+}
+.my-select{
     width: 100%;
 }
 .my-input-error{
@@ -126,4 +130,8 @@ textarea {
     color: red;
     display: block;
     margin-bottom: 10px;
+}
+.my-bottom{
+    position: relative;
+    bottom: 0px !important;
 }

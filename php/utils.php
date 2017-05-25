@@ -84,4 +84,20 @@ function sign_up($username, $email, $password, &$user_logged_in, &$message){
     mysql_close($conn);
     return $user_logged_in;
 }
+
+function selectValue($fieldName, $value, $i){
+    // echo "-> $fieldName";
+    if (isSet($_POST["$fieldName"])) {
+        echo ($_POST["$fieldName"]==$value)?"selected='selected' ":"";
+    } else {
+        echo ($i==0)?"selected='selected' ":"";
+    }
+}
+
+function getValueText($fieldName){
+    echo isSet($_POST[$fieldName])?$_POST[$fieldName]:"";
+}
+function getValue($fieldName){
+    echo isSet($_POST[$fieldName])?"value='".$_POST[$fieldName]."'":"";
+}
  ?>
