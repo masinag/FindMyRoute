@@ -1,21 +1,39 @@
-<label for="nomeNuovoPunto<?php echo $tipoPunto ?>">Nome punto di <?php echo $tipoPunto ?></label>
-<input type="text" id="nomeNuovoPunto<?php echo $tipoPunto ?>"
-    name="nomeNuovoPunto<?php echo $tipoPunto ?>"/>
+<label for="nomePunto<?php echo $tipoPunto ?>">Nome punto di <?php echo $tipoPunto ?></label>
+<input type="text" id="nomePunto<?php echo $tipoPunto ?>"
+    name="nomePunto<?php echo $tipoPunto ?>"/>
+<span class="my-input-error">
+    <?php
+        if ($tipoPunto == "Partenza") {
+            echo isSet($nomePuntoPartenzaMessage)?$nomePuntoPartenzaMessage:"";
+        } else {
+            echo isSet($nomePuntoArrivoMessage)?$nomePuntoArrivoMessage:"" ;
+        }
+    ?>
+</span>
 
-<label for="tipoNuovoPunto<?php echo $tipoPunto ?>">Tipo punto di <?php echo $tipoPunto ?></label>
-<select name="tipoNuovoPunto<?php echo $tipoPunto ?>" class="w3-margin-bottom">
+<label for="tipoPunto<?php echo $tipoPunto ?>">Tipo punto di <?php echo $tipoPunto ?></label>
+<select name="tipoPunto<?php echo $tipoPunto ?>" class="w3-margin-bottom">
     <option value="interesse">Interesse</option>
     <option value="ristoro">Ristoro</option>
     <option value="altro">Altro</option>
 </select> <br/>
 
-<label for="sitoWebNuovoPunto<?php echo $tipoPunto ?>">Sito WEB punto di <?php echo $tipoPunto ?></label>
-<input type="text" id="sitoWebNuovoPunto<?php echo $tipoPunto ?>"
-    name="sitoWebNuovoPunto<?php echo $tipoPunto ?>" />
+<label for="sitoWebPunto<?php echo $tipoPunto ?>">Sito WEB punto di <?php echo $tipoPunto ?></label>
+<input type="text" id="sitoWebPunto<?php echo $tipoPunto ?>"
+    name="sitoWebPunto<?php echo $tipoPunto ?>" />
+<span class="my-input-error">
+    <?php
+        if ($tipoPunto == "Partenza") {
+            echo isSet($sitoPuntoPartenzaMessage)?$sitoPuntoPartenzaMessage:"";
+        } else {
+            echo isSet($sitoPuntoArrivoMessage)?$sitoPuntoArrivoMessage:"" ;
+        }
+    ?>
+</span>
 
-<label for="localitaNuovoPunto<?php echo $tipoPunto ?>">Località punto di <?php echo $tipoPunto ?></label>
-<select name="localitaNuovoPunto<?php echo $tipoPunto ?><?php echo $tipoPunto ?>"
-    id="localitaNuovoPunto<?php echo $tipoPunto ?>" class="my-select w3-margin-bottom"
+<label for="localitaPunto<?php echo $tipoPunto ?>">Località punto di <?php echo $tipoPunto ?></label>
+<select name="localitaPunto<?php echo $tipoPunto ?>"
+    id="localitaPunto<?php echo $tipoPunto ?>" class="my-select w3-margin-bottom"
     onchange="showSubDiv(this, 'nuovaLocalita<?php echo $tipoPunto ?>');
     <?php if ($tipoPunto=='Partenza'){ ?> showSubDiv(this, 'copiaLocalita') <?php } ?>">
     <?php

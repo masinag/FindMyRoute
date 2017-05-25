@@ -79,7 +79,9 @@
                 <option value="altro" class="w3-text-cyan">Altro</option>
              </select>
              <!-- CAMPI PER INSERIRE UN NUOVO PUNTO DI PARTENZA -->
-            <div id="nuovoPuntoPartenza" style="display: none;">
+            <div id="nuovoPuntoPartenza" style="display: <?php
+               echo ($erroriNuovoPuntoPartenza > 0 || $erroriNuovaLocalitaPartenza>0)?'block':'none';
+             ?>;">
                 <hr/>
                 <?php $tipoPunto = "Partenza"; ?>
                 <?php include ROOT_DIR."views/puntiSignificativi/new.php" ?>
@@ -106,7 +108,9 @@
                 <option value="copiaPunto" class="w3-text-deep-orange" id="copiaPunto" style="display: none">Stesso punto di quello di partenza</option>
              </select>
              <!-- CAMPI PER INSERIRE UN NUOVO PUNTO DI ARRIVO -->
-             <div id="nuovoPuntoArrivo" style="display: none;">
+             <div id="nuovoPuntoArrivo" style="display: <?php
+                echo ($erroriNuovoPuntoArrivo > 0 || $erroriNuovaLocalitaArrivo>0)?'block':'none';
+              ?>;">
                  <hr/>
                  <?php $tipoPunto = "Arrivo"; ?>
                  <?php include ROOT_DIR."views/puntiSignificativi/new.php" ?>

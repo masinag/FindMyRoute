@@ -25,14 +25,36 @@
     }
 
 
-
+    $erroriNuovoPuntoPartenza = $erroriNuovaLocalitaPartenza =
+    $erroriNuovoPuntoArrivo   = $erroriNuovaLocalitaArrivo = 0;
     // controllo se c'è un input da parte dell'utente
     if (isSet($_POST["nomeItinerario"])) {
         // controllo il file caricato
         $uploadFile = ROOT_DIR . "files/tracks/" . basename($_FILES["tracciaItinerario"]["name"]);
         $fileMessage = "";
         $uploadOk = checkFile($uploadFile, $fileMessage);
-        
+
+        // controllo eventuali parametri di un nuovo punto di partenza inserito
+        if ($_POST["puntoPartenzaItinerario"]=="altro") {
+            // il nome non deve essere una stringa vuota
+            if (trim($_POST["nomePuntoPartenza"]) == "") {
+                $nomePuntoPartenzaMessage = "Il campo nome non può essere vuoto";
+                $erroriNuovoPuntoPartenza++;
+            }
+            // il sito web, se presente, deve essere un URL valido.
+            if (trim($_POST["sitoPuntoPartenza"])!= "" && !filter_var($_POST["sitoPuntoPartenza"], FILTER_VALIDATE_URL)) {
+              $sitoPuntoPartenzaMessage = "L'URL del sito deve essere nel formato 'protocollo://nomeDominio'";
+              $erroriNuovoPuntoPartenza++;
+            }
+            // controllo eventuali parametri di una nuova località di partenza inserita
+            if ($_POST["localitaPuntoPartenza"] == "altro") {
+                // il nome non deve essere una stringa vuota
+                if (trim($_POST["nomeLocalitaPartenza"]) == "") {
+                    $nomeLocalitaPartenzaMessage = "Il campo nome non può essere vuoto";
+                    $erroriNuovaLocalitaPartenza++;
+                }
+            }
+        }
 
 
         // carico il file

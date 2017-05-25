@@ -1,13 +1,22 @@
-<label for="nomeNuovaLocalita<?php echo $tipoPunto ?>">Nome nuova localita di <?php echo $tipoPunto ?></label>
-<input type="text" name="nomeNuovaLocalita<?php echo $tipoPunto ?>"
-    id="nomeNuovaLocalita<?php echo $tipoPunto ?>"/>
+<label for="nomeLocalita<?php echo $tipoPunto ?>">Nome nuova localita di <?php echo $tipoPunto ?></label>
+<input type="text" name="nomeLocalita<?php echo $tipoPunto ?>"
+    id="nomeLocalita<?php echo $tipoPunto ?>"/>
+<span class="my-input-error">
+    <?php
+        if ($tipoPunto == "Partenza") {
+            echo isSet($nomeLocalitaPartenzaMessage)?$nomeLocalitaPartenzaMessage:"";
+        } else {
+            echo isSet($nomeLocalitaArrivoMessage)?$nomeLocalitaArrivoMessage:"" ;
+        }
+    ?>
+</span>
 
-<label for="capNuovaLocalita<?php echo $tipoPunto ?>">CAP nuova localita di <?php echo $tipoPunto ?></label>
-<input type="number" name="capNuovaLocalita<?php echo $tipoPunto ?>"
-id="capNuovaLocalita<?php echo $tipoPunto ?>"/>
+<label for="capLocalita<?php echo $tipoPunto ?>">CAP nuova localita di <?php echo $tipoPunto ?></label>
+<input type="number" name="capLocalita<?php echo $tipoPunto ?>"
+    id="capLocalita<?php echo $tipoPunto ?>" max="99999"/>
 
-<label for="provinciaNuovaLocalita<?php echo $tipoPunto ?>">Provincia nuova localita</label>
-<select name="provinciaNuovaLocalita<?php echo $tipoPunto ?>" id="provinciaNuovaLocalita<?php echo $tipoPunto ?>">
+<label for="provinciaLocalita<?php echo $tipoPunto ?>">Provincia nuova localita</label>
+<select name="provinciaLocalita<?php echo $tipoPunto ?>" id="provinciaLocalita<?php echo $tipoPunto ?>">
     <?php
         $conn = db_connect();
         $query = "
