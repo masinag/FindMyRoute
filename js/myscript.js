@@ -24,3 +24,12 @@ function showSubDiv(punto, idDiv) {
         document.getElementById(idDiv).style.display = "none";
     }
 }
+
+function openDiv(divName) {
+    var i;
+    var x = document.getElementsByClassName("nuovoItinerario");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(divName).style.display = "block";
+}

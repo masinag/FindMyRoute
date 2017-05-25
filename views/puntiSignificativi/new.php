@@ -30,6 +30,8 @@
         }
     ?>
 </span>
+<!-- MAPPA PER SCEGLIERE LE COORDINATE -->
+
 
 <label for="localitaPunto<?php echo $tipoPunto ?>">Località punto di <?php echo $tipoPunto ?></label>
 <select name="localitaPunto<?php echo $tipoPunto ?>"
@@ -62,7 +64,7 @@
     <option value="altro" class="w3-text-deep-orange"
         <?php selectValue("localitaPunto$tipoPunto", "altro", $i)?>>Altro</option>
  </select>
- 
+
 <div id="nuovaLocalita<?php echo $tipoPunto ?>"
     style="display: <?php
    echo (($tipoPunto == 'Arrivo' && $erroriNuovaLocalitaArrivo>0) ||

@@ -114,13 +114,5 @@
    }, false);
 </script>
 
-<script type="text/javascript">
-    function openDiv(divName) {
-        var i;
-        var x = document.getElementsByClassName("nuovoItinerario");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        document.getElementById(divName).style.display = "block";
-    }
-</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxNPdObgBGVgg7PJPj3KihhwnMr30kSzA&callback=initMap"
+    async defer></script>
