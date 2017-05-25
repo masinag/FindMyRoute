@@ -27,7 +27,8 @@
         $i = 0;
         while ($row = mysql_fetch_array($res)){
     ?>
-        <option value="<?php echo $row["id"] ?>" <?php echo ($i==0)?" selected='selected'":""; ?>>
+        <option value="<?php echo $row["id"] ?>"
+            <?php selectValue("provinciaLocalita<?php echo $tipoPunto ?>", $row["id"], $i)?>>
             <?php echo $row["nome"] ?>
         </option>
     <?php

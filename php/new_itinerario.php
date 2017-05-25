@@ -23,6 +23,30 @@
         return $uploadOk;
     }
 
+    function checkPunto($tipoPunto, &$erroriNuovoPunto, &$erroriNuovaLocalita, &$nomePuntoMessage,
+        &$sitoPuntoMessage, &$nomeLocalitaMessage){
+        if ($_POST["punto".$tipoPunto."Itinerario"]=="altro") {
+            // il nome non deve essere una stringa vuota
+            if (trim($_POST["nomePunto$tipoPunto"]) == "") {
+                $nomePuntoMessage = "Il campo nome non può essere vuoto";
+                $erroriNuovoPunto++;
+            }
+            // il sito web, se presente, deve essere un URL valido.
+            if ((trim($_POST["sitoPunto$tipoPunto"])!= "") && !filter_var($_POST["sitoPunto$tipoPunto"], FILTER_VALIDATE_URL)) {
+              $sitoPuntoMessage = "L'URL del sito deve essere nel formato 'protocollo://nomeDominio'";
+              $erroriNuovoPunto++;
+            }
+            // controllo eventuali parametri di una nuova località di partenza inserita
+            if ($_POST["localitaPunto$tipoPunto"] == "altro") {
+                // il nome non deve essere una stringa vuota
+                if (trim($_POST["nomeLocalita$tipoPunto"]) == "") {
+                    $nomeLocalitaMessage = "Il campo nome non può essere vuoto";
+                    $erroriNuovaLocalita++;
+                }
+            }
+        }
+    }
+
 
     $erroriNuovoPuntoPartenza = $erroriNuovaLocalitaPartenza =
     $erroriNuovoPuntoArrivo   = $erroriNuovaLocalitaArrivo = 0;
@@ -34,50 +58,12 @@
         $uploadOk = checkFile($uploadFile, $fileMessage);
 
         // controllo eventuali parametri di un nuovo punto di partenza inserito
-        if ($_POST["puntoPartenzaItinerario"]=="altro") {
-            // il nome non deve essere una stringa vuota
-            if (trim($_POST["nomePuntoPartenza"]) == "") {
-                $nomePuntoPartenzaMessage = "Il campo nome non può essere vuoto";
-                $erroriNuovoPuntoPartenza++;
-            }
-            // il sito web, se presente, deve essere un URL valido.
-            if ((trim($_POST["sitoPuntoPartenza"])!= "") && !filter_var($_POST["sitoPuntoPartenza"], FILTER_VALIDATE_URL)) {
-              $sitoPuntoPartenzaMessage = "L'URL del sito deve essere nel formato 'protocollo://nomeDominio'";
-              $erroriNuovoPuntoPartenza++;
-            }
-            // controllo eventuali parametri di una nuova località di partenza inserita
-            if ($_POST["localitaPuntoPartenza"] == "altro") {
-                // il nome non deve essere una stringa vuota
-                if (trim($_POST["nomeLocalitaPartenza"]) == "") {
-                    $nomeLocalitaPartenzaMessage = "Il campo nome non può essere vuoto";
-                    $erroriNuovaLocalitaPartenza++;
-                }
-            }
-        }
+        checkPunto("Partenza", $erroriNuovoPuntoPartenza, $erroriNuovaLocalitaPartenza,
+        $nomePuntoPartenzaMessage, $sitoPuntoPartenzaMessage, $nomeLocalitaPartenzaMessage);
 
         // controllo eventuali parametri di un nuovo punto di arrivo inserito
-        if ($_POST["puntoArrivoItinerario"]=="altro") {
-            // il nome non deve essere una stringa vuota
-            if (trim($_POST["nomePuntoArrivo"]) == "") {
-                $nomePuntoArrivoMessage = "Il campo nome non può essere vuoto";
-                $erroriNuovoPuntoArrivo++;
-            }
-            // il sito web, se presente, deve essere un URL valido.
-            if (trim($_POST["sitoPuntoArrivo"])!= "" && !filter_var($_POST["sitoPuntoArrivo"], FILTER_VALIDATE_URL)) {
-              $sitoPuntoArrivoMessage = "L'URL del sito deve essere nel formato 'protocollo://nomeDominio'";
-              $erroriNuovoPuntoArrivo++;
-            }
-            // controllo eventuali parametri di una nuova località di arrivo inserita
-            if ($_POST["localitaPuntoArrivo"] == "altro") {
-                console_log("yes");
-                // il nome non deve essere una stringa vuota
-                if (trim($_POST["nomeLocalitaArrivo"]) == "") {
-                    $nomeLocalitaArrivoMessage = "Il campo nome non può essere vuoto";
-                    $erroriNuovaLocalitaArrivo++;
-                }
-            }
-        }
-
+        checkPunto("Arrivo", $erroriNuovoPuntoArrivo, $erroriNuovaLocalitaArrivo,
+        $nomePuntoArrivoMessage, $sitoPuntoArrivoMessage, $nomeLocalitaArrivoMessage);
 
         // carico il file
         if ($uploadOk && ($erroriNuovoPuntoPartenza + $erroriNuovaLocalitaPartenza +
