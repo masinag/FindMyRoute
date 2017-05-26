@@ -39,6 +39,7 @@
 
 <label for="tracciaItinerario">Traccia GPS</label>
 <input type="file" name="tracciaItinerario" id="tracciaItinerario" required="required"/>
+
 <span class="my-input-error"> <?php echo isSet($fileMessage)?$fileMessage:"" ?></span>
 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
      type="button" onclick="openDiv('datiPuntoPartenza')">Avanti</button>
