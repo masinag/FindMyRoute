@@ -1,5 +1,10 @@
+<div style="margin-top:200px;">
+    <?php foreach ($_POST as $key => $value) {
+        echo $key . "->" . $value;
+    } ?>
+</div>
 <?php include ROOT_DIR."php/new_itinerario.php" ?>
-<div id="nuovo" class="modal" style="display: <?php echo (isSet($itinerarioMessage))?'block':'none' ?>">
+<div id="nuovo" class="modal" style="display: <?php echo (isSet($errori))?'block':'none' ?>">
     <article class="my-userForm w3-text-black">
         <header class="w3-container">
             <h2>Nuovo itinerario</h2>
@@ -9,7 +14,7 @@
             <section class="nuovoItinerario" id="datiItinerario">
                 <p class="w3-text-red my-formAlign">
                 <?php
-                    echo isSet($itinerarioMessage)?$itinerarioMessage:"";
+                    echo isSet($errori)?"Il form contiene degli errori":"";
                 ?>
                 </p>
                 <?php include "new.php" ?>
@@ -54,9 +59,7 @@
                     value="altro" class="w3-text-cyan">Altro</option>
                 </select>
                 <!-- CAMPI PER INSERIRE UN NUOVO PUNTO DI PARTENZA -->
-                <div id="nuovoPuntoPartenza" style="display: <?php
-                    echo ($erroriNuovoPuntoPartenza > 0 || $erroriNuovaLocalitaPartenza>0)?'block':'none';
-                    ?>;">
+                <div id="nuovoPuntoPartenza" style="display: <?php getDisplay('puntoPartenzaItinerario') ?>;">
                     <hr/>
                     <?php $tipoPunto = "Partenza"; ?>
                     <?php include ROOT_DIR."views/puntiSignificativi/new.php" ?>
@@ -95,9 +98,7 @@
                         id="copiaPunto" style="display: none">Stesso punto di quello di partenza</option>
                 </select>
                 <!-- CAMPI PER INSERIRE UN NUOVO PUNTO DI ARRIVO -->
-                <div id="nuovoPuntoArrivo" style="display: <?php
-                    echo ($erroriNuovoPuntoArrivo > 0 || $erroriNuovaLocalitaArrivo>0)?'block':'none';
-                    ?>;">
+                <div id="nuovoPuntoArrivo" style="display: <?php getDisplay('puntoArrivoItinerario') ?>">
                     <hr/>
                     <?php $tipoPunto = "Arrivo"; ?>
                     <?php include ROOT_DIR."views/puntiSignificativi/new.php" ?>
@@ -106,7 +107,7 @@
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
                      type="button" onclick="showDiv('datiPuntoPartenza', mapPartenza);">Indietro</button>
                 <button class="w3-button w3-cyan w3-text-white w3-large w3-margin-top my-bottom"
-                type="submit" name="nuovo" value="Conferma">Conferma </button>
+                    type="submit" name="nuovo" value="Conferma">Conferma </button>
 
 
             </section>
