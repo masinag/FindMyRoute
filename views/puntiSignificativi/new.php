@@ -1,6 +1,6 @@
 <label for="nomePunto<?php echo $tipoPunto ?>">Nome punto di <?php echo $tipoPunto ?></label>
 <input type="text" id="nomePunto<?php echo $tipoPunto ?>"
-    name="nomePunto<?php echo $tipoPunto ?>" <?php getValue("nomePunto<?php echo $tipoPunto ?>") ?>/>
+    name="nomePunto<?php echo $tipoPunto ?>" <?php getValue("nomePunto$tipoPunto") ?>/>
 <span class="my-input-error">
     <?php
         if ($tipoPunto == "Partenza") {
@@ -57,7 +57,11 @@
 <select name="localitaPunto<?php echo $tipoPunto ?>"
     id="localitaPunto<?php echo $tipoPunto ?>" class="my-select w3-margin-bottom"
     onchange="showSubDiv(this, 'nuovaLocalita<?php echo $tipoPunto ?>');
+    <?php if ($tipoPunto=='Partenza'){ ?> showSubDiv(this, 'copiaLocalita') <?php } ?>"
+    onload="showSubDiv(this, 'nuovaLocalita<?php echo $tipoPunto ?>');
     <?php if ($tipoPunto=='Partenza'){ ?> showSubDiv(this, 'copiaLocalita') <?php } ?>">
+
+    
     <?php
         $conn = db_connect();
         $query = "

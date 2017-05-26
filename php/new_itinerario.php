@@ -22,7 +22,7 @@
     }
 
     function checkPunto($tipoPunto, &$erroriNuovoPunto, &$erroriNuovaLocalita, &$nomePuntoMessage,
-        &$sitoPuntoMessage, &$nomeLocalitaMessage){
+        &$sitoPuntoMessage, &$nomeLocalitaMessage, &$capLocalitaMessage){
         if ($_POST["punto".$tipoPunto."Itinerario"]=="altro") {
             // il nome non deve essere una stringa vuota
             if (trim($_POST["nomePunto$tipoPunto"]) == "") {
@@ -41,6 +41,10 @@
                     $nomeLocalitaMessage = "Il campo nome non può essere vuoto";
                     $erroriNuovaLocalita++;
                 }
+                if (trim($_POST["capLocalita$tipoPunto"]) == "") {
+                    $capLocalitaMessage = "Il campo CAP non può essere vuoto";
+                    $erroriNuovaLocalita++;
+                }
             }
         }
     }
@@ -56,11 +60,13 @@
 
         // controllo eventuali parametri di un nuovo punto di partenza inserito
         checkPunto("Partenza", $erroriNuovoPuntoPartenza, $erroriNuovaLocalitaPartenza,
-        $nomePuntoPartenzaMessage, $sitoPuntoPartenzaMessage, $nomeLocalitaPartenzaMessage);
+        $nomePuntoPartenzaMessage, $sitoPuntoPartenzaMessage, $nomeLocalitaPartenzaMessage,
+        $capLocalitaPartenzaMessage);
 
         // controllo eventuali parametri di un nuovo punto di arrivo inserito
         checkPunto("Arrivo", $erroriNuovoPuntoArrivo, $erroriNuovaLocalitaArrivo,
-        $nomePuntoArrivoMessage, $sitoPuntoArrivoMessage, $nomeLocalitaArrivoMessage);
+        $nomePuntoArrivoMessage, $sitoPuntoArrivoMessage, $nomeLocalitaArrivoMessage,
+        $capLocalitaArrivoMessage);
 
         // carico il file
         if ($uploadOk && ($erroriNuovoPuntoPartenza + $erroriNuovaLocalitaPartenza +

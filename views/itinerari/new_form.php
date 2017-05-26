@@ -1,6 +1,6 @@
 <?php include ROOT_DIR."php/new_itinerario.php" ?>
 <div id="nuovo" class="modal" style="display: <?php echo (isSet($itinerarioMessage))?'block':'none' ?>">
-    <article class="my-userForm animate w3-text-black">
+    <article class="my-userForm w3-text-black">
         <header class="w3-container">
             <h2>Nuovo itinerario</h2>
         </header>
@@ -22,9 +22,12 @@
             <section class="nuovoItinerario" id="datiPuntoPartenza" style="display:none">
                 <label for="puntoPartenzaItinerario">Punto di partenza</label>
                 <!-- SCELTA DEL PUNTO DI PARTENZA -->
-                <select name="puntoPartenzaItinerario" id="puntoPartenzaItinerario" class="my-select w3-margin-bottom"
-                    onchange="showSubDiv(this, 'nuovoPuntoPartenza', mapPartenza);showSubDiv(this, 'copiaPunto');"
-                    onload  ="showSubDiv(this, 'nuovoPuntoPartenza', mapPartenza);showSubDiv(this, 'copiaPunto');">
+                <select name="puntoPartenzaItinerario" id="puntoPartenzaItinerario"
+                    class="my-select w3-margin-bottom"
+                    onchange="showSubDiv(this, 'nuovoPuntoPartenza', mapPartenza);
+                                showSubDiv(this, 'copiaPunto');"
+                    onload  ="showSubDiv(this, 'nuovoPuntoPartenza', mapPartenza);
+                                showSubDiv(this, 'copiaPunto');">
                 <?php
                     $conn = db_connect();
                     $queryItinerari = "
@@ -103,7 +106,7 @@
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
                      type="button" onclick="showDiv('datiPuntoPartenza', mapPartenza);">Indietro</button>
                 <button class="w3-button w3-cyan w3-text-white w3-large w3-margin-top my-bottom"
-                type="submit" name="nuovo" value="Conferma" onclick="showDiv('datiItinerario')">Conferma </button>
+                type="submit" name="nuovo" value="Conferma">Conferma </button>
 
 
             </section>
@@ -146,14 +149,14 @@
 
     function placeMarker(position, map, marker, type) {
         if (marker == null){
-            console.log("Marker is null");
+            // console.log("Marker is null");
             marker = new google.maps.Marker({
                 position: position,
                 map: map
             });
         } else {
             marker.setPosition(position);
-            console.log("Changing marker position");
+            // console.log("Changing marker position");
         }
         document.getElementById('latitudinePunto' + type).value=position.lat();
         document.getElementById('longitudinePunto' + type).value=position.lng();

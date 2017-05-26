@@ -1,6 +1,6 @@
 <label for="nomeLocalita<?php echo $tipoPunto ?>">Nome nuova localita di <?php echo $tipoPunto ?></label>
 <input type="text" name="nomeLocalita<?php echo $tipoPunto ?>"
-    id="nomeLocalita<?php echo $tipoPunto ?>"/>
+    id="nomeLocalita<?php echo $tipoPunto ?>" <?php getValue("nomeLocalita$tipoPunto") ?>/>
 <span class="my-input-error">
     <?php
         if ($tipoPunto == "Partenza") {
@@ -13,7 +13,7 @@
 
 <label for="capLocalita<?php echo $tipoPunto ?>">CAP nuova localita di <?php echo $tipoPunto ?></label>
 <input type="number" name="capLocalita<?php echo $tipoPunto ?>"
-    id="capLocalita<?php echo $tipoPunto ?>" max="99999"/>
+    id="capLocalita<?php echo $tipoPunto ?>" max="99999" <?php getValue("capLocalita$tipoPunto") ?>/>
 
 <label for="provinciaLocalita<?php echo $tipoPunto ?>">Provincia nuova localita</label>
 <select name="provinciaLocalita<?php echo $tipoPunto ?>" id="provinciaLocalita<?php echo $tipoPunto ?>">
@@ -28,7 +28,7 @@
         while ($row = mysql_fetch_array($res)){
     ?>
         <option value="<?php echo $row["id"] ?>"
-            <?php selectValue("provinciaLocalita<?php echo $tipoPunto ?>", $row["id"], $i)?>>
+            <?php selectValue("provinciaLocalita$tipoPunto", $row["id"], $i)?>>
             <?php echo $row["nome"] ?>
         </option>
     <?php

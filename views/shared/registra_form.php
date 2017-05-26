@@ -1,5 +1,5 @@
 <div id="registra" class="modal" style="display: <?php echo ($signupMessage==null)?'none':'block' ?>">
-    <article class="my-userForm animate w3-text-black">
+    <article class="my-userForm w3-text-black">
         <header class="w3-container">
             <h2>Registrati</h2>
         </header>
