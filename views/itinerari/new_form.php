@@ -19,8 +19,8 @@
                 <label for="puntoPartenzaItinerario">Punto di partenza</label>
                 <!-- SCELTA DEL PUNTO DI PARTENZA -->
                 <select name="puntoPartenzaItinerario" id="puntoPartenzaItinerario" class="my-select w3-margin-bottom"
-                    onchange="showSubDiv(this, 'nuovoPuntoPartenza');showSubDiv(this, 'copiaPunto')"
-                    onload  ="showSubDiv(this, 'nuovoPuntoPartenza');showSubDiv(this, 'copiaPunto')">
+                    onchange="showSubDiv(this, 'nuovoPuntoPartenza');showSubDiv(this, 'copiaPunto');"
+                    onload  ="showSubDiv(this, 'nuovoPuntoPartenza');showSubDiv(this, 'copiaPunto');">
                 <?php
                     $conn = db_connect();
                     $queryItinerari = "
@@ -96,7 +96,7 @@
                     <?php include ROOT_DIR."views/puntiSignificativi/new.php" ?>
                 </div>
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
-                     type="button" onclick="openDiv('datiPuntoPartenza')">Indietro</button>
+                     type="button" onclick="openDiv('datiPuntoPartenza');">Indietro</button>
                 <button class="w3-button w3-cyan w3-text-white w3-large w3-margin-top my-bottom"
                 type="submit" name="nuovo" value="Conferma" onclick="openDiv('datiItinerario')">Conferma </button>
             </section>
@@ -114,5 +114,5 @@
    }, false);
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxNPdObgBGVgg7PJPj3KihhwnMr30kSzA&callback=initMap"
-    async defer></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxNPdObgBGVgg7PJPj3KihhwnMr30kSzA&callback=initMap"
+    async defer></script> -->

@@ -14,11 +14,9 @@
             $uploadOk = false;
         }
         // se è già presente un file con lo stesso nome, lo rinomino
-        $i=0;
         while (file_exists($uploadFile)) {
             $uploadFile = ROOT_DIR . "files/tracks/" . pathinfo($uploadFile, PATHINFO_FILENAME) .
-            "$i.gpx";
-            $i++;
+            "0.gpx";
         }
         return $uploadOk;
     }
@@ -54,7 +52,6 @@
     if (isSet($_POST["nomeItinerario"])) {
         // controllo il file caricato
         $uploadFile = ROOT_DIR . "files/tracks/" . basename($_FILES["tracciaItinerario"]["name"]);
-        $fileMessage = "";
         $uploadOk = checkFile($uploadFile, $fileMessage);
 
         // controllo eventuali parametri di un nuovo punto di partenza inserito
@@ -68,9 +65,22 @@
         // carico il file
         if ($uploadOk && ($erroriNuovoPuntoPartenza + $erroriNuovaLocalitaPartenza +
         $erroriNuovoPuntoArrivo  + $erroriNuovaLocalitaArrivo == 0)){
-            // if (!move_uploaded_file($_FILES["tracciaItinerario"]["tmp_name"], $uploadFile)) {
-            //     $itinerarioMessage = "Errore durante il caricamento del file";
-            // }
+            if (!move_uploaded_file($_FILES["tracciaItinerario"]["tmp_name"], $uploadFile)) {
+                $itinerarioMessage = "Errore durante il caricamento del file";
+            } else {
+                // posso inserire i dati nel database
+                $conn = db_connect();
+                // inserisco eventualmente la località di partenza
+                if ($_POST["localitaPuntoPartenza"] == "altro") {
+                    $query = "
+                        INSERT into localita (nome, CAP, idProvincia)
+                            VALUES ('".$_POST["nomeLocalitaPartenza"]."',
+                                '".$_POST["capLocalitaPartenza"]."',
+                                ".$_POST["provinciaLocalitaPartenza"].")
+                    ";
+                    console_log($query);
+                }
+            }
         } else {
             $itinerarioMessage = "Il form contiene degli errori";
         }
