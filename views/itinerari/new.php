@@ -28,21 +28,23 @@
 <label class="w3-large">Tempo di percorrenza*</label><br/>
 <div class="w3-half" style="padding-right:10px">
     <label for="oreItinerario">Ore*</label>
-    <input type="number" name="oreItinerario" id="oreItinerario"
+    <input type="text" name="oreItinerario" id="oreItinerario"
         <?php getValue("oreItinerario") ?>/>
     <span class="my-input-error"><?php getError("itinerario", "ore", $errori) ?></span>
 </div>
 <div class="w3-half" style="padding-left:10px">
     <label for="minutiItinerario">Minuti*</label>
-    <input type="number" name="minutiItinerario" id="minutiItinerario"
+    <input type="text" name="minutiItinerario" id="minutiItinerario"
         <?php getValue("minutiItinerario") ?>/>
     <span class="my-input-error"><?php getError("itinerario", "minuti", $errori) ?></span>
+    <br/>
+    <br/>
 </div>
 
 <label for="infoUtiliItinerario">Informazioni utili</label>
 <textarea name="infoUtiliItinerario" id="infoUtiliItinerario" rows="4"
     class="w3-input w3-border"><?php getValueText("infoUtiliItinerario") ?></textarea>
 
-<label for="tracciaItinerario">Traccia GPS*</label>
+<label for="tracciaItinerario">Traccia GPS (formato .gpx)*</label>
 <input type="file" name="tracciaItinerario" id="tracciaItinerario"/>
 <span class="my-input-error"><?php getError("itinerario", "traccia", $errori) ?></span>

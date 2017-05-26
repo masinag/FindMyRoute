@@ -1,9 +1,31 @@
 <?php
     /**
+     * Verifica la validità dei campi relativi ad un itinerario.
+     */
+    function checkItinerario(&$errori){
+        // nome descrizione lunghezza ore e minuti devono essere presenti
+        checkNotEmpty(["nome", "descrizione"], "itinerario", $errori);
+        // lunghezza float > 0
+        $lunghezza = $_POST["lunghezzaItinerario"];
+        if (!is_numeric($lunghezza) || floatval($lunghezza)<0) {
+            $errori["itinerario"]["lunghezza"] = "La lunghezza deve essere un numero reale non negativo.";
+        }
+
+        $ore = $_POST["oreItinerario"];
+        if (!is_numeric($ore) || intval($ore)<0) {
+            $errori["itinerario"]["ore"] = "Il numero di ore deve essere un numero intero positivo";
+        }
+
+        $minuti = $_POST["minutiItinerario"];
+        if (!is_numeric($minuti) || intval($minuti)<0 || intval($minuti)>59) {
+            $errori["itinerario"]["minuti"] = "Il numero di minuti deve essere un numero intero
+                compreso tra 0 e 59";
+        }
+    }
+    /**
      * Verifica la validità del file da caricare. Accetta un parametro in input
      * che rappresenta il percorso in cui il file verrà caricato e, se esiste già
-     * un file con lo stesso nome, verrà rinominato. Restituisce un valore booleano
-     * che indica la validità del file.
+     * un file con lo stesso nome, verrà rinominato.
      */
     function checkFile(&$uploadFile, &$errori){
         if ($_FILES['tracciaItinerario']['error'] != UPLOAD_ERR_NO_FILE) {
@@ -29,7 +51,6 @@
     function checkNotEmpty($fields, $resource, &$errori){
         // scorro la lista dei campi
         foreach ($fields as $f) {
-
             // se il campo è vuoto aggiungo un errore al vettore
             if (trim($_POST[$f.ucfirst($resource)]) == "") {
                 $errori[$resource][$f] = "Il campo $f non può essere vuoto";
@@ -59,7 +80,6 @@
      * il numero totale di campi errati trovati.
      */
     function checkPunto($tipoPunto, &$errori){
-        $totErrori = 0;
         if ($_POST["punto".$tipoPunto."Itinerario"]=="altro") {
             // controllo che i campi non siano vuoti
             checkNotEmpty(["nome", "latitudine", "longitudine"], "punto$tipoPunto", $errori);
@@ -77,7 +97,7 @@
     if (isSet($_POST["nomeItinerario"])) {
         // controllo il file caricato
         $uploadFile = ROOT_DIR . "files/tracks/" . basename($_FILES["tracciaItinerario"]["name"]);
-
+        checkItinerario($errori);
         checkFile($uploadFile, $errori);
 
         // controllo eventuali parametri di un nuovo punto di partenza inserito

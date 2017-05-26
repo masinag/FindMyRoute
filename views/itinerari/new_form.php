@@ -1,8 +1,8 @@
-<div style="margin-top:200px;">
+<!-- <div style="margin-top:200px;">
     <?php foreach ($_POST as $key => $value) {
         echo $key . "->" . $value;
     } ?>
-</div>
+</div> -->
 <?php include ROOT_DIR."php/new_itinerario.php" ?>
 <div id="nuovo" class="modal" style="display: <?php echo (isSet($errori))?'block':'none' ?>">
     <article class="my-userForm w3-text-black">
@@ -106,8 +106,8 @@
 
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
                      type="button" onclick="showDiv('datiPuntoPartenza', mapPartenza);">Indietro</button>
-                <button class="w3-button w3-cyan w3-text-white w3-large w3-margin-top my-bottom"
-                    type="submit" name="nuovo" value="Conferma">Conferma </button>
+                <input class="w3-button w3-cyan w3-text-white w3-large my-buttonAlign"
+                    type="submit" name="nuovo" value="Conferma"/>
 
 
             </section>

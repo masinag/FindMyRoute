@@ -108,6 +108,6 @@
     }
 
     function getDisplay($field){
-        echo $_POST[$field]=="altro"?"block":"none";
+        echo (isSet($_POST[$field]) && $_POST[$field]=="altro")?"block":"none";
     }
  ?>
