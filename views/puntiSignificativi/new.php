@@ -30,8 +30,28 @@
         }
     ?>
 </span>
-<!-- MAPPA PER SCEGLIERE LE COORDINATE -->
 
+
+<!-- MAPPA PER SCEGLIERE LE COORDINATE -->
+<label>Seleziona sulla mappa il punto di <?php echo $tipoPunto ?></label>
+
+<div id="map<?php echo $tipoPunto ?>" class="my-map my-formAlign"></div>
+
+<!-- COORDINATE -->
+
+
+<div class="w3-half" style="padding-right:10px">
+    <label for="latitudinePunto<?php echo $tipoPunto ?>">Latitudine</label>
+    <input type="number" id="latitudinePunto<?php echo $tipoPunto ?>"
+        name="latitudinePunto<?php echo $tipoPunto ?>" <?php getValue("latitudinePunto$tipoPunto")?>
+        disabled="disabled"/>
+</div>
+<div class="w3-half" style="padding-left:10px">
+    <label for="longitudinePunto<?php echo $tipoPunto ?>">Longitudine</label>
+    <input type="number" id="longitudinePunto<?php echo $tipoPunto ?>"
+        name="longitudinePunto<?php echo $tipoPunto ?>" <?php getValue("longitudinePunto")?>
+        disabled="disabled"/>
+</div>
 
 <label for="localitaPunto<?php echo $tipoPunto ?>">Località punto di <?php echo $tipoPunto ?></label>
 <select name="localitaPunto<?php echo $tipoPunto ?>"

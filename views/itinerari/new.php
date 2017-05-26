@@ -20,7 +20,7 @@
     <option <?php selectValue("difficoltaItinerario", "5", 4) ?> value="5">5</option>
 </select>
 
-<!-- <br/> -->
+<br/>
 <label class="w3-large">Tempo di percorrenza</label><br/>
 <div class="w3-half" style="padding-right:10px">
     <label for="oreItinerario">Ore</label>
@@ -39,7 +39,4 @@
 
 <label for="tracciaItinerario">Traccia GPS</label>
 <input type="file" name="tracciaItinerario" id="tracciaItinerario" required="required"/>
-
 <span class="my-input-error"> <?php echo isSet($fileMessage)?$fileMessage:"" ?></span>
-<button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
-     type="button" onclick="openDiv('datiPuntoPartenza')">Avanti</button>

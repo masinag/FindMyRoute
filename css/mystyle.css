@@ -135,3 +135,10 @@ textarea {
     position: relative;
     bottom: 0px !important;
 }
+.my-map {
+        height: 300px;
+      }
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+}
