@@ -17,19 +17,25 @@ function checkPassword() {
     }
 }
 
-function showSubDiv(punto, idDiv) {
+function showSubDiv(punto, idDiv, map) {
     if (punto.value == "altro") {
         document.getElementById(idDiv).style.display = "block";
     } else {
         document.getElementById(idDiv).style.display = "none";
     }
+    if (map!==undefined){
+        google.maps.event.trigger(map, 'resize');
+    }
 }
 
-function openDiv(divName) {
+function showDiv(divName, map) {
     var i;
     var x = document.getElementsByClassName("nuovoItinerario");
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }
     document.getElementById(divName).style.display = "block";
+    if (map!==undefined){
+        google.maps.event.trigger(map, 'resize');
+    }
 }

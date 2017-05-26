@@ -14,8 +14,7 @@
                 </p>
                 <?php include "new.php" ?>
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
-                     type="button" onclick="openDiv('datiPuntoPartenza');
-                     google.maps.event.trigger(mapPartenza, 'resize');">
+                     type="button" onclick="showDiv('datiPuntoPartenza', mapPartenza);">
                     Avanti
                 </button>
             </section>
@@ -24,10 +23,8 @@
                 <label for="puntoPartenzaItinerario">Punto di partenza</label>
                 <!-- SCELTA DEL PUNTO DI PARTENZA -->
                 <select name="puntoPartenzaItinerario" id="puntoPartenzaItinerario" class="my-select w3-margin-bottom"
-                    onchange="showSubDiv(this, 'nuovoPuntoPartenza');showSubDiv(this, 'copiaPunto');
-                        google.maps.event.trigger(mapPartenza, 'resize');"
-                    onload  ="showSubDiv(this, 'nuovoPuntoPartenza');showSubDiv(this, 'copiaPunto');
-                        google.maps.event.trigger(mapPartenza, 'resize');">
+                    onchange="showSubDiv(this, 'nuovoPuntoPartenza', mapPartenza);showSubDiv(this, 'copiaPunto');"
+                    onload  ="showSubDiv(this, 'nuovoPuntoPartenza', mapPartenza);showSubDiv(this, 'copiaPunto');">
                 <?php
                     $conn = db_connect();
                     $queryItinerari = "
@@ -62,9 +59,9 @@
                     <?php include ROOT_DIR."views/puntiSignificativi/new.php" ?>
                 </div>
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
-                     type="button" onclick="openDiv('datiItinerario')">Indietro</button>
+                     type="button" onclick="showDiv('datiItinerario');">Indietro</button>
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
-                     type="button" onclick="openDiv('datiPuntoArrivo')">Avanti</button>
+                     type="button" onclick="showDiv('datiPuntoArrivo', mapArrivo);">Avanti</button>
             </section>
 
 
@@ -72,8 +69,8 @@
                 <!-- SCELTA DEL PUNTO DI ARRIVO -->
                 <label for="puntoArrivoItinerario">Punto di arrivo</label>
                 <select name="puntoArrivoItinerario" id="puntoArrivoItinerario" class="my-select w3-margin-bottom"
-                    onchange="showSubDiv(this, 'nuovoPuntoArrivo');"
-                    onload  ="showSubDiv(this, 'nuovoPuntoArrivo');">
+                    onchange="showSubDiv(this, 'nuovoPuntoArrivo', mapArrivo);"
+                    onload  ="showSubDiv(this, 'nuovoPuntoArrivo', mapArrivo);">
                 <?php
                     $conn = db_connect();
                     $res = mysql_query($queryItinerari);
@@ -104,9 +101,9 @@
                 </div>
 
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
-                     type="button" onclick="openDiv('datiPuntoPartenza');">Indietro</button>
+                     type="button" onclick="showDiv('datiPuntoPartenza', mapPartenza);">Indietro</button>
                 <button class="w3-button w3-cyan w3-text-white w3-large w3-margin-top my-bottom"
-                type="submit" name="nuovo" value="Conferma" onclick="openDiv('datiItinerario')">Conferma </button>
+                type="submit" name="nuovo" value="Conferma" onclick="showDiv('datiItinerario')">Conferma </button>
 
 
             </section>
@@ -127,18 +124,27 @@
 </script>
 
 <script>
-    var mapPartenza;
-    var markerPartenza;
+    var mapPartenza, mapArrivo, markerPartenza, markerArrivo;
     function initMaps() {
+        // mappa punto di partenza
         mapPartenza = new google.maps.Map(document.getElementById('mapPartenza'), {
             center: {lat: 47, lng: 2},
             zoom:5
         });
         mapPartenza.addListener('click', function(e) {
-            markerPartenza = placeMarker(e.latLng, mapPartenza, markerPartenza);
+            markerPartenza = placeMarker(e.latLng, mapPartenza, markerPartenza, 'Partenza');
         });
+        mapArrivo = new google.maps.Map(document.getElementById('mapArrivo'), {
+            center: {lat: 47, lng: 2},
+            zoom:5
+        });
+        mapArrivo.addListener('click', function(e) {
+            markerArrivo = placeMarker(e.latLng, mapArrivo, markerArrivo, 'Arrivo');
+        });
+
     }
-    function placeMarker(position, map, marker) {
+
+    function placeMarker(position, map, marker, type) {
         if (marker == null){
             console.log("Marker is null");
             marker = new google.maps.Marker({
@@ -149,8 +155,9 @@
             marker.setPosition(position);
             console.log("Changing marker position");
         }
-        document.getElementById('latitudinePuntoPartenza').value = position.lat();
-        document.getElementById('longitudinePuntoPartenza').value = position.lng();
+        document.getElementById('latitudinePunto' + type).value=position.lat();
+        document.getElementById('longitudinePunto' + type).value=position.lng();
+
         return marker;
     }
 </script>

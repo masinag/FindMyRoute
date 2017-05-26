@@ -35,7 +35,7 @@
 <!-- MAPPA PER SCEGLIERE LE COORDINATE -->
 <label>Seleziona sulla mappa il punto di <?php echo $tipoPunto ?></label>
 
-<div id="map<?php echo $tipoPunto ?>" class="my-map my-formAlign"></div>
+<div id="map<?php echo $tipoPunto ?>" class="my-map my-formAlign w3-margin-bottom"></div>
 
 <!-- COORDINATE -->
 
