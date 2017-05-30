@@ -66,8 +66,8 @@
         $i++;
     } ?>
     <?php if ($tipoPunto == "Arrivo") { ?>
-        <option value="copia" id="copiaLocalita" class="w3-text-cyan" style="display: none"
-            <?php selectValue("localitaPunto$tipoPunto", "copia", $i++)?>>
+        <option value="copiaLocalita" id="copiaLocalita" class="w3-text-cyan" style="display: none"
+            <?php selectValue("localitaPunto$tipoPunto", "copiaLocalita", $i++)?>>
             Stessa località di quella del punto di partenza</option>
     <?php } ?>
     <option value="altro" class="w3-text-deep-orange"

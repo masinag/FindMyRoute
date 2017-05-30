@@ -1,6 +1,6 @@
 <?php
     require_once("utils.php");
-    function insertLocalita($tipo){
+    function insertLocalita($tipo, $idLocalitaPartenza=null){
         $idLocalita = 0;
         if ($_POST["localitaPunto$tipo"] == "altro") {
             $query = "
@@ -10,13 +10,15 @@
                             ".$_POST["provinciaLocalita$tipo"].")";
             $res = mysql_query($query);
             $idLocalita= mysql_insert_id();
+        } else if ($tipo == "Arrivo" && $_POST["localitaPuntoArrivo"] == "copiaLocalita") {
+            $idLocalita = $idLocalitaPartenza;
         } else {
             $idLocalita = $_POST["localitaPunto$tipo"];
         }
         return $idLocalita;
     }
 
-    function insertPunto($tipoPunto, $idLocalita){
+    function insertPunto($tipoPunto, $idLocalita, $idPuntoPartenza=null){
         $idPunto = 0;
         if ($_POST["punto".$tipoPunto."Itinerario"] == "altro") {
             $query = "
@@ -30,6 +32,8 @@
                  ".$_COOKIE["userID"].", $idLocalita)";
              $res = mysql_query($query);
              $idPunto = mysql_insert_id();
+        } else if ($tipoPunto == "Arrivo" && $_POST["puntoArrivoItinerario"] == "copiaPunto") {
+            $idPunto = $idPuntoPartenza;
         } else {
             $idPunto = $_POST["punto".$tipoPunto."Itinerario"];
         }
@@ -75,10 +79,10 @@
             $conn = db_connect();
             // inserisco eventuale località di partenza e arrivo
             $idLocalitaPartenza = insertLocalita("Partenza");
-            $idLocalitaArrivo = insertLocalita("Arrivo");
+            $idLocalitaArrivo = insertLocalita("Arrivo", $idLocalitaPartenza);
             // inserisco eventuali punti di partenza e arrivo
             $idPuntoPartenza = insertPunto("Partenza", $idLocalitaPartenza);
-            $idPuntoArrivo   = insertPunto("Arrivo", $idLocalitaArrivo);
+            $idPuntoArrivo   = insertPunto("Arrivo", $idLocalitaArrivo, $idPuntoPartenza);
             // quindi inserisco l'itinerario
             insertItinerario($idPuntoPartenza, $idPuntoArrivo, $traccia);
             mysql_close($conn);
