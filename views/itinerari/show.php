@@ -1,14 +1,14 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/utenti/user_status.php" ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/utenti/user_status.php" ?>
 <!DOCTYPE html>
 <html>
     <head>
 
         <meta charset="utf-8">
         <title>Itinerario</title>
-        <?php include ROOT_DIR."views/shared/head.php" ?>
+        <?php include_once ROOT_DIR."views/shared/head.php" ?>
     </head>
     <body>
-        <?php include ROOT_DIR."views/shared/navbar.php" ?>
+        <?php include_once ROOT_DIR."views/shared/navbar.php" ?>
         <?php if (!isSet($_POST["idItinerario"])){
             echo "<header class='my-header'>
             <h1 class='w3-xxxlarge'>Torna alla pagina precedente per scegliere
@@ -46,7 +46,7 @@
              </ul>
          </section>
          <section class="w3-container w3-twothird">
-             <?php include "map.php" ?>
+             <?php include_once "map.php" ?>
          </section>
          <?php } ?>
     </body>

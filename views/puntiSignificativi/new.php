@@ -77,5 +77,5 @@
 <div id="nuovaLocalita<?php echo $tipoPunto ?>"
     style='display: <?php getDisplay("localitaPunto$tipoPunto");?>'>
     <hr/>
-    <?php include ROOT_DIR."views/localita/new.php" ?>
+    <?php include_once ROOT_DIR."views/localita/new.php" ?>
 </div>

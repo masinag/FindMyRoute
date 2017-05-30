@@ -1,13 +1,13 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/utenti/user_status.php" ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/utenti/user_status.php" ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>FindMyRoute</title>
-        <?php include ROOT_DIR."views/shared/head.php" ?>
+        <?php include_once ROOT_DIR."views/shared/head.php" ?>
     </head>
 
     <body>
-        <?php include ROOT_DIR."views/shared/navbar.php" ?>
+        <?php include_once ROOT_DIR."views/shared/navbar.php" ?>
 
         <!-- Intestazione -->
         <header class="w3-container w3-cyan w3-center" style="padding:128px 16px">

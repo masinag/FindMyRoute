@@ -20,7 +20,7 @@
            $message = "Password errata";
            if (password_verify($password, $row["password"])){
                $message = "";
-               setCookie("userID", $row["id"]);
+               setCookie("userID", $row["id"], time() + (10 * 365 * 24 * 60 * 60), "/");
                $user_logged_in = true;
            }
        }
@@ -30,7 +30,7 @@
      * Effettua il logout.
      */
     function log_out(&$user_logged_in){
-        setCookie("userID", "", time()-1);
+        setCookie("userID", "", time()-1, "/");
         $user_logged_in = false;
         return !$user_logged_in;
     }
@@ -61,7 +61,7 @@
                      ('".$username."', '".$email."', '".password_hash($password, PASSWORD_DEFAULT)."')";
             mysql_query($query);
             // e 'loggo' l'utente
-            setCookie("userID", $row["id"]);
+            setCookie("userID", $row["id"], time() + (10 * 365 * 24 * 60 * 60), "/");
             $user_logged_in = true;
         }
         mysql_close($conn);

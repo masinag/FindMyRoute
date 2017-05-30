@@ -3,7 +3,7 @@
         echo $key . "->" . $value;
     } ?>
 </div> -->
-<?php include ROOT_DIR."php/itinerari/new.php" ?>
+<?php include_once ROOT_DIR."php/itinerari/new.php" ?>
 <div id="nuovo" class="modal" style="display: <?php echo (isSet($errori))?'block':'none' ?>">
     <article class="my-userForm w3-text-black">
         <header class="w3-container">
@@ -17,7 +17,7 @@
                     echo isSet($errori)?"Il form contiene degli errori":"";
                 ?>
                 </p>
-                <?php include "new.php" ?>
+                <?php include_once "new.php" ?>
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
                      type="button" onclick="showDiv('datiPuntoPartenza', mapPartenza);">
                     Avanti
@@ -62,7 +62,7 @@
                 <div id="nuovoPuntoPartenza" style="display: <?php getDisplay('puntoPartenzaItinerario') ?>;">
                     <hr/>
                     <?php $tipoPunto = "Partenza"; ?>
-                    <?php include ROOT_DIR."views/puntiSignificativi/new.php" ?>
+                    <?php include_once ROOT_DIR."views/puntiSignificativi/new.php" ?>
                 </div>
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
                      type="button" onclick="showDiv('datiItinerario');">Indietro</button>
@@ -101,7 +101,7 @@
                 <div id="nuovoPuntoArrivo" style="display: <?php getDisplay('puntoArrivoItinerario') ?>">
                     <hr/>
                     <?php $tipoPunto = "Arrivo"; ?>
-                    <?php include ROOT_DIR."views/puntiSignificativi/new.php" ?>
+                    <?php include_once ROOT_DIR."views/puntiSignificativi/new.php" ?>
                 </div>
 
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"

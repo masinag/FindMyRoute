@@ -1,13 +1,13 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/utenti/user_status.php" ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/utenti/user_status.php" ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title>Itinerari</title>
-        <?php include ROOT_DIR."views/shared/head.php" ?>
+        <?php include_once ROOT_DIR."views/shared/head.php" ?>
     </head>
     <body>
-        <?php include ROOT_DIR."views/shared/navbar.php" ?>
-        <?php include  "new_form.php" ?>
+        <?php include_once ROOT_DIR."views/shared/navbar.php" ?>
+        <?php include_once  "new_form.php" ?>
         <header class="my-header w3-center">
             <h1 class="w3-xxxlarge">Itinerari</h1>
         </header>
@@ -61,9 +61,11 @@
                 $i++;
             }
          ?>
-             <button type="button" name="new" class="w3-button w3-circle w3-xlarge w3-deep-orange my-fixed"
-                onclick="document.getElementById('nuovo').style.display='block';">
-                 <i class="fa fa-plus"></i></button>
+            <?php if ($user_logged_in){ ?>
+                 <button type="button" name="new" class="w3-button w3-circle w3-xlarge w3-deep-orange my-fixed"
+                    onclick="document.getElementById('nuovo').style.display='block';">
+                     <i class="fa fa-plus"></i></button>
+             <?php } ?>
             </section>
         </section>
     </body>
