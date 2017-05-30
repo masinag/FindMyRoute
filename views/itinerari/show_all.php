@@ -33,13 +33,15 @@
                     }
                     echo "\t\t\t<section class='w3-row-padding'>\n";
                 }
+                $imagePath = "/FindMyRoute/files/imgs/";
+                $imagePath .= is_null($row["path"])?"default.png":$row["path"];
                 echo "<div class='w3-third'>
                         <article class='w3-card-2 w3-margin'>
                             <header class='w3-container w3-cyan w3-text-white'>
                                 <h3 class='my-two-lines'>".$row["nome"]."</h3>
                             </header>
                             <div class='my-card-image'
-                                style='background-image:url(/FindMyRoute/files/imgs/".$row["path"].")'></div>
+                                style='background-image:url($imagePath)'></div>
                             <article class='w3-container'>
                                 <ul class='w3-ul my-list'>
                                     <li><h5 class='my-label'>Punto di partenza</h5>: ".$row["puntoPartenza"]."</li>
