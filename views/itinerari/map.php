@@ -29,9 +29,6 @@
     <?php
     echo print_WP_GPX_Maps_styles();
     ?>
-    <script type="text/javascript">
-        console.log(map);
-    </script>
     <?php
 
     /*

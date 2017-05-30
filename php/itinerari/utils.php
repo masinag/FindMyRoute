@@ -84,11 +84,11 @@
         }
     }
     /**
-     * Carica il file nella cartella files/tracks
+     * Carica il file nella cartella files/tracks. Restituisce il nome del
+     * file sul server.
      */
     function uploadTrack(){
         $traccia = ROOT_DIR . "files/tracks/" . basename($_FILES["tracciaItinerario"]["name"]);
-        // $file = ROOT_DIR . "files/tracks/" . $file;
         // se è già presente un file con lo stesso nome, lo rinomino
         while (file_exists($traccia)) {
             $traccia = ROOT_DIR . "files/tracks/" . pathinfo($traccia, PATHINFO_FILENAME) .

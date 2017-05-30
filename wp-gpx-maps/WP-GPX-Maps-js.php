@@ -186,8 +186,6 @@
 					mapTypeIds: mapTypeIds
 				}
 			});
-			console.log("->>" + map);
-
 			map.mapTypes.set("OSM1", new google.maps.ImageMapType({
 				getTileUrl: function(coord, zoom) {
 					return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
