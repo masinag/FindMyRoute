@@ -66,7 +66,7 @@
             checkNotEmpty(["nome"], "localita$tipoPunto", $errori);
             // controllo che il CAP sia un numero positivo di 5 cifre
             $cap = trim($_POST["capLocalita$tipoPunto"]);
-            if (strlen($cap) != 5 || !is_int($cap) || intval($cap)<0) {
+            if (strlen($cap) != 5 || !ctype_digit($cap) || intval($cap)<0) {
                 $errori["localita$tipoPunto"]["cap"] = "Il campo cap deve essere
                 un numero intero positivo di 5 cifre.";
             }

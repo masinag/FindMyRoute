@@ -36,8 +36,9 @@
         return $idPunto;
     }
 
-    function uploadFile(){
-
+    function uploadFile($file){
+        $file = ROOT_DIR . "files/tracks/" . $file;
+        return move_uploaded_file($_FILES["tracciaItinerario"]["tmp_name"], $file);
     }
 
 
@@ -62,6 +63,7 @@
                 )
         ";
         $res = mysql_query($query);
+        uploadFile($traccia);
     }
 
     // controllo se c'è un input da parte dell'utente

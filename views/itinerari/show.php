@@ -20,11 +20,11 @@
             $conn = db_connect();
             $query = "SELECT itinerari.*, immagini.path, p1.nome as puntoPartenza,
                         p2.nome as puntoArrivo
-                    from itinerari, immagini, puntiSignificativi as p1,
+                    from itinerari LEFT JOIN immagini ON itinerari.id = immagini.idItinerario,
+                        puntiSignificativi as p1,
                         puntiSignificativi as p2
                     where
                         itinerari.id = ".$_POST["idItinerario"]." and
-                        immagini.idItinerario = itinerari.id and
                           p1.id = itinerari.idPuntoPartenza and
                           p2.id = itinerari.idPuntoArrivo";
             $res = mysql_query($query);
