@@ -3,7 +3,7 @@
     /**
      * Verifica la validità dei campi relativi ad un itinerario.
      */
-    function checkItinerario(&$traccia, &$errori){
+    function checkItinerario(&$errori){
         // nome descrizione lunghezza ore e minuti devono essere presenti
         checkNotEmpty(["nome", "descrizione"], "itinerario", $errori);
         // lunghezza float > 0
@@ -24,33 +24,25 @@
         }
 
         // controllo la traccia gps
-        checkFile($traccia, $errori);
+        checkTrack($errori);
         // controllo eventuali parametri di un nuovo punto di partenza inserito
         checkPunto("Partenza", $errori);
         // controllo eventuali parametri di un nuovo punto di arrivo inserito
         checkPunto("Arrivo", $errori);
-        return $uploadFile;
     }
     /**
      * Verifica la validità del file da caricare. Accetta un parametro in input
      * che rappresenta il percorso in cui il file verrà caricato e, se esiste già
      * un file con lo stesso nome, verrà rinominato.
      */
-    function checkFile(&$uploadFile, &$errori){
+    function checkTrack(&$errori){
         if ($_FILES['tracciaItinerario']['error'] != UPLOAD_ERR_NO_FILE) {
             $uploadFile = ROOT_DIR . "files/tracks/" . basename($_FILES["tracciaItinerario"]["name"]);
             // verifico che l'estensione sia gpx
             $fileType = pathinfo($uploadFile,PATHINFO_EXTENSION);
             if($fileType != "gpx") {
                 $errori["itinerario"]["traccia"] = "Sono supportati solamente i file con estensione GPX";;
-            } else {
-                // se è già presente un file con lo stesso nome, lo rinomino
-                while (file_exists($uploadFile)) {
-                    $uploadFile = ROOT_DIR . "files/tracks/" . pathinfo($uploadFile, PATHINFO_FILENAME) .
-                    "0.gpx";
-                }
             }
-            $uploadFile = basename($uploadFile);
         } else {
             $errori["itinerario"]["traccia"] = "Nessun file selezionato";
         }
@@ -90,6 +82,20 @@
             // controllo eventuali parametri di una nuova località di partenza inserita
             checkLocalita($tipoPunto, $errori);
         }
+    }
+    /**
+     * Carica il file nella cartella files/tracks
+     */
+    function uploadTrack(){
+        $traccia = ROOT_DIR . "files/tracks/" . basename($_FILES["tracciaItinerario"]["name"]);
+        // $file = ROOT_DIR . "files/tracks/" . $file;
+        // se è già presente un file con lo stesso nome, lo rinomino
+        while (file_exists($traccia)) {
+            $traccia = ROOT_DIR . "files/tracks/" . pathinfo($traccia, PATHINFO_FILENAME) .
+                "0.gpx";
+        }
+        move_uploaded_file($_FILES["tracciaItinerario"]["tmp_name"], $traccia);
+        return basename($traccia);
     }
 
  ?>
