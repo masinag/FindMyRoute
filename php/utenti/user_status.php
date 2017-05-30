@@ -14,7 +14,7 @@ if (isSet($_POST["accedi"]) or isSet($_POST["registra"])) {
     }
 } else if (isSet($_POST["logout"])) {
     $changed = log_out($user_logged_in);
-} else if (isSet($_COOKIE["username"])){
+} else if (isSet($_COOKIE["userID"])){
     $user_logged_in = true;
 }
 

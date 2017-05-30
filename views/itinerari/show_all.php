@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/user_status.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/utenti/user_status.php" ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,8 +15,11 @@
         <?php
             $conn = db_connect();
             $query = "SELECT itinerari.*, immagini.path, p1.nome as puntoPartenza, p2.nome as puntoArrivo
-                    from itinerari, immagini, puntiSignificativi as p1, puntiSignificativi as p2
-                    where immagini.idItinerario = itinerari.id and
+                    from itinerari LEFT JOIN immagini ON itinerari.id = immagini.idItinerario,
+                        puntiSignificativi as p1, puntiSignificativi as p2
+                    -- from itinerari, immagini, puntiSignificativi as p1, puntiSignificativi as p2
+                    where
+                        -- immagini.idItinerario = itinerari.id and
                           p1.id = itinerari.idPuntoPartenza and
                           p2.id = itinerari.idPuntoArrivo
                     group by itinerari.id";

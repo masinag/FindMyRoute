@@ -1,8 +1,9 @@
 <?php
+    require_once(ROOT_DIR . "php/utils.php");
     /**
      * Verifica la validità dei campi relativi ad un itinerario.
      */
-    function checkItinerario(&$errori){
+    function checkItinerario(&$traccia, &$errori){
         // nome descrizione lunghezza ore e minuti devono essere presenti
         checkNotEmpty(["nome", "descrizione"], "itinerario", $errori);
         // lunghezza float > 0
@@ -21,6 +22,14 @@
             $errori["itinerario"]["minuti"] = "Il numero di minuti deve essere un numero intero
                 compreso tra 0 e 59";
         }
+
+        // controllo la traccia gps
+        checkFile($traccia, $errori);
+        // controllo eventuali parametri di un nuovo punto di partenza inserito
+        checkPunto("Partenza", $errori);
+        // controllo eventuali parametri di un nuovo punto di arrivo inserito
+        checkPunto("Arrivo", $errori);
+        return $uploadFile;
     }
     /**
      * Verifica la validità del file da caricare. Accetta un parametro in input
@@ -29,6 +38,7 @@
      */
     function checkFile(&$uploadFile, &$errori){
         if ($_FILES['tracciaItinerario']['error'] != UPLOAD_ERR_NO_FILE) {
+            $uploadFile = ROOT_DIR . "files/tracks/" . basename($_FILES["tracciaItinerario"]["name"]);
             // verifico che l'estensione sia gpx
             $fileType = pathinfo($uploadFile,PATHINFO_EXTENSION);
             if($fileType != "gpx") {
@@ -40,23 +50,12 @@
                     "0.gpx";
                 }
             }
+            $uploadFile = basename($uploadFile);
         } else {
             $errori["itinerario"]["traccia"] = "Nessun file selezionato";
         }
     }
-    /**
-     * Controlla che i campi appartenenti ad una certa risorsa non siano vuoti.
-     * Restituisce il numero di campi vuoti trovati.
-     */
-    function checkNotEmpty($fields, $resource, &$errori){
-        // scorro la lista dei campi
-        foreach ($fields as $f) {
-            // se il campo è vuoto aggiungo un errore al vettore
-            if (trim($_POST[$f.ucfirst($resource)]) == "") {
-                $errori[$resource][$f] = "Il campo $f non può essere vuoto";
-            }
-        }
-    }
+
     /**
      * Controlla la validità dei campi relativi ad una localita di 'Partenza' o
      * 'Arrivo'.
@@ -93,41 +92,4 @@
         }
     }
 
-    // controllo se c'è un input da parte dell'utente
-    if (isSet($_POST["nomeItinerario"])) {
-        // controllo il file caricato
-        $uploadFile = ROOT_DIR . "files/tracks/" . basename($_FILES["tracciaItinerario"]["name"]);
-        checkItinerario($errori);
-        checkFile($uploadFile, $errori);
-
-        // controllo eventuali parametri di un nuovo punto di partenza inserito
-        checkPunto("Partenza", $errori);
-
-        // controllo eventuali parametri di un nuovo punto di arrivo inserito
-        checkPunto("Arrivo", $errori);
-
-        console_log($errori);
-        // carico il file
-        // if ($uploadOk && ($erroriNuovoPuntoPartenza + $erroriNuovaLocalitaPartenza +
-        // $erroriNuovoPuntoArrivo  + $erroriNuovaLocalitaArrivo == 0)){
-        //     if (!move_uploaded_file($_FILES["tracciaItinerario"]["tmp_name"], $uploadFile)) {
-        //         $itinerarioMessage = "Errore durante il caricamento del file";
-        //     } else {
-        //         // posso inserire i dati nel database
-        //         $conn = db_connect();
-        //         // inserisco eventualmente la località di partenza
-        //         if ($_POST["localitaPuntoPartenza"] == "altro") {
-        //             $query = "
-        //                 INSERT into localita (nome, CAP, idProvincia)
-        //                     VALUES ('".$_POST["nomeLocalitaPartenza"]."',
-        //                         '".$_POST["capLocalitaPartenza"]."',
-        //                         ".$_POST["provinciaLocalitaPartenza"].")
-        //             ";
-        //             console_log($query);
-        //         }
-        //     }
-        // } else {
-        //     $itinerarioMessage = "Il form contiene degli errori";
-        // }
-    }
  ?>
