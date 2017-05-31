@@ -1,5 +1,6 @@
 <?php
     require_once(ROOT_DIR . "php/utils.php");
+    require_once(ROOT_DIR . "php/puntiSignificativi/utils.php");
     /**
      * Verifica la validità dei campi relativi ad un itinerario.
      */
@@ -48,41 +49,6 @@
         }
     }
 
-    /**
-     * Controlla la validità dei campi relativi ad una localita di 'Partenza' o
-     * 'Arrivo'.
-     */
-    function checkLocalita($tipoPunto, &$errori){
-        if ($_POST["localitaPunto$tipoPunto"] == "altro") {
-            // controllo che non ci siano campi vuoti
-            checkNotEmpty(["nome"], "localita$tipoPunto", $errori);
-            // controllo che il CAP sia un numero positivo di 5 cifre
-            $cap = trim($_POST["capLocalita$tipoPunto"]);
-            if (strlen($cap) != 5 || !ctype_digit($cap) || intval($cap)<0) {
-                $errori["localita$tipoPunto"]["cap"] = "Il campo cap deve essere
-                un numero intero positivo di 5 cifre.";
-            }
-        }
-    }
-
-    /**
-     * Controlla la validità dei dati relativi ad un punto significativo. Accetta
-     * un parametro che indica se il punto è di Partenza o di Arrivo. Restituisce
-     * il numero totale di campi errati trovati.
-     */
-    function checkPunto($tipoPunto, &$errori){
-        if ($_POST["punto".$tipoPunto."Itinerario"]=="altro") {
-            // controllo che i campi non siano vuoti
-            checkNotEmpty(["nome", "latitudine", "longitudine"], "punto$tipoPunto", $errori);
-
-            // il sito web, se presente, deve essere un URL valido.
-            if ((trim($_POST["sitoPunto$tipoPunto"])!= "") && !filter_var($_POST["sitoPunto$tipoPunto"], FILTER_VALIDATE_URL)) {
-                $errori["punto$tipoPunto"]["sito"] = "L'URL del sito deve essere nel formato 'protocollo://nomeDominio'";
-            }
-            // controllo eventuali parametri di una nuova località di partenza inserita
-            checkLocalita($tipoPunto, $errori);
-        }
-    }
     /**
      * Carica il file nella cartella files/tracks. Restituisce il nome del
      * file sul server.

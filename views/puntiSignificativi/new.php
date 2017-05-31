@@ -27,15 +27,15 @@
     <input type="number" id="latitudinePunto<?php echo $tipoPunto ?>"
         name="latitudinePunto<?php echo $tipoPunto ?>" <?php getValue("latitudinePunto$tipoPunto")?>
         readonly="readonly"/>
+    <span class="my-input-error"><?php getError("punto$tipoPunto", "latitudine", $errori) ?></span>
 </div>
 <div class="w3-half" style="padding-left:10px">
     <label for="longitudinePunto<?php echo $tipoPunto ?>">Longitudine</label>
     <input type="number" id="longitudinePunto<?php echo $tipoPunto ?>"
         name="longitudinePunto<?php echo $tipoPunto ?>" <?php getValue("longitudinePunto$tipoPunto")?>
         readonly="readonly"/>
+    <span class="my-input-error"><?php getError("punto$tipoPunto", "longitudine", $errori) ?></span>
 </div>
-<span class="my-input-error"><?php getError("punto$tipoPunto", "latitudine", $errori) ?></span>
-<span class="my-input-error"><?php getError("punto$tipoPunto", "longitudine", $errori) ?></span>
 
 
 <label for="localitaPunto<?php echo $tipoPunto ?>">Località punto di <?php echo $tipoPunto ?>*</label>
