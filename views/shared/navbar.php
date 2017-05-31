@@ -18,7 +18,7 @@
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-padding-large w3-hover-white">Link 4</a>
         <div class="my-float-right">
             <?php
-                if (!$user_logged_in) {
+                if (!$userLoggedIn) {
              ?>
                 <!-- Form per la registrazione -->
                 <?php include ROOT_DIR."views/shared/registra_form.php"; ?>
@@ -56,7 +56,7 @@
         <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
         <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
         <?php
-            if (!$user_logged_in) {
+            if (!$userLoggedIn) {
          ?>
             <button class="w3-bar-item w3-button w3-padding-large w3-text-deep-orange"
             onclick="toggleMenu();document.getElementById('registra').style.display='block'">

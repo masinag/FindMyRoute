@@ -2,43 +2,46 @@
     require_once(ROOT_DIR . "php/utils.php");
 
     /**
-     * Prova ad effettuare il login.
+     * Effettua il login.
      */
-    function log_in($username, $password, &$user_logged_in, &$message){
-        // mi connetto al db
-        $conn = db_connect();
-        // controllo se l'utente esiste
-        $query = "SELECT * FROM utenti WHERE username='$username'";
-        $res=mysql_query($query);
-        mysql_close($conn);
-        // Se l'utente non esiste
-        if(mysql_num_rows($res)==0){
-            $message = "Utente non trovato";
-        } else {
-           // confronto le password
-           $row = mysql_fetch_array($res);
-           $message = "Password errata";
-           if (password_verify($password, $row["password"])){
-               $message = "";
-               setCookie("userID", $row["id"], time() + (10 * 365 * 24 * 60 * 60), "/");
-               $user_logged_in = true;
+    function logIn(&$userLoggedIn, &$errori){
+        // controllo che i campi username e password non siano vuoti
+        checkNotEmpty(["username", "password"], "accedi", $errori);
+        if (!isSet($errori)) {
+            // controllo se l'utente esiste
+            $conn = db_connect();
+            $query = "SELECT * FROM utenti WHERE username='".$_POST["usernameAccedi"]."'";
+            $res=mysql_query($query);
+            mysql_close($conn);
+            // Se l'utente non esiste
+            if (mysql_num_rows($res)==0) {
+                $errori["accedi"]["username"] = "Utente non trovato";
+            } else {
+               // se esiste confronto le password
+               $row = mysql_fetch_array($res);
+               if (password_verify($_POST["passwordAccedi"], $row["password"])){
+                   setCookie("userID", $row["id"], time() + (10 * 365 * 24 * 60 * 60), "/");
+                   $userLoggedIn = true;
+               } else {
+                   $errori["accedi"]["password"] = "Password errata";
+               }
            }
-       }
-       return $user_logged_in;
+        }
+        return $userLoggedIn;
     }
     /**
      * Effettua il logout.
      */
-    function log_out(&$user_logged_in){
+    function logOut(&$userLoggedIn){
         setCookie("userID", "", time()-1, "/");
-        $user_logged_in = false;
-        return !$user_logged_in;
+        $userLoggedIn = false;
+        return !$userLoggedIn;
     }
 
     /**
      * Registra un utente.
      */
-    function sign_up($username, $email, $password, &$user_logged_in, &$message){
+    function signUp($username, $email, $password, &$userLoggedIn, &$message){
         // mi connetto al db
         $conn = db_connect();
         // controllo se username o email sono già stati usati
@@ -62,9 +65,9 @@
             $idPunto = mysql_insert_id();
             // e 'loggo' l'utente
             setCookie("userID", $idPunto, time() + (10 * 365 * 24 * 60 * 60), "/");
-            $user_logged_in = true;
+            $userLoggedIn = true;
         }
         mysql_close($conn);
-        return $user_logged_in;
+        return $userLoggedIn;
     }
  ?>

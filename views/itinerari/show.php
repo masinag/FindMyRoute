@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         <title>Itinerario</title>
         <?php include_once ROOT_DIR."views/shared/head.php" ?>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     </head>
     <body>
         <?php include_once ROOT_DIR."views/shared/navbar.php" ?>
@@ -36,7 +37,7 @@
          </header>
          <section class="w3-container w3-third">
              <ul class="w3-ul">
-                 <li><h5 class='my-label'>Descrizione</h5>: <?php echo addslashes($row["descrizione"]) ?></li>
+                 <li><h5 class='my-label'>Descrizione</h5>: <?php echo ($row["descrizione"]) ?></li>
                  <li><h5 class='my-label'>Punto di partenza</h5>: <?php echo $row["puntoPartenza"] ?></li>
                  <li><h5 class='my-label'>Punto di arrivo</h5>: <?php echo $row["puntoArrivo"] ?></li>
                  <li><h5 class='my-label'>Lunghezza</h5>: <?php echo $row["lunghezza"] ?></li>
@@ -49,20 +50,5 @@
              <?php include_once "map.php" ?>
          </section>
          <?php } ?>
-
-    	<div class="stars">
-    	  <form action="">
-    	    <input class="star star-5" id="star-5" type="radio" name="star"/>
-    	    <label class="star star-5" for="star-5"></label>
-    	    <input class="star star-4" id="star-4" type="radio" name="star"/>
-    	    <label class="star star-4" for="star-4"></label>
-    	    <input class="star star-3" id="star-3" type="radio" name="star"/>
-    	    <label class="star star-3" for="star-3"></label>
-    	    <input class="star star-2" id="star-2" type="radio" name="star"/>
-    	    <label class="star star-2" for="star-2"></label>
-    	    <input class="star star-1" id="star-1" type="radio" name="star"/>
-    	    <label class="star star-1" for="star-1"></label>
-    	  </form>
-    	</div>
     </body>
 </html>

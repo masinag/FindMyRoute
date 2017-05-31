@@ -61,7 +61,7 @@
                 $i++;
             }
          ?>
-            <?php if ($user_logged_in){ ?>
+            <?php if ($userLoggedIn){ ?>
                  <button type="button" name="new" class="w3-button w3-circle w3-xlarge w3-deep-orange my-fixed"
                     onclick="document.getElementById('nuovo').style.display='block';">
                      <i class="fa fa-plus"></i></button>

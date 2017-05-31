@@ -1,32 +1,29 @@
-<div id="registra" class="modal" style="display: <?php echo ($signupMessage==null)?'none':'block' ?>">
+<div id="registra" class="modal" style="display: <?php echo (isSet($errori) && array_key_exists("registra", $errori))?'block':'none' ?>">
     <article class="my-userForm w3-text-black">
         <header class="w3-container">
             <h2>Registrati</h2>
         </header>
 
-        <p class="w3-text-red w3-padding-large">
-        <?php
-            echo $signupMessage;
-            $signupMessage = null;
-        ?>
-        </p>
         <form class="w3-container" action="#" method="post">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username"
-                required="required" class="w3-input w3-border"/>
-
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" required="required"
+            <label for="usernameRegistra">Username*</label>
+            <input type="text" name="usernameRegistra" id="usernameRegistra"
                 class="w3-input w3-border"/>
+            <span class="my-input-error"><?php getError("utente", "usernameRegistra", $errori) ?></span>
 
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password"
-                required="required" class="w3-input w3-border" onkeyup='checkPassword();'/>
+            <label for="emailRegistra">Email*</label>
+            <input type="email" name="emailRegistra" id="emailRegistra"
+                class="w3-input w3-border"/>
+            <span class="my-input-error"><?php getError("utente", "emailRegistra", $errori) ?></span>
 
-            <label for="password_c">Conferma password</label>
-            <input type="password" name="password_c" id="password_c"
-                required="required" class="w3-input w3-border" onkeyup='checkPassword();'/>
-            <!-- <label for="password_c" id="errMessage"></label> -->
+            <label for="passwordRegistra">Password*</label>
+            <input type="password" name="passwordRegistra" id="passwordRegistra"
+                class="w3-input w3-border" onkeyup='checkPassword();'/>
+            <span class="my-input-error"><?php getError("utente", "passwordRegistra", $errori) ?></span>
+
+            <label for="confermaPasswordRegistra">Conferma password*</label>
+            <input type="password" name="confermaPasswordRegistra" id="confermaPasswordRegistra"
+                class="w3-input w3-border" onkeyup='checkPassword();'/>
+            <span class="my-input-error"><?php getError("utente", "confermaPasswordRegistra", $errori) ?></span>
 
             <input class="w3-button w3-deep-orange w3-large w3-margin-top"
                 type="submit" name="registra" value="Conferma"/>

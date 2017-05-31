@@ -2,19 +2,17 @@
 define('ROOT_DIR', $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/");
 require_once("utils.php");
 
-$loginMessage = "";
-$signupMessage = "";
-$user_logged_in = false;
+$userLoggedIn = false;
 $changed = false;
 
 if (isSet($_POST["accedi"])) {
-    $changed = log_in($_POST["username"], $_POST["password"], $user_logged_in, $loginMessage);
+    $changed = logIn($userLoggedIn, $errori);
 } else  if (isSet($_POST["registra"])) {
-    $changed = sign_up($_POST["username"], $_POST["email"], $_POST["password"], $user_logged_in, $signupMessage);
+    $changed = signUp($userLoggedIn, $errori);
 } else if (isSet($_POST["logout"])) {
-    $changed = log_out($user_logged_in);
+    $changed = logOut($userLoggedIn);
 } else if (isSet($_COOKIE["userID"])){
-    $user_logged_in = true;
+    $userLoggedIn = true;
 }
 
 if ($changed) {

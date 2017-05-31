@@ -38,6 +38,7 @@
     }
     function getError($resource, $field, &$errori){
         // return "is set \$errori[$resource][$field]? ". array_key_exists($resource, $errori);
+        // echo "$resource - $field";
         if (isSet($errori) && array_key_exists($resource, $errori) && array_key_exists($field, $errori[$resource])) {
             echo $errori[$resource][$field];
         }
