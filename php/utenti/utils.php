@@ -40,8 +40,7 @@
      */
     function sign_up($username, $email, $password, &$user_logged_in, &$message){
         // mi connetto al db
-        $conn = mysql_connect("localhost", "root", "");
-        mysql_select_db("itinerariInBicicletta", $conn);
+        $conn = db_connect();
         // controllo se username o email sono già stati usati
         $query = "SELECT * FROM utenti WHERE username='$username' OR email='$email'";
         $res=mysql_query($query);
@@ -60,8 +59,9 @@
             $query = "INSERT into utenti (username, email, password) VALUES
                      ('".$username."', '".$email."', '".password_hash($password, PASSWORD_DEFAULT)."')";
             mysql_query($query);
+            $idPunto = mysql_insert_id();
             // e 'loggo' l'utente
-            setCookie("userID", $row["id"], time() + (10 * 365 * 24 * 60 * 60), "/");
+            setCookie("userID", $idPunto, time() + (10 * 365 * 24 * 60 * 60), "/");
             $user_logged_in = true;
         }
         mysql_close($conn);
