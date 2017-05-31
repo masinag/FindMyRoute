@@ -16,7 +16,18 @@
                 L'applicazione per la mappatura di itinerari in bicicletta <br/>
             </p>
         </header>
+        <!-- <p>
+            <?php
+            foreach ($errori as $key => $value) {
+                echo "[$key] -> [";
+                foreach ($value as $k => $v) {
+                    echo "$k -> [$v], ";
+                }
+                echo "], <br/>";
+            }
 
+             ?>
+        </p> -->
         <!-- Primo blocco -->
         <section class="w3-row-padding w3-padding-64 w3-container">
             <div class="w3-content w3-container" style="">

@@ -37,37 +37,61 @@
         $userLoggedIn = false;
         return !$userLoggedIn;
     }
-
     /**
      * Registra un utente.
      */
-    function signUp($username, $email, $password, &$userLoggedIn, &$message){
-        // mi connetto al db
-        $conn = db_connect();
-        // controllo se username o email sono già stati usati
-        $query = "SELECT * FROM utenti WHERE username='$username' OR email='$email'";
-        $res=mysql_query($query);
-        if (mysql_num_rows($res) > 0) {
-            // se esiste già un utente mostro un messaggio opportuno
-            while ($row = mysql_fetch_array($res)) {
-                if ($row["username"] == $username) {
-                    $message.="L'username è stato già utilizzato<br/>";
+    function signUp(&$userLoggedIn, &$errori) {
+        // controllo se ci sono campi vuoti
+        checkNotEmpty(["username", "email", "password"], "registra", $errori);
+
+        if (!isSet($errori)) {
+            $username = $_POST["usernameRegistra"];
+            $email = $_POST["emailRegistra"];
+            $password = $_POST["passwordRegistra"];
+            $conferma = $_POST["confermaPasswordRegistra"];
+
+            // controllo se username o password sono già stati utilizzati
+            $conn = db_connect();
+            $query = "SELECT * FROM utenti WHERE username='$username'
+                OR email='$email'";
+            $res=mysql_query($query);
+            // se esistono utenti con le stesse credenziali
+            if (mysql_num_rows($res) > 0) {
+                // se esiste già un utente mostro un messaggio opportuno
+                while ($row = mysql_fetch_array($res)) {
+                    if ($row["username"] == $username) {
+                        $errori["registra"]["username"] = "L'username è stato già utilizzato";
+                    }
+                    if ($row["email"] == $email) {
+                        $errori["registra"]["email"] ="L'email è stata già utilizzata";
+                    }
                 }
-                if ($row["email"] == $email) {
-                    $message.="L'email è stata già utilizzata<br/>";
+            } else {
+                // controllo che l'email sia valida
+                if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    $errori["registra"]["email"] = "Indirizzo email non valido";
                 }
-            }
-        } else {
-            // altrimento posso registrare il nuovo utente
-            $query = "INSERT into utenti (username, email, password) VALUES
-                     ('".$username."', '".$email."', '".password_hash($password, PASSWORD_DEFAULT)."')";
-            mysql_query($query);
-            $idPunto = mysql_insert_id();
-            // e 'loggo' l'utente
-            setCookie("userID", $idPunto, time() + (10 * 365 * 24 * 60 * 60), "/");
-            $userLoggedIn = true;
+                //controllo che password e conferma corrispondano
+                if ($password != $conferma) {
+                    $errori["registra"]["confermaPassword"] = "Password e conferma password devono corrispondere";
+                }
+
+                if(!isSet($errori)){
+                    // se non ci sono errori posso registrare il nuovo utente
+                    $query = "INSERT into utenti (username, email, password) VALUES
+                        ('".$username."', '".$email."', '".password_hash($password, PASSWORD_DEFAULT)."')";
+                    mysql_query($query);
+                    $idPunto = mysql_insert_id();
+                    // e 'loggo' l'utente
+                    setCookie("userID", $idPunto, time() + (10 * 365 * 24 * 60 * 60), "/");
+                    $userLoggedIn = true;
+                }
+           }
+           mysql_close($conn);
         }
-        mysql_close($conn);
         return $userLoggedIn;
     }
+
+
+
  ?>
