@@ -52,7 +52,7 @@
          <section class="w3-container w3-twothird w3-padding-large">
              <?php include_once "map.php" ?>
          </section>
-         <section class="w3-container w3-padding-large">
+         <section class="w3-container w3-padding-large w3-third">
              <hr/>
              <?php include_once ROOT_DIR . "views/recensioni/show.php" ?>
          </section>

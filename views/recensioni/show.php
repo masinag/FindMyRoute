@@ -1,3 +1,4 @@
+<?php include_once ROOT_DIR."php/recensioni/new.php" ?>
 <h2 class="">Recensioni</h2>
 <?php
     $conn = db_connect();
@@ -32,12 +33,25 @@
 
         <?php
     } else {
-        echo "<ul class='w3-ul'>";
+        include_once "stars.php";
+
+        $i = 1;
         while ($row = mysql_fetch_array($res1)) {
-            echo "<li><b>Voto</b>: ".$row["voto"]."<br/>
-                      ".$row["recensione"]."</li>";
+            echo "<section class='w3-card-4'>
+
+                    <header class='w3-container w3-cyan'>
+                    <p>".$row["username"]."</p>
+                    </header>
+
+                    <div class='stars w3-padding'>";
+                        showStars($row["voto"], false, $i);
+            echo "  </div>
+                    <div class='w3-containter w3-padding-large'>
+                     <p>".$row["recensione"]."</p>
+                    </div>
+            </section>";
+            $i++;
         }
-        echo "</ul>";
     }
 
 

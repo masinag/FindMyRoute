@@ -65,7 +65,7 @@
     		width: 100%;
     		height: 13px;
     		margin: 0;
-    		z-index: 1;
+    		z-index: 0;
     		background: WHITE;
     		font-size: 12px;
     	}
