@@ -35,7 +35,10 @@
          <header class="my-header w3-center">
              <h1 class="w3-xxxlarge"><?php echo $row["nome"] ?></h1>
          </header>
-         <section class="w3-container w3-third">
+         <section class="w3-container w3-third w3-padding-large w3-justify">
+             <header>
+                 <h2 class="w3-margin-left">Itinerario</h2>
+             </header>
              <ul class="w3-ul">
                  <li><h5 class='my-label'>Descrizione</h5>: <?php echo ($row["descrizione"]) ?></li>
                  <li><h5 class='my-label'>Punto di partenza</h5>: <?php echo $row["puntoPartenza"] ?></li>
@@ -46,8 +49,12 @@
 
              </ul>
          </section>
-         <section class="w3-container w3-twothird">
+         <section class="w3-container w3-twothird w3-padding-large">
              <?php include_once "map.php" ?>
+         </section>
+         <section class="w3-container w3-padding-large">
+             <hr/>
+             <?php include_once ROOT_DIR . "views/recensioni/show.php" ?>
          </section>
          <?php } ?>
     </body>
