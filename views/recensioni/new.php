@@ -15,8 +15,7 @@
 
             <label for="testoRecensione">Recensione</label>
             <textarea name="testoRecensione" id="testoRecensione" rows="4"
-                class="w3-input w3-border"><?php getValueText("testoRecensione") ?>
-            </textarea>
+                class="w3-input w3-border"><?php getValueText("testoRecensione") ?></textarea>
 
             <input type="submit" name="recensione" value="Conferma"
                 class="w3-button w3-cyan w3-text-white w3-large w3-show-block" />

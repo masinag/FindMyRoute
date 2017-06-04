@@ -1,6 +1,6 @@
 <?php include_once ROOT_DIR."php/recensioni/new.php" ?>
-<h2 class="">Recensioni</h2>
-<article class='w3-third'>
+<article class='w3-third w3-padding-large'>
+    <h2 class="">Recensioni</h2>
 <?php
     $conn = db_connect();
     // tutte le recensioni per questo itinerario
@@ -15,7 +15,6 @@
         $query2 = $query1 . " AND idUtente = " . $_COOKIE["userID"];
         // e quelle fatte dagli altri utenti
         $query1 .= " AND vd.idUtente != ".$_COOKIE["userID"];
-
         $res2 = mysql_query($query2);
         // se l'utente non ha ancora fatto recensioni mostro il pulsante per aggiungerne una
         if (mysql_num_rows($res2)==0){
@@ -40,12 +39,11 @@
     mysql_close($conn);
 
     // quindi mostro le altre recensioni (se ci sono)
-    if (mysql_num_rows($res1)==0) {
+    if (mysql_num_rows($res1)==0 && isSet($res2) && mysql_num_rows($res2)==0) {
         ?>
         <p class="w3-margin-top">
             Non ci sono recensioni per questo itinerario
         </p>
-
         <?php
     } else {
         $i = 1;
