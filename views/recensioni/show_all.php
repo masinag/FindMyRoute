@@ -1,4 +1,4 @@
-<?php include_once ROOT_DIR."php/recensioni/new.php" ?>
+<?php include_once ROOT_DIR."php/recensioni/controller.php" ?>
 <article class='w3-third w3-padding-large'>
     <h2 class="">Recensioni</h2>
 <?php
@@ -13,9 +13,11 @@
     if ($userLoggedIn){
         //  prendo la recensione fatta dall'utente corrente
         $query2 = $query1 . " AND idUtente = " . $_COOKIE["userID"];
+        $res2 = mysql_query($query2);
         // e quelle fatte dagli altri utenti
         $query1 .= " AND vd.idUtente != ".$_COOKIE["userID"];
-        $res2 = mysql_query($query2);
+        $res1 = mysql_query($query1);
+        mysql_close($conn);
         // se l'utente non ha ancora fatto recensioni mostro il pulsante per aggiungerne una
         if (mysql_num_rows($res2)==0){
             include ROOT_DIR."views/recensioni/new.php";
@@ -35,8 +37,6 @@
             include ROOT_DIR."views/recensioni/show.php";
         }
     }
-    $res1 = mysql_query($query1);
-    mysql_close($conn);
 
     // quindi mostro le altre recensioni (se ci sono)
     if (mysql_num_rows($res1)==0 && (!isSet($res2) || mysql_num_rows($res2)==0)) {

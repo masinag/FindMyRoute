@@ -5,7 +5,7 @@
 
 <label for="descrizioneItinerario">Descrizione*</label>
 <textarea name="descrizioneItinerario" id="descrizioneItinerario" rows="4"
-    class="w3-input w3-border"><?php printValueText("descrizioneItinerario") ?>
+    class="w3-input w3-border"><?php printValueText("descrizioneItinerario", $values) ?>
 </textarea>
 <span class="my-input-error"><?php getError("itinerario", "descrizione", $errori) ?></span>
 
@@ -43,7 +43,7 @@
 
 <label for="infoUtiliItinerario">Informazioni utili</label>
 <textarea name="infoUtiliItinerario" id="infoUtiliItinerario" rows="4"
-    class="w3-input w3-border"><?php printValueText("infoUtiliItinerario") ?></textarea>
+    class="w3-input w3-border"><?php printValueText("infoUtiliItinerario", $values) ?></textarea>
 
 <label for="tracciaItinerario">Traccia GPS (formato .gpx)*</label>
 <input type="file" name="tracciaItinerario" id="tracciaItinerario"/>
