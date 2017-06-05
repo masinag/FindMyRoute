@@ -1,6 +1,6 @@
 <?php
     require_once ROOT_DIR."php/utils.php";
-    if (isSet($_POST["recensione"])) {
+    if (isSet($_POST["nuovaRecensione"])) {
         // controllo che il campo voto sia settato
         checkNotEmpty(["voto"], "recensione", $errori);
         if(!isSet($errori)){

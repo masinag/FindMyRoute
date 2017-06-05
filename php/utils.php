@@ -30,8 +30,16 @@
         }
     }
 
-    function getValueText($fieldName){
-        echo isSet($_POST[$fieldName])?$_POST[$fieldName]:"";
+    function printValueText($fieldName, &$values){
+        echo getValueText($fieldName, $values);
+    }
+
+    function getValueText($fieldName, &$values){
+        if ($values == null) {
+            return isSet($_POST[$fieldName])?$_POST[$fieldName]:"";
+        } else {
+            return isSet($values[$fieldName])?$values[$fieldName]:"";
+        }
     }
     function getValue($fieldName){
         echo isSet($_POST[$fieldName])?"value='".$_POST[$fieldName]."'":"value=''";

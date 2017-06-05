@@ -5,7 +5,7 @@
     $conn = db_connect();
     // tutte le recensioni per questo itinerario
     $query1 = "
-        SELECT vd.voto, vd.recensione, u.username
+        SELECT vd.voto, vd.recensione, u.username, u.id
         FROM valutatiDa as vd, utenti as u
         WHERE vd.idItinerario = ".$_POST["idItinerario"]." AND
               vd.idUtente = u.id";
@@ -28,9 +28,9 @@
             <?php
         } else {
             $row = mysql_fetch_array($res2);
-            $username = "Tu";
-            $voto = $row["voto"];
-            $recensione = $row["recensione"];
+            $values["usernameRecensione"] = $row["username"];
+            $values["votoRecensione"] = $row["voto"];
+            $values["testoRecensione"] = $row["recensione"];
             $i = 0;
             include ROOT_DIR."views/recensioni/show.php";
         }
@@ -39,7 +39,7 @@
     mysql_close($conn);
 
     // quindi mostro le altre recensioni (se ci sono)
-    if (mysql_num_rows($res1)==0 && isSet($res2) && mysql_num_rows($res2)==0) {
+    if (mysql_num_rows($res1)==0 && (!isSet($res2) || mysql_num_rows($res2)==0)) {
         ?>
         <p class="w3-margin-top">
             Non ci sono recensioni per questo itinerario
@@ -48,9 +48,9 @@
     } else {
         $i = 1;
         while ($row = mysql_fetch_array($res1)) {
-            $username = $row["username"];
-            $voto = $row["voto"];
-            $recensione = $row["recensione"];
+            $values["usernameRecensione"] = $row["username"];
+            $values["votoRecensione"] = $row["voto"];
+            $values["testoRecensione"] = $row["recensione"];
             include ROOT_DIR."views/recensioni/show.php";
             $i++;
         }
