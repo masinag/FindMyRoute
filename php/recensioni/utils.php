@@ -36,4 +36,14 @@
         mysql_close($conn);
     }
 
+    function deleteRecensione(){
+        $query = "
+            DELETE FROM valutatiDa
+            WHERE idItinerario = ".$_POST["idItinerario"]." AND
+                  idUtente = ".$_COOKIE["userID"];
+        $conn = db_connect();
+        mysql_query($query);
+        mysql_close($conn);
+    }
+
  ?>

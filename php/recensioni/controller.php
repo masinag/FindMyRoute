@@ -11,5 +11,7 @@
         if(!isSet($errori)){
             editRecensione();
         }
+    } else if (isSet($_POST["eliminaRecensione"])) {
+        deleteRecensione();
     }
  ?>
