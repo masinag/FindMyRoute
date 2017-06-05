@@ -46,5 +46,14 @@
     class="w3-input w3-border"><?php printValueText("infoUtiliItinerario", $values) ?></textarea>
 
 <label for="tracciaItinerario">Traccia GPS (formato .gpx)*</label>
-<input type="file" name="tracciaItinerario" id="tracciaItinerario"/>
+<input type="file" name="tracciaItinerario" id="tracciaItinerario" accept=".gpx"/>
 <span class="my-input-error"><?php getError("itinerario", "traccia", $errori) ?></span>
+
+<label>Immagini dell'itinerario</label>
+<button type="button" name="nuovaImmagine" class="w3-button w3-padding w3-deep-orange
+    w3-right" onclick="addImageField('immaginiItinerario')">Aggiungi</button>
+<input type="file" name="immaginiItinerario[]" id="immaginiItinerario0" accept="image/*" style="display:block;"/>
+<input type="file" name="immaginiItinerario[]" id="immaginiItinerario1"accept="image/*" style="display:none;"/>
+<input type="file" name="immaginiItinerario[]" id="immaginiItinerario2"accept="image/*" style="display:none;"/>
+<input type="file" name="immaginiItinerario[]" id="immaginiItinerario3"accept="image/*" style="display:none;"/>
+<input type="file" name="immaginiItinerario[]" id="immaginiItinerario4"accept="image/*" style="display:none;"/>

@@ -39,3 +39,17 @@ function showDiv(divName, map) {
         google.maps.event.trigger(map, 'resize');
     }
 }
+
+function addImageField(id){
+    var i = 0;
+    var added = false
+    var field = document.getElementById(id + i);
+    while (field != null && !added) {
+        if (field.style.display == 'none'){
+            field.style.display = 'block';
+            added = true;
+        } else {
+            field = document.getElementById(id + ++i);
+        }
+    }
+}

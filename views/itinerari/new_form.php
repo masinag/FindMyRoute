@@ -44,7 +44,7 @@
                         ?>
                         <option <?php selectValue("puntoPartenzaItinerario", $row['id'], $i) ?>
                             value="<?php echo $row['id'] ?>">
-                            <?php echo $row["nomePunto"].", ".$row["nomeLoc"].", ".$row["sigla"] ?>
+                            <?php echo $row["sigla"].", ".$row["nomeLoc"].", ".$row["nomePunto"] ?>
                         </option>
                         <?php
                         $i++;
@@ -80,7 +80,7 @@
                     while ($row = mysql_fetch_array($res)) {
                         ?>
                         <option value="<?php echo $row['id'] ?>"<?php echo ($i==0)?" selected='selected'":"" ?>>
-                            <?php echo $row["nomePunto"].", ".$row["nomeLoc"].", ".$row["sigla"] ?>
+                            <?php echo $row["sigla"].", ".$row["nomeLoc"].", ".$row["nomePunto"] ?>
                         </option>
                         <?php
                         $i++;
