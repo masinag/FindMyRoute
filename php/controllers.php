@@ -7,5 +7,6 @@
     include_once "itinerari/controller.php";
     if ($changed) {
         header('Location:'.$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']);
+        die;
     }
  ?>

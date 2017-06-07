@@ -13,4 +13,9 @@ if (isSet($_POST["accedi"])) {
     $userLoggedIn = true;
 }
 
+if ($changed) {
+    header('Location: /FindMyRoute/index.php');
+    die;
+}
+
 ?>
