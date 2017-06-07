@@ -1,17 +1,17 @@
 <?php
     require_once("utils.php");
-
     if (isSet($_POST["nuovaRecensione"])) {
         checkRecensione($errori);
         if(!isSet($errori)){
-            insertRecensione();
+            $changed = insertRecensione();
         }
     } else if (isSet($_POST["modificaRecensione"])) {
         checkRecensione($errori);
         if(!isSet($errori)){
-            editRecensione();
+            $changed = editRecensione();
         }
     } else if (isSet($_POST["eliminaRecensione"])) {
-        deleteRecensione();
+        $changed = deleteRecensione();
     }
+
  ?>

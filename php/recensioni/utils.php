@@ -17,9 +17,10 @@
                 ('".$_POST["votoRecensione"]."',
                  '$testo',
                  ".$_COOKIE["userID"].",
-                 ".$_POST["idItinerario"].")";
+                 ".$_GET["idItinerario"].")";
         mysql_query($query);
         mysql_close($conn);
+        return true;
     }
 
     function editRecensione(){
@@ -30,20 +31,22 @@
             UPDATE valutatiDa
             SET recensione = '$testo',
                 voto = '".$_POST["votoRecensione"]."'
-            WHERE idItinerario = ".$_POST["idItinerario"]." AND
+            WHERE idItinerario = ".$_GET["idItinerario"]." AND
                   idUtente = ".$_COOKIE["userID"];
         mysql_query($query);
         mysql_close($conn);
+        return true;
     }
 
     function deleteRecensione(){
         $query = "
             DELETE FROM valutatiDa
-            WHERE idItinerario = ".$_POST["idItinerario"]." AND
+            WHERE idItinerario = ".$_GET["idItinerario"]." AND
                   idUtente = ".$_COOKIE["userID"];
         $conn = db_connect();
         mysql_query($query);
         mysql_close($conn);
+        return true;
     }
 
  ?>

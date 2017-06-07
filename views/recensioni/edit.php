@@ -4,7 +4,7 @@
             <h2>Modifica</h2>
         </header>
 
-        <form class="w3-container" action="#" method="post">
+        <form class="w3-container" action="show.php?idItinerario="<?php echo $_GET["idItinerario"] ?> method="post">
             <?php include ROOT_DIR."views/recensioni/_form.php" ?>
 
             <input type="submit" name="modificaRecensione" value="Conferma"

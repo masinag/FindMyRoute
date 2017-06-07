@@ -1,7 +1,6 @@
 <?php include_once "stars.php" ?>
 <div class="stars">
     <label for="votoRecensione">Voto</label><br/>
-    <input type="hidden" name="idItinerario" value="<?php echo $_POST["idItinerario"] ?>"/>
     <?php
     $nStars = getValueText("votoRecensione", $values);
     showStars($nStars==""?5:$nStars, true, "") ?>

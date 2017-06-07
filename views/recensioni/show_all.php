@@ -6,7 +6,7 @@
     $query1 = "
         SELECT vd.voto, vd.recensione, u.username, u.id
         FROM valutatiDa as vd, utenti as u
-        WHERE vd.idItinerario = ".$_POST["idItinerario"]." AND
+        WHERE vd.idItinerario = ".$_GET["idItinerario"]." AND
               vd.idUtente = u.id";
     // se l'utente è loggato
     if ($userLoggedIn){

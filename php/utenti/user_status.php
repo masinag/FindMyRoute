@@ -2,7 +2,6 @@
 require_once("utils.php");
 
 $userLoggedIn = false;
-$changed = false;
 
 if (isSet($_POST["accedi"])) {
     $changed = logIn($userLoggedIn, $errori);
@@ -12,11 +11,6 @@ if (isSet($_POST["accedi"])) {
     $changed = logOut($userLoggedIn);
 } else if (isSet($_COOKIE["userID"])){
     $userLoggedIn = true;
-}
-
-if ($changed) {
-    header('Location: /FindMyRoute/index.php');
-    exit();
 }
 
 ?>

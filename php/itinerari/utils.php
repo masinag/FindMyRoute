@@ -66,4 +66,35 @@
         move_uploaded_file($_FILES["tracciaItinerario"]["tmp_name"], $traccia);
         return basename($traccia);
     }
+
+    /**
+     * Inserisce un itinerario. Accetta come parametri gli id dei punti di
+     * partenza e arrivo e il nome del file da caricare.
+     */
+    function insertItinerario($idPuntoPartenza, $idPuntoArrivo){
+        $tempoPercorrenza = $_POST["oreItinerario"] . ":" .
+                                $_POST["minutiItinerario"] . ":00";
+        // carico il file
+        $traccia = uploadTrack();
+        $query = "
+            INSERT INTO itinerari (nome, descrizione, lunghezza,
+                tempoPercorrenza, difficolta, infoUtili, tracciaGPS,
+                idUtente, idPuntoPartenza, idPuntoArrivo)
+            VALUES
+                ('".$_POST["nomeItinerario"]."',
+                '".$_POST["descrizioneItinerario"]."',
+                ".$_POST["lunghezzaItinerario"].",
+                 '$tempoPercorrenza',
+                ".$_POST["difficoltaItinerario"].",
+                '".$_POST["infoUtiliItinerario"]."',
+                '$traccia',
+                ".$_COOKIE["userID"].",
+                $idPuntoPartenza,
+                $idPuntoArrivo
+                )
+        ";
+        $res = mysql_query($query);
+        insertImmagini(mysql_insert_id());
+        return true;
+    }
  ?>

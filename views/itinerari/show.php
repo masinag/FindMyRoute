@@ -10,7 +10,7 @@
     </head>
     <body>
         <?php include_once ROOT_DIR."views/shared/navbar.php" ?>
-        <?php if (!isSet($_POST["idItinerario"])){
+        <?php if (!isSet($_GET["idItinerario"])){
             echo "<header class='my-header'>
             <h1 class='w3-xxxlarge'>Torna alla pagina precedente per scegliere
                 un itinerario</h1>
@@ -25,7 +25,7 @@
                         puntiSignificativi as p1,
                         puntiSignificativi as p2
                     where
-                        itinerari.id = ".$_POST["idItinerario"]." and
+                        itinerari.id = ".$_GET["idItinerario"]." and
                           p1.id = itinerari.idPuntoPartenza and
                           p2.id = itinerari.idPuntoArrivo";
             $res = mysql_query($query);
