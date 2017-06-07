@@ -14,7 +14,6 @@
     class="w3-input w3-border" <?php getValue("lunghezzaItinerario") ?>/>
 <span class="my-input-error"><?php getError("itinerario", "lunghezza", $errori) ?></span>
 
-
 <label for="difficoltaItinerario">Difficolta*</label>
 <select name="difficoltaItinerario" id="difficoltaItinerario" class="w3-margin-bottom">
     <option <?php selectValue("difficoltaItinerario", "1", 0) ?> value="1">1</option>
@@ -57,3 +56,4 @@
 <input type="file" name="immaginiItinerario[]" id="immaginiItinerario2"accept="image/*" style="display:none;"/>
 <input type="file" name="immaginiItinerario[]" id="immaginiItinerario3"accept="image/*" style="display:none;"/>
 <input type="file" name="immaginiItinerario[]" id="immaginiItinerario4"accept="image/*" style="display:none;"/>
+<span class="my-input-error"><?php getError("itinerario", "immagini", $errori) ?></span>

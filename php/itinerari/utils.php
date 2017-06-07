@@ -1,6 +1,7 @@
 <?php
     require_once(ROOT_DIR . "php/utils.php");
     require_once(ROOT_DIR . "php/puntiSignificativi/utils.php");
+    require_once(ROOT_DIR . "php/immagini/utils.php");
     /**
      * Verifica la validità dei campi relativi ad un itinerario.
      */
@@ -26,6 +27,8 @@
 
         // controllo la traccia gps
         checkTrack($errori);
+        // controllo le immagini caricate
+        checkImmagini($errori);
         // controllo eventuali parametri di un nuovo punto di partenza inserito
         checkPunto("Partenza", $errori);
         // controllo eventuali parametri di un nuovo punto di arrivo inserito
@@ -42,7 +45,7 @@
             // verifico che l'estensione sia gpx
             $fileType = pathinfo($uploadFile,PATHINFO_EXTENSION);
             if($fileType != "gpx") {
-                $errori["itinerario"]["traccia"] = "Sono supportati solamente i file con estensione GPX";;
+                $errori["itinerario"]["traccia"] = "Sono supportati solamente i file con estensione GPX";
             }
         } else {
             $errori["itinerario"]["traccia"] = "Nessun file selezionato";
@@ -63,5 +66,4 @@
         move_uploaded_file($_FILES["tracciaItinerario"]["tmp_name"], $traccia);
         return basename($traccia);
     }
-
  ?>

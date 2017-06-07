@@ -1,7 +1,7 @@
 <?php
     require_once("utils.php");
-    require_once(ROOT_DIR . "php/puntiSignificativi/new.php");
-    require_once(ROOT_DIR . "php/localita/new.php");
+    require_once(ROOT_DIR . "php/puntiSignificativi/controller.php");
+    require_once(ROOT_DIR . "php/localita/controller.php");
 
     /**
      * Inserisce un itinerario. Accetta come parametri gli id dei punti di
@@ -30,6 +30,7 @@
                 )
         ";
         $res = mysql_query($query);
+        insertImmagini(mysql_insert_id());
     }
 
     // controllo se c'è un input da parte dell'utente

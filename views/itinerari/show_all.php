@@ -1,4 +1,4 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/utenti/user_status.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/utenti/user_status.php" ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,7 +41,7 @@
                                 <h3 class='my-two-lines'>".$row["nome"]."</h3>
                             </header>
                             <div class='my-card-image'
-                                style='background-image:url($imagePath)'></div>
+                                style='background-image:url(\"$imagePath\")'></div>
                             <article class='w3-container'>
                                 <ul class='w3-ul my-list'>
                                     <li><h5 class='my-label'>Punto di partenza</h5>: ".$row["puntoPartenza"]."</li>
