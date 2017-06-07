@@ -1,4 +1,3 @@
-<?php include_once ROOT_DIR."php/recensioni/controller.php" ?>
 <article class='w3-third w3-padding-large'>
     <h2 class="">Recensioni</h2>
 <?php

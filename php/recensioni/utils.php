@@ -1,5 +1,5 @@
 <?php
-    require_once(ROOT_DIR . "php/utils.php");
+    // require_once(ROOT_DIR . "php/utils.php");
 
     function checkRecensione(&$errori){
         // controllo che il campo voto sia settato

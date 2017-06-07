@@ -1,5 +1,4 @@
 <?php
-define('ROOT_DIR', $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/");
 require_once("utils.php");
 
 $userLoggedIn = false;

@@ -1,4 +1,3 @@
-<?php include_once ROOT_DIR."php/itinerari/controller.php" ?>
 <div id="nuovo" class="modal" style="display: <?php echo (isSet($errori))?'block':'none' ?>">
     <article class="my-userForm w3-text-black">
         <header class="w3-container">

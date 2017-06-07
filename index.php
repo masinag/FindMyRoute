@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/utenti/user_status.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/FindMyRoute/php/controllers.php" ?>
 <!DOCTYPE html>
 <html>
     <head>

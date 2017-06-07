@@ -1,5 +1,5 @@
 <?php
-    require_once(ROOT_DIR . "php/utils.php");
+    // require_once(ROOT_DIR . "php/utils.php");
 
     /**
      * Effettua il login.

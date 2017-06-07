@@ -1,7 +1,6 @@
 <?php
+    // require_once("utils.php");
     require_once("utils.php");
-    require_once(ROOT_DIR . "php/puntiSignificativi/controller.php");
-    require_once(ROOT_DIR . "php/localita/controller.php");
 
     /**
      * Inserisce un itinerario. Accetta come parametri gli id dei punti di

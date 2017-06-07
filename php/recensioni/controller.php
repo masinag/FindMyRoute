@@ -1,5 +1,5 @@
 <?php
-    require_once "utils.php";
+    require_once("utils.php");
 
     if (isSet($_POST["nuovaRecensione"])) {
         checkRecensione($errori);
