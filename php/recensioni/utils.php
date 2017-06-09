@@ -1,11 +1,15 @@
 <?php
-    // require_once(ROOT_DIR . "php/utils.php");
-
+    /**
+     * Controlla che i valori del form di una recensione siano corretti.
+     */
     function checkRecensione(&$errori){
         // controllo che il campo voto sia settato
         checkNotEmpty(["voto"], "recensione", $errori);
     }
-
+    /**
+     * Inserisce una recensione nel database. Restituisce un valore booleano
+     * che indica se l'inserimento è andato a buon fine.
+     */
     function insertRecensione(){
         // inserisco la nuova recensione
         $conn = db_connect();
@@ -22,7 +26,10 @@
         mysql_close($conn);
         return true;
     }
-
+    /**
+     * Modifica una recensione nel database. Restituisce un valore booleano
+     * che indica se la modifica è andata a buon fine.
+     */
     function editRecensione(){
         // modifico la recensione corrente
         $conn = db_connect();
@@ -37,7 +44,10 @@
         mysql_close($conn);
         return true;
     }
-
+    /**
+     * Cancella una recensione dal database. Restituisce un valore booleano
+     * che indica se l'eliminazione è andata a buon fine.
+     */
     function deleteRecensione(){
         $query = "
             DELETE FROM valutatiDa

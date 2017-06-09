@@ -1,5 +1,3 @@
-# ignore all images and gps track files
 files/imgs/*
 files/tracks/*
-# ignore temp files
 uploads/*

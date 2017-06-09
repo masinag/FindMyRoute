@@ -1,6 +1,6 @@
-drop database if exists itinerariInBicicletta;
-create database itinerariInBicicletta;
-use itinerariInBicicletta;
+drop database if exists findMyRoute;
+create database findMyRoute;
+use findMyRoute;
 
 create table utenti(
     id       int unsigned auto_increment not null,

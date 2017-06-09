@@ -10,6 +10,7 @@
         $finished = false;
         while (!$finished && $i < 5) {
             $image = $_FILES["immaginiItinerario"]["tmp_name"][$i];
+            // controlle che tutti siano immagini
             if ($image != false && !getimagesize($image)){
                 $errori["itinerario"]["immagini"] = "Alcune delle immagini caricate non sono supportate";
                 $finished = true;

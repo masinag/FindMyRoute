@@ -8,11 +8,11 @@ function toggleMenu() {
 }
 
 function checkPassword() {
-    if (document.getElementById('password').value ==
-        document.getElementById('password_c').value) {
-        document.getElementById('password_c').setCustomValidity('');
+    if (document.getElementById('passwordRegistra').value ==
+        document.getElementById('confermaPasswordRegistra').value) {
+        document.getElementById('confermaPasswordRegistra').setCustomValidity('');
     } else {
-        document.getElementById('password_c').setCustomValidity(
+        document.getElementById('confermaPasswordRegistra').setCustomValidity(
             'Le password devono coincidere');
     }
 }

@@ -1,4 +1,4 @@
-use itinerariInBicicletta;
+use findMyRoute;
 
 delete from itinerari;
 delete from apertiIn;

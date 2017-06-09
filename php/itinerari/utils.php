@@ -13,12 +13,12 @@
         if (!is_numeric($lunghezza) || floatval($lunghezza)<0) {
             $errori["itinerario"]["lunghezza"] = "La lunghezza deve essere un numero reale non negativo.";
         }
-
+        // le ore devono essere un intero positivo
         $ore = $_POST["oreItinerario"];
         if (!is_numeric($ore) || intval($ore)<0) {
             $errori["itinerario"]["ore"] = "Il numero di ore deve essere un numero intero positivo";
         }
-
+        // i minuti un intero tra 0 e 59
         $minuti = $_POST["minutiItinerario"];
         if (!is_numeric($minuti) || intval($minuti)<0 || intval($minuti)>59) {
             $errori["itinerario"]["minuti"] = "Il numero di minuti deve essere un numero intero

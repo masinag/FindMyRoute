@@ -45,8 +45,9 @@
                  <li><h5 class='my-label'>Punto di arrivo</h5>: <?php echo $row["puntoArrivo"] ?></li>
                  <li><h5 class='my-label'>Lunghezza</h5>: <?php echo $row["lunghezza"] ?></li>
                  <li><h5 class='my-label'>Tempo di percorrenza</h5>: <?php echo $row["tempoPercorrenza"] ?> ore</li>
+                 <?php if ($row["infoUtili"] != "") { ?>
                  <li><h5 class='my-label'>informazioni utili</h5>: <?php echo $row["infoUtili"] ?></li>
-
+                 <?php } ?>
              </ul>
          </section>
          <section class="w3-container w3-twothird w3-padding-large">
