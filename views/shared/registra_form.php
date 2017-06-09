@@ -31,3 +31,6 @@
 
     </article>
 </div>
+<script type="text/javascript">
+    addModalListener('registra');
+</script>

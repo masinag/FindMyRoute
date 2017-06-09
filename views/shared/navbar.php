@@ -79,17 +79,3 @@
         ?>
     </nav>
 </div>
-
-<script type="text/javascript">
-
-    // Chiudo le finestre quando l'utente clicca fuori da esse
-    var modalA = document.getElementById('accedi');
-    var modalR = document.getElementById('registra');
-    window.onclick = function(event) {
-       if (event.target == modalA) {
-           modalA.style.display = "none";
-       } else if (event.target == modalR) {
-           modalR.style.display = "none";
-       }
-    }
-</script>

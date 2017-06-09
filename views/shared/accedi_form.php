@@ -20,3 +20,6 @@
         </form>
     </article>
 </div>
+<script type="text/javascript">
+    addModalListener('accedi');
+</script>

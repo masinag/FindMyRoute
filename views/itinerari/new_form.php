@@ -1,4 +1,4 @@
-<div id="nuovo" class="modal" style="display: <?php echo (isSet($errori))?'block':'none' ?>">
+<div id="nuovoItinerario" class="modal" style="display: <?php echo (isSet($errori))?'block':'none' ?>">
     <article class="my-userForm w3-text-black">
         <header class="w3-container">
             <h2>Nuovo itinerario</h2>
@@ -109,26 +109,22 @@
     </article>
 </div>
 
-
-
-
 <script type="text/javascript">
-    var modalNew = document.getElementById('nuovo');
-    window.addEventListener("click", function(event) {
-       if (event.target == modalNew) {
-           modalNew.style.display = "none";
-       }
-   }, false);
+    addModalListener('nuovoItinerario');
 </script>
 
 <script>
     var mapPartenza, mapArrivo, markerPartenza, markerArrivo;
+    /**
+     * Visualizza le mappe per selezionare il punto di partenza e arrivo.
+     */
     function initMaps() {
         // mappa punto di partenza
         mapPartenza = new google.maps.Map(document.getElementById('mapPartenza'), {
             center: {lat: 47, lng: 2},
             zoom:5
         });
+        // quando clicco sulla mappa viene mostrato un marker
         mapPartenza.addListener('click', function(e) {
             markerPartenza = placeMarker(e.latLng, mapPartenza, markerPartenza, 'Partenza');
         });
@@ -139,19 +135,19 @@
         mapArrivo.addListener('click', function(e) {
             markerArrivo = placeMarker(e.latLng, mapArrivo, markerArrivo, 'Arrivo');
         });
-
     }
-
+    /**
+     * Mostra un marker sulla mappa e stampa le coordinate ai rispettivi
+     * campi.
+     */
     function placeMarker(position, map, marker, type) {
         if (marker == null){
-            // console.log("Marker is null");
             marker = new google.maps.Marker({
                 position: position,
                 map: map
             });
         } else {
             marker.setPosition(position);
-            // console.log("Changing marker position");
         }
         document.getElementById('latitudinePunto' + type).value=position.lat();
         document.getElementById('longitudinePunto' + type).value=position.lng();

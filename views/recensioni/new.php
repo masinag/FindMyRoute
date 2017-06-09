@@ -14,10 +14,5 @@
 </div>
 
 <script type="text/javascript">
-    var modalNewRec = document.getElementById('nuovaRecensione');
-    window.addEventListener("click", function(event) {
-       if (event.target == modalNewRec) {
-           modalNewRec.style.display = "none";
-       }
-   }, false);
+    addModalListener('nuovaRecensione');
 </script>
