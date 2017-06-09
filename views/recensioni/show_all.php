@@ -28,6 +28,7 @@
             <br/>
             <?php
         } else {
+            // altrimenti mostro la sua recensione
             $row = mysql_fetch_array($res2);
             $values["usernameRecensione"] = $row["username"];
             $values["votoRecensione"] = $row["voto"];
@@ -35,6 +36,10 @@
             $i = 0;
             include ROOT_DIR."views/recensioni/show.php";
         }
+    } else {
+        // se l'utente non è loggato mostro tutte le recensioni
+        $res1 = mysql_query($query1);
+        mysql_close($conn);
     }
 
     // quindi mostro le altre recensioni (se ci sono)

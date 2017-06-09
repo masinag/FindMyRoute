@@ -50,7 +50,7 @@
     </nav>
 
     <!-- Navbar su schermi piccoli -->
-    <nav id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-large">
+    <nav id="navbar" class="w3-bar-block w3-white w3-hide w3-hide-large w3-large">
         <a href="/FindMyRoute/index.php" class="w3-bar-item w3-button w3-padding-large">Home</a>
         <a href="/FindMyRoute/views/itinerari/show_all.php" class="w3-bar-item w3-button w3-padding-large">Itinerari</a>
         <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>

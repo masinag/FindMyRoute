@@ -101,7 +101,7 @@
                 <button class="w3-button w3-deep-orange w3-large w3-margin-top my-formAlign"
                      type="button" onclick="showDiv('datiPuntoPartenza', mapPartenza);">Indietro</button>
                 <input class="w3-button w3-cyan w3-text-white w3-large my-buttonAlign"
-                    type="submit" name="nuovo" value="Conferma"/>
+                    type="submit" name="nuovoItinerario" value="Conferma"/>
 
 
             </section>
