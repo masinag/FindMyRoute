@@ -11,7 +11,11 @@
 
         <!-- Intestazione -->
         <header class="w3-container w3-cyan w3-center" style="padding:128px 16px">
-            <h1 class="w3-margin w3-jumbo w3-text-white">FindMyRoute</h1>
+            <h1 class="w3-margin w3-jumbo w3-text-white">
+                FindMy <span class="my-nowrap">
+                    <img src="/FindMyRoute/files/imgs/logo-white.svg"
+                        alt="Logo FindMyRoute" style="height:1em;">oute
+                    </span></h1>
             <p class="w3-xlarge w3-text-white">
                 L'applicazione per la mappatura di itinerari in bicicletta <br/>
             </p>

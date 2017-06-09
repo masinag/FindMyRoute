@@ -160,3 +160,6 @@ textarea {
 .my-buttonAlign{
     margin-top: 25px!important;
 }
+.my-nowrap{
+    white-space:nowrap;
+}
