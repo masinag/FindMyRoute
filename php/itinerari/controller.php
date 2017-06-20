@@ -3,7 +3,7 @@
     require_once("utils.php");
 
     // controllo se c'è un input da parte dell'utente
-    if (isSet($_POST["nomeItinerario"])) {
+    if (isSet($_POST["nuovoItinerario"])) {
         // controllo che i parametri siano validi
         checkItinerario($errori);
         // se tutti i parametri sono validi procedo con l'inserimento

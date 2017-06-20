@@ -1,5 +1,7 @@
 <?php
     require_once("utils.php");
+    // a seconda della form compilata, controllo eventuali campi e chiamo la
+    // funzione corrispondente 
     if (isSet($_POST["nuovaRecensione"])) {
         checkRecensione($errori);
         if(!isSet($errori)){

@@ -11,7 +11,11 @@
 
         <!-- Intestazione -->
         <header class="w3-container w3-cyan w3-center" style="padding:128px 16px">
-            <h1 class="w3-margin w3-jumbo w3-text-white">FindMyRoute</h1>
+            <h1 class="w3-margin w3-jumbo w3-text-white">
+                FindMy <span class="my-nowrap">
+                    <img src="/FindMyRoute/files/imgs/logo-white.svg"
+                        alt="Logo FindMyRoute" style="height:1em;">oute
+                    </span></h1>
             <p class="w3-xlarge w3-text-white">
                 L'applicazione per la mappatura di itinerari in bicicletta <br/>
             </p>
@@ -71,12 +75,16 @@
         <!-- Footer -->
         <footer class="w3-container w3-padding-64 w3-center w3-opacity">
             <div class="w3-xlarge w3-padding-32">
-                <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
                 <i class="fa fa-instagram w3-hover-opacity"></i>
                 <i class="fa fa-snapchat w3-hover-opacity"></i>
                 <i class="fa fa-pinterest-p w3-hover-opacity"></i>
                 <i class="fa fa-twitter w3-hover-opacity"></i>
-                <i class="fa fa-linkedin w3-hover-opacity"></i>
+                <i class="fa fa-linkedin w3-hover-opacity"></i> -->
+                <a href="https://github.com/masinag/FindMyRoute.git" class=" w3-button w3-hover-opacity">
+                    Github
+                    <i class="fa fa-github" ></i>
+                </a>
             </div>
         </footer>
     </body>

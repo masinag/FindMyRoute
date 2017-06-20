@@ -4,7 +4,7 @@
     $changed = false;
     include_once "utils.php";
     // includo i controller delle varie risorse
-    include_once "utenti/user_status.php";
+    include_once "utenti/controller.php";
     include_once "recensioni/controller.php";
     include_once "itinerari/controller.php";
     // aggiorno la pagina se sono state fatte delle modifiche (per evitare

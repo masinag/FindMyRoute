@@ -4,7 +4,13 @@
      */
     function db_connect(){
         $conn = mysql_connect("localhost", "root", "");
-        mysql_select_db("findMyRoute", $conn);
+        if (!$conn) {
+            echo "Impossibile connettersi al database";
+        }
+        $db = mysql_select_db("findMyRoute", $conn);
+        if (!$db) {
+            echo "Database non trovato";
+        }
         mysql_query ("set character_set_client='utf8'");
         mysql_query ("set character_set_results='utf8'");
         mysql_query ("set collation_connection='utf8_general_ci'");

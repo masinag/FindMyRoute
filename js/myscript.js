@@ -2,7 +2,7 @@
  * Mostra il menù laterale quando viene cliccata l'icona del 'panino'
  */
 function toggleMenu() {
-    var x = document.getElementById("navDemo");
+    var x = document.getElementById("navbar");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
     } else {
