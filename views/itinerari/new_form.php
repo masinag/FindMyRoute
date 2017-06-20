@@ -1,4 +1,4 @@
-<div id="nuovoItinerario" class="modal" style="display: <?php echo (isSet($errori))?'block':'none' ?>">
+<div id="nuovoItinerario" class="modal" style="display: <?php echo (isSet($errori['itinerario']))?'block':'none' ?>">
     <article class="my-userForm w3-text-black">
         <header class="w3-container">
             <h2>Nuovo itinerario</h2>
