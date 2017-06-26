@@ -30,7 +30,7 @@
         } else {
             // altrimenti mostro la sua recensione
             $row = mysql_fetch_array($res2);
-            $values["usernameRecensione"] = $row["username"];
+            $values["usernameRecensione"] = "Tu";
             $values["votoRecensione"] = $row["voto"];
             $values["testoRecensione"] = $row["recensione"];
             $i = 0;
